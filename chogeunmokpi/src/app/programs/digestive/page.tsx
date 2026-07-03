@@ -215,7 +215,7 @@ export default function DigestiveProgramPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
               먹는 즐거움을 잃어버리셨나요?
             </h2>
             <p className="mt-3 text-ink-soft">
@@ -243,11 +243,11 @@ export default function DigestiveProgramPage() {
           </div>
 
           {/* 3. 핵심 진단 원리 (특별 진단 시스템) */}
-          <div className="rounded-3xl border border-line bg-card p-8 md:p-10">
+          <div className="rounded-3xl border-2 border-ink/80 bg-card p-8 md:p-10">
             <span className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-root/10 px-3 py-1 text-xs font-medium text-root">
               ✓ 특별 진단 시스템
             </span>
-            <h3 className="mb-6 font-display text-2xl text-ink md:text-3xl">
+            <h3 className="mb-6 text-2xl font-bold tracking-tight text-ink md:text-3xl">
               위장병, 움직임을 되살려야 낫습니다
             </h3>
             <div className="space-y-4 text-[15px] leading-loose text-ink-soft">
@@ -284,7 +284,7 @@ export default function DigestiveProgramPage() {
             <p className="mb-3 text-xs font-semibold tracking-wide text-root">
               CORE SOLUTION
             </p>
-            <h2 className="mb-8 font-display text-3xl leading-snug text-ink md:text-4xl">
+            <h2 className="mb-8 font-bold tracking-tight text-3xl leading-snug text-ink md:text-4xl">
               위장을 다시 뛰게 하는
               <br />
               핵심 치료 원리
@@ -315,7 +315,7 @@ export default function DigestiveProgramPage() {
       <section id="quiz" className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-10 text-center">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
+            <h2 className="font-bold tracking-tight text-3xl text-ink md:text-4xl">
               소화기 미니 진단
             </h2>
             <p className="mt-3 text-ink-soft">
@@ -330,7 +330,7 @@ export default function DigestiveProgramPage() {
       <section className="border-t border-line bg-paper-soft">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
+            <h2 className="font-bold tracking-tight text-3xl text-ink md:text-4xl">
               증상별 맞춤 솔루션
             </h2>
             <p className="mt-3 text-ink-soft">
@@ -386,7 +386,7 @@ export default function DigestiveProgramPage() {
               🍵
             </div>
             <div>
-              <h2 className="mb-3 font-display text-3xl text-ink md:text-4xl">
+              <h2 className="mb-3 font-bold tracking-tight text-3xl text-ink md:text-4xl">
                 초근목피 소화기 치료 프로그램
               </h2>
               <p className="text-ink-soft">
@@ -419,7 +419,7 @@ export default function DigestiveProgramPage() {
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="font-display text-3xl text-ink md:text-4xl">
+              <h2 className="font-bold tracking-tight text-3xl text-ink md:text-4xl">
                 치료후기
               </h2>
               <p className="mt-2 text-ink-soft">
@@ -477,7 +477,7 @@ export default function DigestiveProgramPage() {
             </div>
             <div>
               <p className="mb-2 text-xs text-ink-soft">담당 의료진</p>
-              <h3 className="mb-3 font-display text-2xl text-ink">
+              <h3 className="mb-3 font-bold tracking-tight text-2xl text-ink">
                 {digestiveDoctor.role} {digestiveDoctor.name}
               </h3>
               <p className="mb-4 leading-relaxed text-ink-soft">
@@ -498,7 +498,7 @@ export default function DigestiveProgramPage() {
             <p className="mb-2 text-xs font-semibold tracking-wide text-root">
               TREATMENT PROCESS
             </p>
-            <h2 className="mb-12 font-display text-3xl text-ink md:text-4xl">
+            <h2 className="mb-12 font-bold tracking-tight text-3xl text-ink md:text-4xl">
               진료 절차
             </h2>
           </div>
@@ -524,7 +524,7 @@ export default function DigestiveProgramPage() {
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="grid gap-10 md:grid-cols-[1.3fr_1fr]">
             <div>
-              <h2 className="mb-6 font-display text-2xl text-ink md:text-3xl">
+              <h2 className="mb-6 font-bold tracking-tight text-2xl text-ink md:text-3xl">
                 자주 묻는 질문
               </h2>
               <div className="space-y-3">
@@ -543,7 +543,7 @@ export default function DigestiveProgramPage() {
             </div>
 
             <div className="flex flex-col justify-center rounded-3xl border border-line bg-card p-8 text-center">
-              <h3 className="mb-3 font-display text-xl text-ink">
+              <h3 className="mb-3 font-bold tracking-tight text-xl text-ink">
                 비대면 진료 프로세스
               </h3>
               <p className="mb-6 text-sm leading-relaxed text-ink-soft">
@@ -568,7 +568,7 @@ export default function DigestiveProgramPage() {
           <p className="mb-2 text-xs text-ink-soft">함께 보면 좋은 문서</p>
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h2 className="font-display text-3xl text-ink md:text-4xl">
+              <h2 className="font-bold tracking-tight text-3xl text-ink md:text-4xl">
                 다음으로 보면 좋은 자료
               </h2>
               <p className="mt-3 text-sm text-ink-soft">
