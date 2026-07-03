@@ -3,7 +3,9 @@ import Link from "next/link";
 import { programs } from "@/lib/site-data";
 
 export function generateStaticParams() {
-  return programs.map((p) => ({ slug: p.slug }));
+  return programs
+    .filter((p) => p.slug !== "digestive")
+    .map((p) => ({ slug: p.slug }));
 }
 
 export default async function ProgramDetailPage({

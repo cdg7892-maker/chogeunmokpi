@@ -3,56 +3,82 @@ export type Program = {
   title: string;
   summary: string;
   keywords: string[];
+  image: string;
+  icon: string;
 };
 
 export const programs: Program[] = [
   {
     slug: "digestive",
     title: "소화기질환",
-    summary: "역류성식도염·과민성대장증후군·만성 위염, 뿌리부터 다스리는 소화기 치료",
+    summary:
+      "위장병, 움직임을 되살려야 낫습니다. 굳어진 담적을 풀고 위장 운동성을 회복시켜 편안한 속을 되찾아 드립니다.",
     keywords: ["역류성식도염", "과민성대장증후군", "만성 위염·담적"],
+    image: "/images/programs/digestive.jpg",
+    icon: "🌾",
   },
   {
     slug: "diet",
     title: "다이어트",
-    summary: "체질에 맞춘 근본적인 체형 관리, 요요 없는 다이어트 한약",
+    summary:
+      "굶지 않고, 힘들지 않게. 체질에 맞춘 처방으로 요요 없이 건강하게 체중 관리를 도와드립니다.",
     keywords: ["체질 다이어트", "요요 없는 감량", "식욕·대사 관리"],
+    image: "/images/programs/diet.jpg",
+    icon: "⚖️",
   },
   {
     slug: "mind",
     title: "마음건강",
-    summary: "불면·화병·만성피로, 몸과 마음의 균형을 함께 봅니다",
+    summary:
+      "마음의 병, 몸만 치료해서는 낫지 않습니다. 심·간·비 장부의 균형을 되찾아 불면, 우울, 불안의 뿌리를 다스립니다.",
     keywords: ["불면증", "화병", "만성피로·번아웃"],
+    image: "/images/programs/mind.jpg",
+    icon: "🌙",
   },
   {
     slug: "skin",
     title: "피부질환",
-    summary: "아토피·여드름·두드러기·건선, 안에서부터 다스리는 피부 치료",
+    summary:
+      "피부는 몸의 거울입니다. 스테로이드 없이 속부터 맑아지게, 면역을 되살려 재발 없는 피부를 만듭니다.",
     keywords: ["아토피", "여드름·두드러기", "건선"],
+    image: "/images/programs/skin.jpg",
+    icon: "🌿",
   },
   {
     slug: "tonic",
     title: "보약·웰니스",
-    summary: "공진단·경옥고 등 체질 맞춤 보약으로 몸의 균형을 지킵니다",
+    summary:
+      "피로는 몸의 SOS 신호입니다. 오장육부의 기운을 채우고 면역력을 높여 활력 넘치는 일상을 되찾아 드립니다.",
     keywords: ["공진단", "경옥고", "체질 보약"],
+    image: "/images/programs/tonic.jpg",
+    icon: "🍵",
   },
   {
     slug: "pediatric",
     title: "소아·수험생",
-    summary: "성장·면역·집중력, 우리 아이 맞춤 한방 관리",
+    summary:
+      "성장을 방해하는 요인을 없애는 것이 먼저입니다. 비염, 소화불량을 해결하고 아이가 스스로 자랄 힘을 길러줍니다.",
     keywords: ["소아 허약", "성장 관리", "수험생 보약"],
+    image: "/images/programs/pediatric.jpg",
+    icon: "🌱",
   },
   {
     slug: "head-face",
     title: "두면부 클리닉",
-    summary: "두통·안면부 질환, 두면부 순환과 균형을 바로잡습니다",
+    summary:
+      "두통, 어지럼증, 참지 마세요. 두면부의 순환과 균형을 바로잡아 맑은 정신을 되찾아 드립니다.",
     keywords: ["만성 두통", "안면부 순환", "이명·어지럼증"],
+    image: "/images/programs/head-face.jpg",
+    icon: "🧠",
   },
   {
     slug: "women",
     title: "여성질환",
-    summary: "산전산후·생리불순 등 여성 건강 전 주기를 함께합니다",
+    summary:
+      "여성의 몸은 주기마다 달라집니다. 산전산후, 생리불순까지 여성 건강 전 주기를 함께 살핍니다.",
     keywords: ["산후보약", "생리불순", "갱년기 관리"],
+    image: "/images/programs/women.jpg",
+    icon: "🌸",
   },
 ];
 
@@ -92,6 +118,42 @@ export const doctors: Doctor[] = [
       "00학회 정회원 (추후 업데이트)",
       "00 관련 연구·강의 활동 (추후 업데이트)",
     ],
+  },
+];
+
+export type Review = {
+  id: string;
+  programSlug: string;
+  patient: string;
+  title: string;
+  summary: string;
+  doctor: string;
+};
+
+export const reviews: Review[] = [
+  {
+    id: "r1",
+    programSlug: "digestive",
+    patient: "강**",
+    title: "[52세, 여성, 만성소화불량] 물만 마셔도 붓는 것 같아요",
+    summary: "위장 운동성 회복 치료 후 속이 한결 편해졌다는 후기",
+    doctor: "이호근",
+  },
+  {
+    id: "r2",
+    programSlug: "digestive",
+    patient: "김**",
+    title: "[45세, 여성, 역류성식도염] 눕기만 하면 신물이 올라와요",
+    summary: "담적 관리와 함께 식도 증상이 개선된 사례",
+    doctor: "이호근",
+  },
+  {
+    id: "r3",
+    programSlug: "digestive",
+    patient: "박**",
+    title: "[55세, 여성, 기능성 소화불량] 20년 넘게 지속된 만성 속더부룩함",
+    summary: "장기간 지속된 소화불량이 호전된 치료 경과",
+    doctor: "이호근",
   },
 ];
 
