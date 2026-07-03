@@ -37,8 +37,13 @@ export default function Header() {
               priority
             />
           </span>
-          <span className="font-display text-2xl tracking-tight text-ink">
-            초근목피한의원
+          <span className="flex items-baseline gap-1.5">
+            <span className="font-display text-2xl tracking-tight text-ink">
+              초근목피한의원
+            </span>
+            <span className="hidden text-[11px] tracking-wide text-ink-soft/60 md:inline">
+              Since 1994
+            </span>
           </span>
         </Link>
 
