@@ -142,28 +142,43 @@ export default function DigestiveProgramPage() {
     <>
       {/* 1. 히어로 */}
       <section className="border-b border-line bg-paper-soft">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
+        <div className="mx-auto max-w-6xl px-5 pt-8 md:pt-10">
+          <div className="inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-herb/30 to-root/20 text-sm">
+              🩺
+            </span>
+            <span className="text-xs leading-tight text-ink-soft">
+              의료 감수
+              <br />
+              <span className="text-sm font-semibold text-ink">
+                {digestiveDoctor.name} {digestiveDoctor.role}
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
           <div>
-            <p className="mb-4 text-sm leading-relaxed text-ink-soft">
+            <p className="mb-5 text-base leading-relaxed text-ink-soft">
               더부룩한 속, 쓰린 가슴.
               <br />
               위장의 운동성을 되살려 편안함을 드립니다.
             </p>
-            <h1 className="font-display text-5xl leading-[1.2] text-ink">
+            <h1 className="font-display text-6xl leading-[1.15] text-ink md:text-7xl">
               소화기
               <br />
               클리닉
             </h1>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/reserve"
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper-soft transition hover:bg-root"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-medium text-paper-soft transition hover:bg-root"
               >
                 📅 진료 예약하기
               </Link>
               <a
                 href="#quiz"
-                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-medium text-ink-soft transition hover:border-root hover:text-root"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-4 text-base font-medium text-ink-soft transition hover:border-root hover:text-root"
               >
                 📋 소화기 자가진단
               </a>
@@ -171,11 +186,11 @@ export default function DigestiveProgramPage() {
           </div>
 
           <div className="relative">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-herb/20 via-paper to-root/15 text-6xl">
+            <div className="flex aspect-[4/4.6] items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-herb/20 via-paper to-root/15 text-8xl">
               🌾
             </div>
-            <div className="absolute -bottom-6 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-line bg-card p-5 shadow-lg shadow-ink/5 md:left-auto md:right-4 md:translate-x-0">
-              <div className="space-y-2 text-sm text-ink">
+            <div className="absolute -bottom-8 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-line bg-card p-6 shadow-lg shadow-ink/5 md:left-auto md:right-4 md:translate-x-0">
+              <div className="space-y-2.5 text-base text-ink">
                 <p className="flex items-center gap-2">
                   <span className="text-root">★</span> 만성 소화불량·담적병
                 </p>
