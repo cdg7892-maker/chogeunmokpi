@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { programs } from "@/lib/site-data";
@@ -25,7 +26,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper-soft/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="relative h-9 w-7">
+            <Image
+              src="/logo-icon.png"
+              alt="초근목피한의원 로고"
+              fill
+              sizes="28px"
+              className="object-contain"
+              priority
+            />
+          </span>
           <span className="font-display text-2xl tracking-tight text-ink">
             초근목피한의원
           </span>

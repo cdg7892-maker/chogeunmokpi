@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { clinicInfo } from "@/lib/site-data";
 
@@ -5,6 +6,21 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper-soft">
       <div className="mx-auto max-w-6xl px-5 py-10">
+        <div className="mb-8 flex items-center gap-2.5">
+          <span className="relative h-7 w-[22px]">
+            <Image
+              src="/logo-icon.png"
+              alt="초근목피한의원 로고"
+              fill
+              sizes="22px"
+              className="object-contain"
+            />
+          </span>
+          <span className="font-display text-lg text-ink">
+            초근목피한의원
+          </span>
+        </div>
+
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="mb-3 text-sm font-semibold text-ink">진료 시간</h3>
