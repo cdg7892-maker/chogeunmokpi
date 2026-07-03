@@ -435,7 +435,7 @@ export default function DigestiveProgramPage() {
             {symptoms.map((s) => (
               <div
                 key={s.title}
-                className="rounded-2xl border border-line bg-card p-6"
+                className="rounded-2xl border border-line bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-root/40 hover:shadow-lg hover:shadow-ink/5"
               >
                 <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-root">
                   <s.Icon />
@@ -555,7 +555,7 @@ export default function DigestiveProgramPage() {
             {solutions.map((s) => (
               <div
                 key={s.n}
-                className="relative rounded-2xl border border-line bg-card p-7"
+                className="relative rounded-2xl border border-line bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:border-root/40 hover:shadow-lg hover:shadow-ink/5"
               >
                 <span className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-line text-sm text-ink-soft">
                   {s.n}
@@ -621,7 +621,7 @@ export default function DigestiveProgramPage() {
             {treatments.map((t) => (
               <div
                 key={t.title}
-                className="rounded-2xl border border-line bg-card p-6"
+                className="rounded-2xl border border-line bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-root/40 hover:shadow-lg hover:shadow-ink/5"
               >
                 <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-soft text-root">
                   <t.Icon />
@@ -661,7 +661,7 @@ export default function DigestiveProgramPage() {
               <Link
                 key={r.id}
                 href="/community/reviews"
-                className="group rounded-2xl border border-line bg-card p-6 transition hover:border-root/50"
+                className="group rounded-2xl border border-line bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
               >
                 <div className="mb-3 flex items-center gap-2">
                   <span className="rounded-full bg-paper px-2.5 py-0.5 text-xs text-ink-soft">
@@ -816,7 +816,7 @@ export default function DigestiveProgramPage() {
               </p>
               <Link
                 href="/programs/tonic"
-                className="block rounded-2xl border border-line bg-card p-5 transition hover:border-root/50"
+                className="block rounded-2xl border border-line bg-card p-5 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
               >
                 <span className="mb-2 inline-block rounded-full bg-paper-soft px-2 py-0.5 text-xs text-ink-soft">
                   진료
@@ -838,7 +838,7 @@ export default function DigestiveProgramPage() {
               <div className="space-y-4">
                 <Link
                   href="/community/guide"
-                  className="block rounded-2xl border border-line bg-card p-5 transition hover:border-root/50"
+                  className="block rounded-2xl border border-line bg-card p-5 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <span className="mb-2 inline-block rounded-full bg-paper-soft px-2 py-0.5 text-xs text-ink-soft">
                     주제
@@ -850,7 +850,7 @@ export default function DigestiveProgramPage() {
                 </Link>
                 <Link
                   href="/community/guide"
-                  className="block rounded-2xl border border-line bg-card p-5 transition hover:border-root/50"
+                  className="block rounded-2xl border border-line bg-card p-5 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <span className="mb-2 inline-block rounded-full bg-paper-soft px-2 py-0.5 text-xs text-ink-soft">
                     주제
@@ -871,7 +871,7 @@ export default function DigestiveProgramPage() {
               <div className="space-y-4">
                 <Link
                   href="/community/column"
-                  className="block rounded-2xl border border-line bg-card p-5 transition hover:border-root/50"
+                  className="block rounded-2xl border border-line bg-card p-5 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
                 >
                   <span className="mb-2 inline-block rounded-full bg-paper-soft px-2 py-0.5 text-xs text-ink-soft">
                     읽을거리

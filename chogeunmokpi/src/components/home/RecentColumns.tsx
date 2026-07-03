@@ -42,7 +42,7 @@ export default function RecentColumns() {
             <Link
               key={col.title}
               href="/community/column"
-              className="group rounded-2xl border border-line bg-card p-6 transition hover:border-root/50"
+              className="group rounded-2xl border border-line bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
             >
               <div className="mb-4 flex h-32 items-center justify-center rounded-xl bg-paper-soft text-2xl text-herb/50">
                 🌿

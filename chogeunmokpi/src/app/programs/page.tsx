@@ -14,39 +14,39 @@ export default function ProgramsPage() {
         </p>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {programs.map((program, i) => (
           <Link
             key={program.slug}
             href={`/programs/${program.slug}`}
-            className={`group rounded-2xl border border-line bg-card p-7 transition hover:border-root/50 hover:shadow-md hover:shadow-ink/5 ${
-              i === 0 ? "sm:col-span-2 md:col-span-1 md:ring-1 md:ring-root/30" : ""
+            className={`group overflow-hidden rounded-2xl border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5 ${
+              i === 0
+                ? "border-root/60 ring-1 ring-root/30"
+                : "border-line hover:border-root/40"
             }`}
           >
-            {i === 0 && (
-              <span className="mb-3 inline-block rounded-full bg-root px-2.5 py-0.5 text-xs font-medium text-paper-soft">
-                대표 진료과목
-              </span>
-            )}
-            <p className="mb-2 text-lg font-medium text-ink">
-              {program.title}
-            </p>
-            <p className="mb-4 text-sm leading-relaxed text-ink-soft">
-              {program.summary}
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {program.keywords.map((kw) => (
-                <span
-                  key={kw}
-                  className="rounded-full bg-paper-soft px-2.5 py-1 text-xs text-ink-soft"
-                >
-                  {kw}
+            <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-herb/20 via-paper-soft to-root/15">
+              <div className="flex h-full w-full items-center justify-center text-5xl opacity-70 transition group-hover:scale-105">
+                {program.icon}
+              </div>
+              {i === 0 && (
+                <span className="absolute left-3 top-3 rounded-full bg-root px-2.5 py-0.5 text-xs font-medium text-paper-soft">
+                  대표 진료과목
                 </span>
-              ))}
+              )}
             </div>
-            <span className="mt-4 inline-block text-root opacity-0 transition group-hover:opacity-100">
-              자세히 보기 →
-            </span>
+
+            <div className="p-6">
+              <p className="mb-2 text-lg font-medium text-ink">
+                {program.title}
+              </p>
+              <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-ink-soft">
+                {program.summary}
+              </p>
+              <span className="text-sm font-medium text-root">
+                자세히 보기 →
+              </span>
+            </div>
           </Link>
         ))}
       </div>

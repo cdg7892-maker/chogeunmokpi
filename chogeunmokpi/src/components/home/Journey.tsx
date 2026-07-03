@@ -39,7 +39,7 @@ export default function Journey() {
             <Link
               key={card.title}
               href={card.href}
-              className="group rounded-2xl border border-line bg-card p-7 transition hover:border-root/50 hover:shadow-md hover:shadow-ink/5"
+              className="group rounded-2xl border border-line bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
             >
               <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-paper text-xl">
                 {card.icon}
