@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { doctors } from "@/lib/site-data";
 
@@ -17,11 +18,14 @@ export default function DoctorsPage() {
             key={doctor.slug}
             className="w-full max-w-xs overflow-hidden rounded-3xl border border-line bg-card"
           >
-            <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-herb/15 via-paper-soft to-root/10 text-ink-soft/60">
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-4xl">🩺</span>
-                <span className="text-sm">{doctor.photoNote}</span>
-              </div>
+            <div className="relative aspect-[4/5]">
+              <Image
+                src={doctor.photo}
+                alt={`${doctor.role} ${doctor.name}`}
+                fill
+                sizes="320px"
+                className="object-cover"
+              />
             </div>
 
             <div className="p-6">

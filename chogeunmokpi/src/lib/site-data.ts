@@ -62,7 +62,7 @@ export type Doctor = {
   name: string;
   tags: string[];
   shortIntro: string;
-  photoNote: string;
+  photo: string;
   detailPhoto: string;
   story: string[];
   credentials: string[];
@@ -76,7 +76,7 @@ export const doctors: Doctor[] = [
     tags: ["#소화기질환", "#피부질환", "#알러지"],
     shortIntro:
       "진료를 하다 보면, 여러 곳을 다녀도 좀처럼 낫지 않아 마음까지 지친 분들을 자주 만납니다. 그런 분들을 곁에서 오래 지켜보면서, 자연스럽게…",
-    photoNote: "대표원장 사진 (추후 교체)",
+    photo: "/images/doctors/lee-ho-geun.png",
     detailPhoto: "/images/doctors/lee-ho-geun-detail.png",
     story: [
       "진료실에서 가장 많이 듣는 말은 \"검사는 정상이라는데 왜 이렇게 아플까요?\"였습니다. 수치로는 설명되지 않는 고통 속에 있는 환자분들을 보며 한의사로서 깊이 고민했습니다.",
@@ -102,9 +102,11 @@ export const clinicInfo = {
   address: "대전 00구 00동 00 (00빌딩 0층)",
   bizNumber: "000-00-00000",
   hours: {
-    weekday: "00:00 - 00:00",
-    saturday: "00:00 - 00:00",
-    lunch: "00:00 - 00:00",
-    note: "일요일·공휴일 휴진",
+    weekday: "09:00 - 18:00",
+    weekdayLabel: "월·화·수·금",
+    weekend: "09:00 - 15:00",
+    weekendLabel: "토·일",
+    closed: "목요일 휴무",
+    note: "점심시간 없이 진료",
   },
 };

@@ -67,16 +67,16 @@ export default function NoticeHours() {
             </h3>
             <dl className="space-y-2 text-sm text-ink-soft">
               <div className="flex justify-between">
-                <dt>평일</dt>
+                <dt>{clinicInfo.hours.weekdayLabel}</dt>
                 <dd>{clinicInfo.hours.weekday}</dd>
               </div>
               <div className="flex justify-between">
-                <dt>토요일</dt>
-                <dd>{clinicInfo.hours.saturday}</dd>
+                <dt>{clinicInfo.hours.weekendLabel}</dt>
+                <dd>{clinicInfo.hours.weekend}</dd>
               </div>
-              <div className="flex justify-between">
-                <dt>점심시간</dt>
-                <dd>{clinicInfo.hours.lunch}</dd>
+              <div className="flex justify-between text-root">
+                <dt>목요일</dt>
+                <dd>휴무</dd>
               </div>
             </dl>
             <p className="mt-3 text-xs text-ink-soft/70">
