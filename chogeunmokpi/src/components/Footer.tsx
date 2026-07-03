@@ -9,15 +9,15 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 text-sm font-semibold text-ink">진료 시간</h3>
             <dl className="space-y-1.5 text-sm text-ink-soft">
-              <div className="flex justify-between max-w-xs">
+              <div className="flex max-w-xs justify-between gap-6">
                 <dt>평일</dt>
                 <dd>{clinicInfo.hours.weekday}</dd>
               </div>
-              <div className="flex justify-between max-w-xs">
+              <div className="flex max-w-xs justify-between gap-6">
                 <dt>토요일</dt>
                 <dd>{clinicInfo.hours.saturday}</dd>
               </div>
-              <div className="flex justify-between max-w-xs">
+              <div className="flex max-w-xs justify-between gap-6">
                 <dt>점심시간</dt>
                 <dd>{clinicInfo.hours.lunch}</dd>
               </div>
