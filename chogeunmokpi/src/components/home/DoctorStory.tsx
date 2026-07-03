@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function DoctorStory() {
@@ -43,11 +44,15 @@ export default function DoctorStory() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-herb/15 via-paper-soft to-root/10">
-          <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-ink-soft/60">
-            <span className="text-4xl">🩺</span>
-            <span className="text-sm">원장님 사진 (추후 교체)</span>
-          </div>
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-line">
+          <Image
+            src="/images/doctors/lee-ho-geun.png"
+            alt="초근목피한의원 대표원장 이호근"
+            fill
+            sizes="(max-width: 768px) 90vw, 400px"
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
     </section>
