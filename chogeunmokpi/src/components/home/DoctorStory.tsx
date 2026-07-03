@@ -46,10 +46,11 @@ export default function DoctorStory() {
 
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-line">
           <Image
-            src="/images/doctors/lee-ho-geun.png"
+            src="/images/doctors/lee-ho-geun-main.png"
             alt="초근목피한의원 대표원장 이호근"
             fill
             sizes="(max-width: 768px) 90vw, 400px"
+            quality={95}
             className="object-cover"
             priority
           />

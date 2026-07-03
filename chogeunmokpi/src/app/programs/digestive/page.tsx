@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import DigestiveQuiz from "@/components/programs/DigestiveQuiz";
 import { doctors, reviews } from "@/lib/site-data";
@@ -144,8 +145,15 @@ export default function DigestiveProgramPage() {
       <section className="border-b border-line bg-paper-soft">
         <div className="mx-auto max-w-6xl px-5 pt-8 md:pt-10">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-herb/30 to-root/20 text-sm">
-              🩺
+            <span className="relative h-8 w-8 overflow-hidden rounded-full">
+              <Image
+                src={digestiveDoctor.photo}
+                alt={digestiveDoctor.name}
+                fill
+                sizes="32px"
+                quality={90}
+                className="object-cover"
+              />
             </span>
             <span className="text-xs leading-tight text-ink-soft">
               의료 감수
@@ -457,8 +465,15 @@ export default function DigestiveProgramPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-16 flex flex-col gap-6 rounded-3xl border border-line bg-paper-soft p-8 md:flex-row md:items-center md:p-10">
-            <div className="flex aspect-square w-full max-w-[180px] shrink-0 items-center justify-center rounded-2xl border border-line bg-card text-4xl">
-              🩺
+            <div className="relative aspect-square w-full max-w-[180px] shrink-0 overflow-hidden rounded-2xl border border-line bg-card">
+              <Image
+                src={digestiveDoctor.photo}
+                alt={`${digestiveDoctor.role} ${digestiveDoctor.name}`}
+                fill
+                sizes="180px"
+                quality={95}
+                className="object-cover"
+              />
             </div>
             <div>
               <p className="mb-2 text-xs text-ink-soft">담당 의료진</p>

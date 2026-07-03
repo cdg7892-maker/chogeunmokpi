@@ -24,6 +24,7 @@ export default function DoctorsPage() {
                 alt={`${doctor.role} ${doctor.name}`}
                 fill
                 sizes="320px"
+                quality={95}
                 className="object-cover"
               />
             </div>

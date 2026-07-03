@@ -33,6 +33,7 @@ export default async function DoctorDetailPage({
             alt={`${doctor.role} ${doctor.name}`}
             fill
             sizes="(max-width: 768px) 90vw, 400px"
+            quality={95}
             className="object-cover"
             priority
           />
