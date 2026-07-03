@@ -57,7 +57,8 @@ export default function Header() {
                   label: p.title,
                 })),
               ]}
-              wide
+              highlightFirst
+              dividerAfterFirst
             />
           </NavGroup>
 
@@ -134,11 +135,27 @@ function NavGroup({
   return (
     <div className="relative" onMouseEnter={onEnter}>
       <button
-        className={`rounded-full px-4 py-2.5 text-sm font-medium transition ${
+        className={`flex items-center gap-1 rounded-full px-4 py-2.5 text-sm font-medium transition ${
           active ? "text-root" : "text-ink-soft hover:text-ink"
         }`}
       >
         {label}
+        <svg
+          className={`h-3 w-3 transition-transform duration-200 ${
+            active ? "rotate-180" : ""
+          }`}
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M2.5 4.5L6 8L9.5 4.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
       {active && (
         <div className="absolute left-1/2 top-full -translate-x-1/2 pt-2">
@@ -151,25 +168,31 @@ function NavGroup({
 
 function DropdownPanel({
   links,
-  wide,
+  highlightFirst,
+  dividerAfterFirst,
 }: {
   links: { href: string; label: string }[];
-  wide?: boolean;
+  highlightFirst?: boolean;
+  dividerAfterFirst?: boolean;
 }) {
   return (
-    <div
-      className={`rounded-2xl border border-line bg-card p-2 shadow-lg shadow-ink/5 ${
-        wide ? "grid w-64 grid-cols-2 gap-1" : "w-44"
-      }`}
-    >
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition hover:bg-paper hover:text-ink"
-        >
-          {link.label}
-        </Link>
+    <div className="w-48 rounded-2xl border border-line bg-card p-2 shadow-lg shadow-ink/5">
+      {links.map((link, i) => (
+        <div key={link.href}>
+          <Link
+            href={link.href}
+            className={`block rounded-lg px-3 py-2 text-sm transition hover:bg-paper ${
+              highlightFirst && i === 0
+                ? "font-semibold text-ink hover:text-ink"
+                : "text-ink-soft hover:text-ink"
+            }`}
+          >
+            {link.label}
+          </Link>
+          {dividerAfterFirst && i === 0 && (
+            <div className="my-1.5 h-px bg-line" />
+          )}
+        </div>
       ))}
     </div>
   );
