@@ -3,24 +3,222 @@ import Link from "next/link";
 import DigestiveQuiz from "@/components/programs/DigestiveQuiz";
 import { doctors, reviews } from "@/lib/site-data";
 
+function IconCalendar() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M8 3v4M16 3v4M3 10h18" />
+    </svg>
+  );
+}
+
+function IconClipboard() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="6" y="4" width="12" height="17" rx="2" />
+      <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1M9 11h6M9 15h6" />
+    </svg>
+  );
+}
+
+function IconCheck() {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
+function IconBolt() {
+  return (
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="none"
+    >
+      <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+    </svg>
+  );
+}
+
+function IconIndigestion() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 3c-1 3-1 5 0 7s1 4 0 6M12 3c-1 3-1 5 0 7s1 4 0 6M16 3c-1 3-1 5 0 7s1 4 0 6" />
+    </svg>
+  );
+}
+
+function IconReflux() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 2c1.5 2 2.5 3.5 2.5 5.5 0 1.4-1 2-1 3.2 0 1 .8 1.5 1.5 1.5" />
+      <path d="M9 8c-1.5 1.8-2 3.5-2 5a5 5 0 0 0 10 0c0-1.2-.4-2-1-2.8" />
+    </svg>
+  );
+}
+
+function IconIBS() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 12c3 0 3-4 6-4a3 3 0 0 1 0 6c-6 0-6 6-12 6a3 3 0 1 1 0-6c3 0 3-2 6-2Z" />
+    </svg>
+  );
+}
+
+function IconStagnation() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="3" />
+      <path d="M3.5 9.5h17M9.5 9.5v10M9.5 3.5v3M15.5 9.5v10M15.5 3.5v3M3.5 15.5h6M15.5 15.5h5" />
+    </svg>
+  );
+}
+
+function IconCup() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z" />
+      <path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17M8 3c-.8 1-.8 1.6 0 2.6M12 3c-.8 1-.8 1.6 0 2.6" />
+    </svg>
+  );
+}
+
+function IconMoxa() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 3c2 2.5 3 4.3 3 6.2A3 3 0 0 1 9 9.2C9 7.3 10 5.5 12 3Z" />
+      <path d="M6 21c0-4 2.7-6.5 6-6.5S18 17 18 21" />
+    </svg>
+  );
+}
+
+function IconNeedle() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 5 5 19M15 3l6 6M3 21l3.5-1L5 16.5 3 21ZM11 9l4 4M9 11l4 4" />
+    </svg>
+  );
+}
+
+function IconStar() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.5 14.9 9l7.1.6-5.4 4.6 1.7 7-6.3-3.9L5.7 21.2l1.7-7-5.4-4.6L9.1 9 12 2.5Z" />
+    </svg>
+  );
+}
+
 const symptoms = [
   {
-    icon: "/images/programs/icon-indigestion.png",
+    Icon: IconIndigestion,
     title: "만성 소화불량",
     desc: "조금만 먹어도 체하고, 명치가 꽉 막힌 듯 답답합니다.",
   },
   {
-    icon: "/images/programs/icon-reflux.png",
+    Icon: IconReflux,
     title: "역류성 식도염",
     desc: "신물이 올라오고 가슴이 타들어가며, 목에 이물감이 느껴집니다.",
   },
   {
-    icon: "/images/programs/icon-ibs.png",
+    Icon: IconIBS,
     title: "과민성 대장",
     desc: "배에 가스가 차고 복통이 있으며, 설사와 변비가 반복됩니다.",
   },
   {
-    icon: "/images/programs/icon-stagnation.png",
+    Icon: IconStagnation,
     title: "담적병(위장 굳음)",
     desc: "위장이 굳어 움직이지 않고, 전신이 무겁고 피곤합니다.",
   },
@@ -81,17 +279,17 @@ const solutions = [
 
 const treatments = [
   {
-    icon: "☕",
+    Icon: IconCup,
     title: "맞춤 치료 한약",
     desc: "굳은 위장을 풀고 운동성을 높이며 염증을 치료하는 1:1 맞춤 한약입니다.",
   },
   {
-    icon: "🔥",
+    Icon: IconMoxa,
     title: "왕뜸 요법",
     desc: "복부 깊숙이 열을 전달하여 위장의 혈류량을 늘리고 냉기를 없앱니다.",
   },
   {
-    icon: "💉",
+    Icon: IconNeedle,
     title: "약침 치료",
     desc: "위장과 연결된 경혈에 약침을 주입하여 위장 기능을 직접적으로 활성화합니다.",
   },
@@ -182,13 +380,13 @@ export default function DigestiveProgramPage() {
                 href="/reserve"
                 className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-medium text-paper-soft transition hover:bg-root"
               >
-                📅 진료 예약하기
+                <IconCalendar /> 진료 예약하기
               </Link>
               <a
                 href="#quiz"
                 className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-4 text-base font-medium text-ink-soft transition hover:border-root hover:text-root"
               >
-                📋 소화기 자가진단
+                <IconClipboard /> 소화기 자가진단
               </a>
             </div>
           </div>
@@ -208,10 +406,10 @@ export default function DigestiveProgramPage() {
             <div className="absolute -bottom-8 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-line bg-card p-6 shadow-lg shadow-ink/5 md:left-auto md:right-4 md:translate-x-0">
               <div className="space-y-2.5 text-base text-ink">
                 <p className="flex items-center gap-2">
-                  <span className="text-root">★</span> 만성 소화불량·담적병
+                  <span className="text-root"><IconStar /></span> 만성 소화불량·담적병
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="text-root">★</span> 역류성 식도염 집중 진료
+                  <span className="text-root"><IconStar /></span> 역류성 식도염 집중 진료
                 </p>
               </div>
             </div>
@@ -239,14 +437,8 @@ export default function DigestiveProgramPage() {
                 key={s.title}
                 className="rounded-2xl border border-line bg-card p-6"
               >
-                <span className="relative mb-4 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-paper-soft">
-                  <Image
-                    src={s.icon}
-                    alt={s.title}
-                    fill
-                    sizes="56px"
-                    className="object-contain p-2"
-                  />
+                <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-root">
+                  <s.Icon />
                 </span>
                 <p className="mb-2 font-medium text-ink">{s.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
@@ -259,7 +451,7 @@ export default function DigestiveProgramPage() {
           {/* 3. 핵심 진단 원리 (특별 진단 시스템) */}
           <div className="rounded-3xl border-2 border-ink/80 bg-card p-8 md:p-10">
             <span className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-root/10 px-3 py-1 text-xs font-medium text-root">
-              ✓ 특별 진단 시스템
+              <IconCheck /> 특별 진단 시스템
             </span>
             <h3 className="mb-6 text-2xl font-bold tracking-tight text-ink md:text-3xl">
               위장병, 움직임을 되살려야 낫습니다
@@ -372,8 +564,8 @@ export default function DigestiveProgramPage() {
                   {s.title}
                 </p>
 
-                <p className="mb-2 text-xs font-medium text-ink-soft">
-                  ✓ 주요 증상
+                <p className="mb-2 flex items-center gap-1.5 text-xs font-medium text-ink-soft">
+                  <IconCheck /> 주요 증상
                 </p>
                 <ul className="mb-5 space-y-1 text-sm text-ink-soft">
                   {s.symptoms.map((sym) => (
@@ -382,13 +574,15 @@ export default function DigestiveProgramPage() {
                 </ul>
 
                 <div className="mb-4 rounded-xl bg-paper px-4 py-3">
-                  <p className="mb-1 text-xs text-ink-soft">
-                    📋 {s.patternLabel}
+                  <p className="mb-1 flex items-center gap-1.5 text-xs text-ink-soft">
+                    <IconClipboard /> {s.patternLabel}
                   </p>
                   <p className="text-sm font-medium text-ink">{s.pattern}</p>
                 </div>
 
-                <p className="mb-1 text-xs text-root">⚡ 추천 치료</p>
+                <p className="mb-1 flex items-center gap-1.5 text-xs text-root">
+                  <IconBolt /> 추천 치료
+                </p>
                 <p className="mb-1 font-medium text-ink">{s.treatment}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {s.treatmentDesc}
@@ -429,8 +623,8 @@ export default function DigestiveProgramPage() {
                 key={t.title}
                 className="rounded-2xl border border-line bg-card p-6"
               >
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-soft text-xl">
-                  {t.icon}
+                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-soft text-root">
+                  <t.Icon />
                 </span>
                 <p className="mb-2 font-medium text-ink">{t.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
