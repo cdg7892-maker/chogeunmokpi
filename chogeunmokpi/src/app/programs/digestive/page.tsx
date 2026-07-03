@@ -5,22 +5,22 @@ import { doctors, reviews } from "@/lib/site-data";
 
 const symptoms = [
   {
-    icon: "🐢",
+    icon: "/images/programs/icon-indigestion.png",
     title: "만성 소화불량",
     desc: "조금만 먹어도 체하고, 명치가 꽉 막힌 듯 답답합니다.",
   },
   {
-    icon: "🔥",
+    icon: "/images/programs/icon-reflux.png",
     title: "역류성 식도염",
     desc: "신물이 올라오고 가슴이 타들어가며, 목에 이물감이 느껴집니다.",
   },
   {
-    icon: "🌀",
+    icon: "/images/programs/icon-ibs.png",
     title: "과민성 대장",
     desc: "배에 가스가 차고 복통이 있으며, 설사와 변비가 반복됩니다.",
   },
   {
-    icon: "🧱",
+    icon: "/images/programs/icon-stagnation.png",
     title: "담적병(위장 굳음)",
     desc: "위장이 굳어 움직이지 않고, 전신이 무겁고 피곤합니다.",
   },
@@ -194,8 +194,16 @@ export default function DigestiveProgramPage() {
           </div>
 
           <div className="relative">
-            <div className="flex aspect-[4/4.6] items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-herb/20 via-paper to-root/15 text-8xl">
-              🌾
+            <div className="relative aspect-[4/4.6] overflow-hidden rounded-3xl border border-line">
+              <Image
+                src="/images/programs/digestive-hero.png"
+                alt="배를 감싸쥔 손, 소화기 클리닉"
+                fill
+                sizes="(max-width: 768px) 90vw, 500px"
+                quality={95}
+                className="object-cover"
+                priority
+              />
             </div>
             <div className="absolute -bottom-8 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-line bg-card p-6 shadow-lg shadow-ink/5 md:left-auto md:right-4 md:translate-x-0">
               <div className="space-y-2.5 text-base text-ink">
@@ -231,8 +239,14 @@ export default function DigestiveProgramPage() {
                 key={s.title}
                 className="rounded-2xl border border-line bg-card p-6"
               >
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-soft text-xl">
-                  {s.icon}
+                <span className="relative mb-4 flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-paper-soft">
+                  <Image
+                    src={s.icon}
+                    alt={s.title}
+                    fill
+                    sizes="56px"
+                    className="object-contain p-2"
+                  />
                 </span>
                 <p className="mb-2 font-medium text-ink">{s.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
@@ -305,8 +319,15 @@ export default function DigestiveProgramPage() {
               ))}
             </div>
           </div>
-          <div className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center rounded-3xl border border-line bg-paper text-7xl">
-            🌀
+          <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl border border-line bg-paper">
+            <Image
+              src="/images/programs/digestive-mechanism.png"
+              alt="소화기 순환 치료 원리 일러스트"
+              fill
+              sizes="(max-width: 768px) 90vw, 400px"
+              quality={95}
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
@@ -382,8 +403,15 @@ export default function DigestiveProgramPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
           <div className="mb-12 grid items-center gap-8 md:grid-cols-2">
-            <div className="flex aspect-square items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-root/15 via-paper-soft to-herb/15 text-6xl">
-              🍵
+            <div className="relative aspect-square overflow-hidden rounded-3xl border border-line">
+              <Image
+                src="/images/programs/digestive-treatment.png"
+                alt="따뜻한 차를 든 손, 초근목피 소화기 치료 프로그램"
+                fill
+                sizes="(max-width: 768px) 90vw, 500px"
+                quality={95}
+                className="object-cover"
+              />
             </div>
             <div>
               <h2 className="mb-3 font-bold tracking-tight text-3xl text-ink md:text-4xl">
