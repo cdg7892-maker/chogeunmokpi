@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #eeeae0;
+  --paper-soft: #f6f3ec;
+  --ink: #2b2e23;
+  --ink-soft: #4d5142;
+  --root-brown: #6b4226;
+  --root-brown-dark: #4f3019;
+  --herb-green: #5c6e4a;
+  --line: #c9c2ae;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-root: var(--root-brown);
+  --color-root-dark: var(--root-brown-dark);
+  --color-herb: var(--herb-green);
+  --color-line: var(--line);
+  --color-card: var(--card);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
+    -apple-system, sans-serif;
+}
+
+/* NOTE: 배포 시 next/font/google의 Song Myung으로 교체 예정 */
+.font-display {
+  font-family: "Nanum Myeongjo", "Batang", Georgia, serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
