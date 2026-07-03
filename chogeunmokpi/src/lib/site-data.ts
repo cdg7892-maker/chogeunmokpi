@@ -63,6 +63,7 @@ export type Doctor = {
   tags: string[];
   shortIntro: string;
   photoNote: string;
+  detailPhoto: string;
   story: string[];
   credentials: string[];
 };
@@ -76,6 +77,7 @@ export const doctors: Doctor[] = [
     shortIntro:
       "진료를 하다 보면, 여러 곳을 다녀도 좀처럼 낫지 않아 마음까지 지친 분들을 자주 만납니다. 그런 분들을 곁에서 오래 지켜보면서, 자연스럽게…",
     photoNote: "대표원장 사진 (추후 교체)",
+    detailPhoto: "/images/doctors/lee-ho-geun-detail.png",
     story: [
       "진료실에서 가장 많이 듣는 말은 \"검사는 정상이라는데 왜 이렇게 아플까요?\"였습니다. 수치로는 설명되지 않는 고통 속에 있는 환자분들을 보며 한의사로서 깊이 고민했습니다.",
       "기계가 읽어내는 데이터도 중요하지만, 그 너머에 있는 몸의 흐름과 균형을 읽어내는 것이 진정한 치유의 시작임을 깨달았습니다.",
