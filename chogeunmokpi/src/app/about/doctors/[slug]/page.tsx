@@ -18,7 +18,7 @@ export default async function DoctorDetailPage({
   if (!doctor) notFound();
 
   return (
-    <section className="mx-auto max-w-4xl px-5 py-20 md:py-24">
+    <section className="ch-section-pad mx-auto max-w-4xl">
       <Link
         href="/about/doctors"
         className="mb-10 inline-block text-sm text-ink-soft hover:text-root"
@@ -27,7 +27,7 @@ export default async function DoctorDetailPage({
       </Link>
 
       <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line shadow-sm shadow-ink/5">
           <Image
             src={doctor.detailPhoto}
             alt={`${doctor.role} ${doctor.name}`}
@@ -61,7 +61,7 @@ export default async function DoctorDetailPage({
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-line bg-card p-6">
+          <div className="ch-card mt-8">
             <h2 className="mb-3 text-sm font-semibold text-ink">약력</h2>
             <ul className="space-y-1.5 text-sm text-ink-soft">
               {doctor.credentials.map((c) => (
@@ -75,7 +75,7 @@ export default async function DoctorDetailPage({
 
           <Link
             href="/reserve"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper-soft transition hover:bg-root"
+            className="ch-btn-primary mt-8"
           >
             진료 예약하기 →
           </Link>

@@ -3,7 +3,7 @@ import { programs } from "@/lib/site-data";
 
 export default function ProgramsPage() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <section className="ch-section-pad mx-auto max-w-6xl">
       <div className="mb-12 text-center">
         <p className="mb-3 text-sm text-root">진료과목</p>
         <h1 className="font-display text-4xl text-ink md:text-5xl">
@@ -19,7 +19,7 @@ export default function ProgramsPage() {
           <Link
             key={program.slug}
             href={`/programs/${program.slug}`}
-            className={`group overflow-hidden rounded-2xl border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-ink/5 ${
+            className={`ch-card-hover group overflow-hidden rounded-2xl border bg-card shadow-sm shadow-ink/5 ${
               i === 0
                 ? "border-root/60 ring-1 ring-root/30"
                 : "border-line hover:border-root/40"

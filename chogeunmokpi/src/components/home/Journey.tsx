@@ -23,10 +23,10 @@ const cards = [
 
 export default function Journey() {
   return (
-    <section className="border-t border-line bg-paper-soft">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <section className="ch-section bg-paper-soft">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="font-display text-3xl text-ink md:text-4xl">
+          <h2 className="ch-section-title">
             치유를 향한 여정
           </h2>
           <p className="mt-2 text-sm text-ink-soft">
@@ -39,7 +39,7 @@ export default function Journey() {
             <Link
               key={card.title}
               href={card.href}
-              className="group rounded-2xl border border-line bg-card p-7 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
+              className="ch-card ch-card-hover group p-7"
             >
               <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-paper text-xl">
                 {card.icon}

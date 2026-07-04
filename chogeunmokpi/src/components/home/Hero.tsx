@@ -53,7 +53,7 @@ export default function Hero() {
         />
       </svg>
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-28 pt-20 text-center md:pt-28">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-24 pt-20 text-center md:pb-28 md:pt-28">
         <p className="mb-6 text-xs tracking-[0.3em] text-ink-soft">
           전통의 지혜와 현대한의학의 통합
         </p>
@@ -69,7 +69,7 @@ export default function Hero() {
         </p>
         <Link
           href="/reserve"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-medium text-paper-soft transition hover:bg-root"
+          className="ch-btn-primary mt-10 px-7 py-3.5"
         >
           진료 예약하기
           <span aria-hidden="true">→</span>

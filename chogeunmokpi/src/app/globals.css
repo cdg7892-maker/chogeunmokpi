@@ -33,11 +33,60 @@ body {
   color: var(--ink);
   font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
     -apple-system, sans-serif;
+  line-height: 1.5;
 }
 
 /* NOTE: 배포 시 next/font/google의 Song Myung으로 교체 예정 */
 .font-display {
   font-family: "Nanum Myeongjo", "Batang", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@layer components {
+  .ch-section {
+    @apply border-t border-line;
+  }
+
+  .ch-section-pad {
+    @apply px-5 py-16 md:py-20;
+  }
+
+  .ch-section-title {
+    @apply text-3xl font-bold tracking-normal text-ink md:text-4xl;
+    font-family: "Nanum Myeongjo", "Batang", Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .ch-section-copy {
+    @apply mt-3 text-sm leading-relaxed text-ink-soft md:text-base;
+  }
+
+  .ch-card {
+    @apply rounded-2xl border border-line bg-card p-6 shadow-sm shadow-ink/5;
+  }
+
+  .ch-card-lg {
+    @apply rounded-2xl border border-line bg-card p-6 shadow-sm shadow-ink/5 md:p-8;
+  }
+
+  .ch-card-hover {
+    @apply transform-gpu transition-all duration-300 ease-out hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5;
+  }
+
+  .ch-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper-soft shadow-md shadow-ink/10 transition-all duration-300 ease-out hover:-translate-y-px hover:bg-root hover:shadow-lg hover:shadow-ink/10;
+  }
+
+  .ch-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink-soft transition-all duration-300 ease-out hover:-translate-y-px hover:border-root hover:bg-paper-soft hover:text-root;
+  }
+
+  .ch-pill {
+    @apply rounded-full border border-line bg-card px-4 py-2 text-sm text-ink-soft transition-all duration-300 ease-out hover:-translate-y-px hover:border-root hover:text-root;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -43,12 +43,12 @@ const steps = [
 export default function ProblemSteps() {
   return (
     <section className="bg-paper">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <p className="mb-3 text-sm text-ink-soft">
             초근목피는 당신의 아픔을 다르게 봅니다.
           </p>
-          <h2 className="font-display text-3xl text-ink md:text-4xl">
+          <h2 className="ch-section-title">
             왜 낫지 않았을까요?
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function ProblemSteps() {
         <div className="grid gap-6 md:grid-cols-3 md:gap-5">
           {steps.map((step, i) => (
             <div key={step.n} className="relative">
-              <div className="h-full rounded-2xl border border-line bg-card p-7">
+              <div className="ch-card ch-card-hover h-full p-7">
                 <span className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-medium text-paper-soft">
                   {step.n}
                 </span>

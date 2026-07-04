@@ -19,7 +19,7 @@ export default async function ProgramDetailPage({
   if (!program) notFound();
 
   return (
-    <section className="mx-auto max-w-3xl px-5 py-24 text-center">
+    <section className="ch-section-pad mx-auto max-w-3xl text-center">
       <p className="mb-3 text-sm text-root">진료과목</p>
       <h1 className="font-display text-4xl text-ink">{program.title}</h1>
       <p className="mt-5 text-ink-soft">{program.summary}</p>
@@ -38,7 +38,7 @@ export default async function ProgramDetailPage({
       </div>
       <Link
         href="/programs"
-        className="mt-8 inline-block rounded-full border border-line px-6 py-2.5 text-sm text-ink-soft hover:border-root hover:text-root"
+        className="ch-btn-secondary mt-8"
       >
         ← 진료과목 전체보기
       </Link>

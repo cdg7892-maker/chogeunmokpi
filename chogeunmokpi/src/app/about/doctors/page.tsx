@@ -4,7 +4,7 @@ import { doctors } from "@/lib/site-data";
 
 export default function DoctorsPage() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <section className="ch-section-pad mx-auto max-w-6xl">
       <div className="mb-14 text-center">
         <h1 className="font-display text-4xl text-ink md:text-5xl">
           의료진 소개
@@ -16,7 +16,7 @@ export default function DoctorsPage() {
         {doctors.map((doctor) => (
           <div
             key={doctor.slug}
-            className="w-full max-w-xs overflow-hidden rounded-3xl border border-line bg-card"
+            className="ch-card-hover w-full max-w-xs overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5"
           >
             <div className="relative aspect-[4/5]">
               <Image
@@ -51,7 +51,7 @@ export default function DoctorsPage() {
               </p>
               <Link
                 href={`/about/doctors/${doctor.slug}`}
-                className="block rounded-full border border-line py-2.5 text-center text-sm font-medium text-ink-soft transition hover:border-root hover:text-root"
+                className="ch-btn-secondary flex py-2.5"
               >
                 의료진 소개 더보기
               </Link>

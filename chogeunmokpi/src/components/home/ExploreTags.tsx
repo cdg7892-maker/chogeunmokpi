@@ -17,11 +17,11 @@ const tags = [
 
 export default function ExploreTags() {
   return (
-    <section className="border-t border-line bg-paper-soft">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <section className="ch-section bg-paper-soft">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
+            <h2 className="ch-section-title">
               진료 분야 둘러보기
             </h2>
             <p className="mt-2 text-sm text-ink-soft">
@@ -41,7 +41,7 @@ export default function ExploreTags() {
             <Link
               key={tag}
               href="/programs"
-              className="rounded-full border border-line bg-card px-4 py-2.5 text-sm text-ink-soft transition hover:border-root hover:text-root"
+              className="ch-pill"
             >
               {tag}
             </Link>

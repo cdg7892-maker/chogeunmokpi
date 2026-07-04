@@ -90,7 +90,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/reserve"
-            className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper-soft transition hover:bg-root md:inline-block"
+            className="ch-btn-primary hidden px-5 py-2.5 md:inline-flex"
           >
             예약하기
           </Link>
@@ -126,7 +126,7 @@ export default function Header() {
           <MobileGroup title="커뮤니티" links={communityLinks} />
           <Link
             href="/reserve"
-            className="mt-2 block rounded-full bg-ink px-5 py-3 text-center text-sm font-medium text-paper-soft"
+            className="ch-btn-primary mt-2 flex px-5 py-3"
             onClick={() => setMobileOpen(false)}
           >
             예약하기
@@ -192,7 +192,7 @@ function DropdownPanel({
   dividerAfterFirst?: boolean;
 }) {
   return (
-    <div className="w-48 rounded-2xl border border-line bg-card p-2 shadow-lg shadow-ink/5">
+    <div className="w-48 rounded-2xl border border-line bg-card p-2 shadow-md shadow-ink/5">
       {links.map((link, i) => (
         <div key={link.href}>
           <Link
@@ -231,7 +231,7 @@ function MobileGroup({
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-full border border-line px-3 py-1.5 text-sm text-ink-soft"
+            className="ch-pill px-3 py-1.5"
           >
             {link.label}
           </Link>

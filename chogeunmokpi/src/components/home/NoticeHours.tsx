@@ -24,8 +24,8 @@ const notices = [
 
 export default function NoticeHours() {
   return (
-    <section className="border-t border-line bg-paper-soft">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <section className="ch-section bg-paper-soft">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
             <span aria-hidden="true">📣</span> 공지사항
@@ -42,7 +42,7 @@ export default function NoticeHours() {
           {notices.map((notice) => (
             <div
               key={notice.title}
-              className="rounded-2xl border border-line bg-card p-6"
+              className="ch-card ch-card-hover"
             >
               <div className="mb-3 flex items-center gap-2">
                 <span className="rounded-full bg-root/10 px-2.5 py-0.5 text-xs font-medium text-root">
@@ -61,7 +61,7 @@ export default function NoticeHours() {
         </div>
 
         <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-line bg-card p-6">
+          <div className="ch-card">
             <h3 className="mb-4 flex items-center gap-2 font-medium text-ink">
               <span aria-hidden="true">🕐</span> 진료 시간
             </h3>
@@ -84,14 +84,14 @@ export default function NoticeHours() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-line bg-card p-6">
+          <div className="ch-card">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="flex items-center gap-2 font-medium text-ink">
                 <span aria-hidden="true">📞</span> 예약 및 문의
               </h3>
               <Link
                 href="/reserve"
-                className="rounded-full bg-ink px-4 py-1.5 text-xs font-medium text-paper-soft hover:bg-root"
+                className="ch-btn-primary px-4 py-1.5 text-xs"
               >
                 진료 예약하기
               </Link>
@@ -106,7 +106,7 @@ export default function NoticeHours() {
                 <p className="text-sm text-ink-soft">{clinicInfo.address}</p>
                 <Link
                   href="/about/location"
-                  className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 text-xs text-ink-soft hover:border-root hover:text-root"
+                  className="ch-btn-secondary whitespace-nowrap px-3 py-1.5 text-xs"
                 >
                   지도 보기 ⊙
                 </Link>

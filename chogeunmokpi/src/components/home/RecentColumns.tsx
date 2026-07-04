@@ -24,9 +24,9 @@ const columns = [
 export default function RecentColumns() {
   return (
     <section className="bg-paper">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-10 flex items-end justify-between">
-          <h2 className="font-display text-3xl text-ink md:text-4xl">
+          <h2 className="ch-section-title">
             최근 건강 이야기
           </h2>
           <Link
@@ -42,7 +42,7 @@ export default function RecentColumns() {
             <Link
               key={col.title}
               href="/community/column"
-              className="group rounded-2xl border border-line bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-root/50 hover:shadow-lg hover:shadow-ink/5"
+              className="ch-card ch-card-hover group"
             >
               <div className="mb-4 flex h-32 items-center justify-center rounded-xl bg-paper-soft text-2xl text-herb/50">
                 🌿

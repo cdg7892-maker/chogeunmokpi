@@ -184,7 +184,7 @@ export default function DigestiveQuiz() {
   const result = done ? getResult(totalScore, hasFlag) : null;
 
   return (
-    <div className="mx-auto max-w-2xl transform-gpu rounded-3xl border border-line bg-card p-8 shadow-sm shadow-ink/5 transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-root/50 hover:shadow-2xl hover:shadow-ink/10">
+    <div className="ch-card-lg ch-card-hover mx-auto max-w-2xl">
       <div className="mb-6 flex items-center justify-between">
         <h3 className="text-xl font-bold tracking-tight text-ink">
           소화기질환 미니 진단
@@ -213,7 +213,7 @@ export default function DigestiveQuiz() {
               <button
                 key={opt.label}
                 onClick={() => handleSelect(opt)}
-                className="block w-full rounded-xl border border-line px-4 py-3 text-left text-sm text-ink-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-root hover:bg-paper hover:text-ink hover:shadow-md hover:shadow-ink/5"
+                className="block w-full rounded-2xl border border-line px-4 py-4 text-left text-sm text-ink-soft transition-all duration-300 ease-out hover:-translate-y-px hover:border-root hover:bg-paper hover:text-ink hover:shadow-md hover:shadow-ink/5"
               >
                 {opt.label}
               </button>
@@ -269,7 +269,7 @@ export default function DigestiveQuiz() {
             <div className="flex flex-col items-center gap-3">
               <Link
                 href="/reserve"
-                className="w-full rounded-full bg-ink py-3.5 text-center text-sm font-medium text-paper-soft transition-all duration-200 hover:-translate-y-1 hover:bg-root hover:shadow-lg hover:shadow-ink/10"
+                className="ch-btn-primary w-full py-3.5"
               >
                 맞춤 상담 신청하기 (무료)
               </Link>

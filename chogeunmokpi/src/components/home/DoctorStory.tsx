@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function DoctorStory() {
   return (
     <section className="bg-paper">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-2 md:py-28">
+      <div className="ch-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
         <div>
           <p className="mb-3 text-sm text-ink-soft">치유와 회복의 공간</p>
-          <h2 className="font-display text-3xl leading-snug text-ink md:text-4xl">
+          <h2 className="ch-section-title leading-snug">
             낫지 않는 질환,
             <br />그 간절함에 답하겠습니다.
           </h2>
@@ -44,7 +44,7 @@ export default function DoctorStory() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-line">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl border border-line shadow-sm shadow-ink/5">
           <Image
             src="/images/doctors/lee-ho-geun-main.png"
             alt="초근목피한의원 대표원장 이호근"

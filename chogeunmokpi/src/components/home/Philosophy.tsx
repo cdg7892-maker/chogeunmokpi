@@ -1,9 +1,9 @@
 export default function Philosophy() {
   return (
-    <section className="border-t border-line bg-paper-soft">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
+    <section className="ch-section bg-paper-soft">
+      <div className="ch-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <h2 className="font-display text-3xl leading-snug text-ink md:text-4xl">
+          <h2 className="ch-section-title leading-snug">
             검사지 너머,
             <br />
             몸이 보내는 신호를 읽습니다.
