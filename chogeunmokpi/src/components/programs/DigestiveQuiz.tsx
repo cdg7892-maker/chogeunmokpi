@@ -184,7 +184,7 @@ export default function DigestiveQuiz() {
   const result = done ? getResult(totalScore, hasFlag) : null;
 
   return (
-    <div className="mx-auto max-w-2xl rounded-3xl border border-line bg-card p-8">
+    <div className="mx-auto max-w-2xl transform-gpu rounded-3xl border border-line bg-card p-8 shadow-sm shadow-ink/5 transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:border-root/50 hover:shadow-2xl hover:shadow-ink/10">
       <div className="mb-6 flex items-center justify-between">
         <h3 className="text-xl font-bold tracking-tight text-ink">
           소화기질환 미니 진단
