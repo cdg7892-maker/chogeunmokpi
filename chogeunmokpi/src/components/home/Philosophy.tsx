@@ -11,7 +11,7 @@ export default function Philosophy() {
             몸이 보내는 신호를 읽습니다.
           </h2>
           <div className="my-6 h-px w-12 bg-root" />
-          <p className="max-w-md text-[15px] leading-loose text-ink-soft">
+          <p className="max-w-xl text-base leading-loose text-ink-soft md:text-lg">
             검사 결과는 정상. 그런데 왜 아직 힘드실까요?
             <br />
             동양의학의 지혜는 기계가 놓치는 미세한 불균형을 읽어냅니다.

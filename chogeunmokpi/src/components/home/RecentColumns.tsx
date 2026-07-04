@@ -31,7 +31,7 @@ export default function RecentColumns() {
           </h2>
           <Link
             href="/community/column"
-            className="text-sm text-ink-soft hover:text-root"
+            className="text-base text-ink-soft hover:text-root"
           >
             더보기 →
           </Link>
@@ -48,10 +48,10 @@ export default function RecentColumns() {
                 🌿
               </div>
               <p className="mb-2 text-xs text-ink-soft/70">{col.date}</p>
-              <p className="mb-2 font-medium leading-snug text-ink">
+              <p className="mb-2 text-lg font-semibold leading-snug text-ink">
                 {col.title}
               </p>
-              <p className="line-clamp-2 text-sm text-ink-soft">
+              <p className="line-clamp-2 text-base text-ink-soft">
                 {col.summary}
               </p>
               <span className="mt-3 inline-block text-sm text-root opacity-0 transition group-hover:opacity-100">

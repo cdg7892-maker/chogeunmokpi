@@ -31,14 +31,14 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-    -apple-system, sans-serif;
+  font-family: "Spoqa Han Sans Neo", "Pretendard", "Apple SD Gothic Neo",
+    "Noto Sans KR", -apple-system, sans-serif;
   line-height: 1.5;
 }
 
 /* NOTE: 배포 시 next/font/google의 Song Myung으로 교체 예정 */
 .font-display {
-  font-family: "Nanum Myeongjo", "Batang", Georgia, serif;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", Georgia, serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -58,14 +58,14 @@ body {
   }
 
   .ch-section-title {
-    @apply text-3xl font-bold tracking-normal text-ink md:text-4xl;
-    font-family: "Nanum Myeongjo", "Batang", Georgia, serif;
+    @apply text-4xl font-bold tracking-normal text-ink md:text-5xl;
+    font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", Georgia, serif;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
 
   .ch-section-copy {
-    @apply mt-3 text-sm leading-relaxed text-ink-soft md:text-base;
+    @apply mt-4 text-base leading-relaxed text-ink-soft md:text-lg;
   }
 
   .ch-card {

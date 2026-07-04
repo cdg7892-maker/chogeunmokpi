@@ -29,7 +29,7 @@ export default function Journey() {
           <h2 className="ch-section-title">
             치유를 향한 여정
           </h2>
-          <p className="mt-2 text-sm text-ink-soft">
+          <p className="mt-3 text-base text-ink-soft">
             당신에게 필요한 따뜻한 처방
           </p>
         </div>
@@ -44,10 +44,10 @@ export default function Journey() {
               <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-paper text-xl">
                 {card.icon}
               </span>
-              <p className="mb-1.5 text-lg font-medium text-ink">
+              <p className="mb-2 text-xl font-semibold text-ink">
                 {card.title}
               </p>
-              <p className="text-sm text-ink-soft">{card.body}</p>
+              <p className="text-base text-ink-soft">{card.body}</p>
               <span className="mt-4 inline-block text-root transition group-hover:translate-x-1">
                 →
               </span>

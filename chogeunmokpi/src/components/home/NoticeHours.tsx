@@ -32,7 +32,7 @@ export default function NoticeHours() {
           </h2>
           <Link
             href="/about/notices"
-            className="text-sm text-ink-soft hover:text-root"
+            className="text-base text-ink-soft hover:text-root"
           >
             더보기 +
           </Link>
@@ -53,7 +53,7 @@ export default function NoticeHours() {
                 </span>
               </div>
               <p className="mb-1.5 font-medium text-ink">{notice.title}</p>
-              <p className="line-clamp-2 text-sm text-ink-soft">
+              <p className="line-clamp-2 text-base text-ink-soft">
                 {notice.body}
               </p>
             </div>
@@ -65,7 +65,7 @@ export default function NoticeHours() {
             <h3 className="mb-4 flex items-center gap-2 font-medium text-ink">
               <span aria-hidden="true">🕐</span> 진료 시간
             </h3>
-            <dl className="space-y-2 text-sm text-ink-soft">
+            <dl className="space-y-2 text-base text-ink-soft">
               <div className="flex justify-between">
                 <dt>{clinicInfo.hours.weekdayLabel}</dt>
                 <dd>{clinicInfo.hours.weekday}</dd>
@@ -103,7 +103,7 @@ export default function NoticeHours() {
                 <span aria-hidden="true">📍</span> 오시는 길
               </h3>
               <div className="flex items-center justify-between">
-                <p className="text-sm text-ink-soft">{clinicInfo.address}</p>
+                <p className="text-base text-ink-soft">{clinicInfo.address}</p>
                 <Link
                   href="/about/location"
                   className="ch-btn-secondary whitespace-nowrap px-3 py-1.5 text-xs"

@@ -54,15 +54,15 @@ export default function Hero() {
       </svg>
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center md:py-24">
-        <p className="mb-6 text-xs tracking-[0.3em] text-ink-soft">
+        <p className="mb-6 text-sm tracking-[0.28em] text-ink-soft">
           전통의 지혜와 현대한의학의 통합
         </p>
-        <h1 className="font-display text-5xl leading-[1.25] text-ink md:text-6xl">
+        <h1 className="font-display text-6xl leading-[1.16] text-ink md:text-7xl">
           근본의 시간,
           <br />
           회복의 공간
         </h1>
-        <p className="mt-8 text-base leading-relaxed text-ink-soft md:text-lg">
+        <p className="mt-8 text-lg leading-relaxed text-ink-soft md:text-xl">
           이곳저곳 다녀봐도 낫지 않던 만성 질환.
           <br />
           초근목피는 수치가 아닌 몸 전체의 균형을 봅니다.

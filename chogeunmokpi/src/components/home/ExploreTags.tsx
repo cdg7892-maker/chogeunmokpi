@@ -24,13 +24,13 @@ export default function ExploreTags() {
             <h2 className="ch-section-title">
               진료 분야 둘러보기
             </h2>
-            <p className="mt-2 text-sm text-ink-soft">
+            <p className="mt-3 text-base text-ink-soft">
               관심 있는 진료 분야를 선택해 보세요
             </p>
           </div>
           <Link
             href="/programs"
-            className="whitespace-nowrap text-sm text-ink-soft hover:text-root"
+            className="whitespace-nowrap text-base text-ink-soft hover:text-root"
           >
             전체 진료 분야 →
           </Link>

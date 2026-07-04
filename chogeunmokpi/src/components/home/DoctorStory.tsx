@@ -7,13 +7,13 @@ export default function DoctorStory() {
     <section className="bg-paper">
       <RevealOnScroll className="home-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
         <div>
-          <p className="mb-3 text-sm text-ink-soft">치유와 회복의 공간</p>
+          <p className="mb-3 text-base text-ink-soft">치유와 회복의 공간</p>
           <h2 className="ch-section-title leading-snug">
             낫지 않는 질환,
             <br />그 간절함에 답하겠습니다.
           </h2>
 
-          <div className="mt-7 space-y-4 text-[15px] leading-loose text-ink-soft">
+          <div className="mt-7 space-y-4 text-base leading-loose text-ink-soft md:text-lg">
             <p>
               진료실에서 가장 많이 듣는 말은 &ldquo;검사는 정상이라는데 왜
               이렇게 아플까요?&rdquo;였습니다. 수치로는 설명되지 않는 고통
@@ -33,12 +33,12 @@ export default function DoctorStory() {
           <div className="mt-8 flex items-center gap-3 border-t border-line pt-6">
             <div>
               <p className="text-xs text-ink-soft">대표원장</p>
-              <p className="text-lg font-medium text-ink">이호근</p>
+              <p className="text-xl font-semibold text-ink">이호근</p>
             </div>
             <span className="text-line">|</span>
             <Link
               href="/about/doctors"
-              className="text-sm text-root transition hover:text-root-dark"
+              className="text-base text-root transition hover:text-root-dark"
             >
               의료진 소개 보기 →
             </Link>

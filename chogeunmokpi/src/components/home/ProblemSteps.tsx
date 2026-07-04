@@ -47,7 +47,7 @@ export default function ProblemSteps() {
     <section className="bg-paper">
       <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-12 text-center">
-          <p className="mb-3 text-sm text-ink-soft">
+          <p className="mb-3 text-base text-ink-soft">
             초근목피는 당신의 아픔을 다르게 봅니다.
           </p>
           <h2 className="ch-section-title">
@@ -67,10 +67,10 @@ export default function ProblemSteps() {
                 <span className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-medium text-paper-soft">
                   {step.n}
                 </span>
-                <p className="mb-3 text-lg font-medium leading-snug text-ink">
+                <p className="mb-3 text-xl font-semibold leading-snug text-ink">
                   {step.title}
                 </p>
-                <p className="text-sm leading-relaxed text-ink-soft">
+                <p className="text-base leading-relaxed text-ink-soft">
                   {step.body}
                 </p>
               </div>
