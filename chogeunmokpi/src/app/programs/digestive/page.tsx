@@ -341,36 +341,34 @@ export default function DigestiveProgramPage() {
     <>
       {/* 1. 히어로 */}
       <section className="border-b border-line bg-paper-soft">
-        <div className="mx-auto max-w-6xl px-5 pt-8 md:pt-10">
-          <div className="inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5">
-            <span className="relative h-8 w-8 overflow-hidden rounded-full">
-              <Image
-                src={digestiveDoctor.photo}
-                alt={digestiveDoctor.name}
-                fill
-                sizes="32px"
-                quality={90}
-                className="object-cover"
-              />
-            </span>
-            <span className="text-xs leading-tight text-ink-soft">
-              의료 감수
-              <br />
-              <span className="text-sm font-semibold text-ink">
-                {digestiveDoctor.name} {digestiveDoctor.role}
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:min-h-[720px] md:grid-cols-[0.95fr_1.05fr] md:py-20">
+          <div className="flex flex-col items-start">
+            <div className="mb-24 inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5 shadow-sm shadow-ink/5">
+              <span className="relative h-8 w-8 overflow-hidden rounded-full">
+                <Image
+                  src={digestiveDoctor.photo}
+                  alt={digestiveDoctor.name}
+                  fill
+                  sizes="32px"
+                  quality={90}
+                  className="object-cover"
+                />
               </span>
-            </span>
-          </div>
-        </div>
+              <span className="text-xs leading-tight text-ink-soft">
+                의료 감수
+                <br />
+                <span className="text-sm font-semibold text-ink">
+                  {digestiveDoctor.name} {digestiveDoctor.role}
+                </span>
+              </span>
+            </div>
 
-        <div className="ch-section-pad mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-          <div>
-            <p className="mb-5 text-base leading-relaxed text-ink-soft">
+            <p className="mb-6 max-w-md text-base leading-7 text-ink-soft">
               더부룩한 속, 쓰린 가슴.
               <br />
               위장의 운동성을 되살려 편안함을 드립니다.
             </p>
-            <h1 className="font-display text-6xl leading-[1.15] text-ink md:text-7xl">
+            <h1 className="font-display text-[4.75rem] leading-[1.05] text-ink md:text-[5.75rem]">
               소화기
               <br />
               클리닉
@@ -403,7 +401,7 @@ export default function DigestiveProgramPage() {
                 priority
               />
             </div>
-            <div className="ch-card absolute -bottom-8 left-1/2 w-[85%] -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0">
+            <div className="ch-card absolute -bottom-8 left-1/2 w-[82%] -translate-x-1/2 p-5 md:left-auto md:right-4 md:translate-x-0">
               <div className="space-y-2.5 text-base text-ink">
                 <p className="flex items-center gap-2">
                   <span className="text-root"><IconStar /></span> 만성 소화불량·담적병
@@ -424,7 +422,7 @@ export default function DigestiveProgramPage() {
             <h2 className="ch-section-title">
               먹는 즐거움을 잃어버리셨나요?
             </h2>
-            <p className="mt-3 text-ink-soft">
+            <p className="ch-section-copy">
               내시경엔 이상이 없다는데,
               <br />
               나는 여전히 아프고 답답합니다.
@@ -435,12 +433,12 @@ export default function DigestiveProgramPage() {
             {symptoms.map((s) => (
               <div
                 key={s.title}
-                className="ch-card ch-card-hover"
+                className="ch-card ch-card-hover flex min-h-[220px] flex-col items-start"
               >
-                <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-root">
+                <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-root">
                   <s.Icon />
                 </span>
-                <p className="mb-2 font-medium text-ink">{s.title}</p>
+                <p className="mb-3 text-lg font-semibold leading-snug text-ink">{s.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {s.desc}
                 </p>
@@ -449,11 +447,11 @@ export default function DigestiveProgramPage() {
           </div>
 
           {/* 3. 핵심 진단 원리 (특별 진단 시스템) */}
-          <div className="ch-card-lg border-ink/80 md:p-10">
+          <div className="ch-card-lg mx-auto max-w-4xl border-line md:p-10">
             <span className="mb-5 inline-flex items-center gap-1.5 rounded-full bg-root/10 px-3 py-1 text-xs font-medium text-root">
               <IconCheck /> 특별 진단 시스템
             </span>
-            <h3 className="mb-6 text-2xl font-bold tracking-tight text-ink md:text-3xl">
+            <h3 className="mb-6 font-display text-2xl text-ink md:text-3xl">
               위장병, 움직임을 되살려야 낫습니다
             </h3>
             <div className="space-y-4 text-[15px] leading-loose text-ink-soft">
@@ -495,14 +493,14 @@ export default function DigestiveProgramPage() {
               <br />
               핵심 치료 원리
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-5">
               {mechanism.map((m) => (
-                <div key={m.n} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink text-sm font-medium text-paper-soft">
+                <div key={m.n} className="flex gap-4 rounded-2xl border border-line bg-card p-5 shadow-sm shadow-ink/5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-sm font-semibold text-paper-soft">
                     {m.n}
                   </span>
                   <div>
-                    <p className="mb-1 font-medium text-ink">{m.title}</p>
+                    <p className="mb-1 text-lg font-semibold leading-snug text-ink">{m.title}</p>
                     <p className="text-sm leading-relaxed text-ink-soft">
                       {m.desc}
                     </p>
@@ -531,7 +529,7 @@ export default function DigestiveProgramPage() {
             <h2 className="ch-section-title">
               소화기 미니 진단
             </h2>
-            <p className="mt-3 text-ink-soft">
+            <p className="ch-section-copy">
               1분이면 충분합니다. 나에게 딱 맞는 처방을 확인해보세요.
             </p>
           </div>
@@ -546,7 +544,7 @@ export default function DigestiveProgramPage() {
             <h2 className="ch-section-title">
               증상별 맞춤 솔루션
             </h2>
-            <p className="mt-3 text-ink-soft">
+            <p className="ch-section-copy">
               같은 소화불량이라도 원인에 따라 치료법이 다릅니다.
             </p>
           </div>
@@ -555,12 +553,12 @@ export default function DigestiveProgramPage() {
             {solutions.map((s) => (
               <div
                 key={s.n}
-                className="ch-card ch-card-hover relative p-7"
+                className="ch-card ch-card-hover relative flex min-h-[520px] flex-col p-7"
               >
                 <span className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-line text-sm text-ink-soft">
                   {s.n}
                 </span>
-                <p className="mb-4 whitespace-pre-line text-lg font-medium leading-snug text-ink">
+                <p className="mb-5 min-h-[3.5rem] whitespace-pre-line pr-12 text-lg font-semibold leading-snug text-ink">
                   {s.title}
                 </p>
 
@@ -611,7 +609,7 @@ export default function DigestiveProgramPage() {
               <h2 className="ch-section-title mb-3">
                 초근목피 소화기 치료 프로그램
               </h2>
-              <p className="text-ink-soft">
+              <p className="ch-section-copy">
                 위장의 기능을 근본적으로 살리는 치료입니다.
               </p>
             </div>
@@ -621,12 +619,12 @@ export default function DigestiveProgramPage() {
             {treatments.map((t) => (
               <div
                 key={t.title}
-                className="ch-card ch-card-hover"
+                className="ch-card ch-card-hover min-h-[210px]"
               >
                 <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-paper-soft text-root">
                   <t.Icon />
                 </span>
-                <p className="mb-2 font-medium text-ink">{t.title}</p>
+                <p className="mb-2 text-lg font-semibold leading-snug text-ink">{t.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {t.desc}
                 </p>
@@ -644,7 +642,7 @@ export default function DigestiveProgramPage() {
               <h2 className="ch-section-title">
                 치료후기
               </h2>
-              <p className="mt-2 text-ink-soft">
+              <p className="ch-section-copy">
                 초근목피와 함께 속 편한 일상을 만난 분들의 이야기입니다.
               </p>
             </div>
@@ -661,7 +659,7 @@ export default function DigestiveProgramPage() {
               <Link
                 key={r.id}
                 href="/community/reviews"
-                className="ch-card ch-card-hover group"
+                className="ch-card ch-card-hover group min-h-[190px]"
               >
                 <div className="mb-3 flex items-center gap-2">
                   <span className="rounded-full bg-paper px-2.5 py-0.5 text-xs text-ink-soft">
@@ -727,11 +725,11 @@ export default function DigestiveProgramPage() {
 
           <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
             {process.map((p) => (
-              <div key={p.n} className="text-center">
+              <div key={p.n} className="ch-card flex min-h-[190px] flex-col items-center text-center">
                 <span className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-line text-lg font-medium text-ink">
                   {p.n}
                 </span>
-                <p className="mb-2 font-medium text-ink">{p.title}</p>
+                <p className="mb-2 text-lg font-semibold leading-snug text-ink">{p.title}</p>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   {p.desc}
                 </p>
