@@ -7,7 +7,7 @@ const thumbnailBySlug: Record<string, string> = {
   mind: "/images/programs/mind-hero.png",
   skin: "/images/programs/skin-hero.png",
   tonic: "/images/programs/tonic-hero.png",
-  pediatric: "/images/programs/pediatric-hero.png",
+  pediatric: "/images/programs/pediatric-hero-v2.png",
   "head-face": "/images/programs/head-face-hero.png",
   women: "/images/programs/women-hero.png",
 };

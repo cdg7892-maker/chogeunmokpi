@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-type Pattern = "growth" | "study" | "immunity" | "sleep";
+type Pattern = "growth" | "immunity" | "study" | "neuro";
 
 type Option = {
   label: string;
@@ -13,67 +13,67 @@ type Option = {
 
 const questions: Array<{ q: string; options: Option[] }> = [
   {
-    q: "현재 아이에게 가장 크게 신경 쓰이는 부분은 무엇인가요?",
+    q: "우리 아이, 어떤 점이 가장 걱정되시나요?",
     options: [
-      { label: "또래보다 키나 체중 증가가 더딘 것 같아요.", score: 2, pattern: "growth" },
-      { label: "공부할 때 집중력이 오래 가지 않고 쉽게 지쳐요.", score: 2, pattern: "study" },
-      { label: "감기, 비염, 잔병치레가 자주 반복돼요.", score: 2, pattern: "immunity" },
-      { label: "잠이 얕거나 늦게 자고 아침에 일어나기 힘들어요.", score: 2, pattern: "sleep" },
+      { label: "키 성장·체중 증가가 더디거나 성조숙이 걱정돼요.", score: 2, pattern: "growth" },
+      { label: "감기·비염·중이염처럼 잔병치레가 자주 반복돼요.", score: 2, pattern: "immunity" },
+      { label: "집중력이 부족하고 공부할 때 금방 지쳐요.", score: 2, pattern: "study" },
+      { label: "틱, ADHD, 야뇨처럼 신경·생활 리듬 문제가 있어요.", score: 2, pattern: "neuro" },
     ],
   },
   {
-    q: "식사와 소화 상태는 어떤 편인가요?",
+    q: "식사와 수면은 어떤 편인가요?",
     options: [
-      { label: "입이 짧고 먹는 양이 적어 살이 잘 붙지 않아요.", score: 2, pattern: "growth" },
-      { label: "시험 기간이나 스트레스가 있으면 배가 불편해져요.", score: 1, pattern: "study" },
-      { label: "차가운 음식이나 간식 후 콧물, 기침이 늘어요.", score: 1, pattern: "immunity" },
-      { label: "저녁 식사 후 더부룩해서 잠드는 시간이 늦어져요.", score: 1, pattern: "sleep" },
+      { label: "입이 짧고 편식이 심해 살이 잘 붙지 않아요.", score: 2, pattern: "growth" },
+      { label: "코가 막혀 입으로 숨 쉬거나 자면서 자주 뒤척여요.", score: 2, pattern: "immunity" },
+      { label: "늦게까지 공부하거나 스마트폰 때문에 잠이 부족해요.", score: 1, pattern: "study" },
+      { label: "잠들기 전 예민해지고 깊이 자지 못하는 날이 많아요.", score: 2, pattern: "neuro" },
     ],
   },
   {
-    q: "하루 중 컨디션이 가장 무너지는 때는 언제인가요?",
+    q: "최근 반복되는 몸의 신호는 무엇인가요?",
     options: [
-      { label: "활동량이 많아지면 금방 피곤해하고 누워 있으려 해요.", score: 1, pattern: "growth" },
-      { label: "오후나 저녁 공부 시간에 졸음과 멍함이 심해져요.", score: 2, pattern: "study" },
-      { label: "환절기나 사람이 많은 곳에 다녀오면 바로 아파요.", score: 2, pattern: "immunity" },
-      { label: "밤이 될수록 예민해지고 잠드는 데 오래 걸려요.", score: 2, pattern: "sleep" },
+      { label: "배가 자주 아프고 체력이 약해 쉽게 지쳐요.", score: 1, pattern: "growth" },
+      { label: "환절기마다 콧물, 기침, 목감기가 오래 가요.", score: 2, pattern: "immunity" },
+      { label: "오후가 되면 졸음, 두통, 눈 피로가 심해져요.", score: 2, pattern: "study" },
+      { label: "긴장하면 눈 깜빡임, 헛기침, 산만함이 심해져요.", score: 2, pattern: "neuro" },
     ],
   },
   {
-    q: "가장 원하는 관리 목표는 무엇인가요?",
+    q: "가장 원하는 치료 목표는 무엇인가요?",
     options: [
-      { label: "잘 먹고 흡수해서 성장 기반을 단단히 만들고 싶어요.", score: 1, pattern: "growth" },
-      { label: "체력과 집중력을 함께 끌어올리고 싶어요.", score: 1, pattern: "study" },
-      { label: "잦은 감기와 비염으로 흔들리는 컨디션을 줄이고 싶어요.", score: 1, pattern: "immunity" },
-      { label: "수면 리듬을 안정시켜 아침 컨디션을 좋게 만들고 싶어요.", score: 1, pattern: "sleep" },
+      { label: "성장 방해 요인을 줄이고 숨은 키를 찾고 싶어요.", score: 1, pattern: "growth" },
+      { label: "잔병치레를 줄여 성장에 쓸 에너지를 확보하고 싶어요.", score: 1, pattern: "immunity" },
+      { label: "수험생 체력과 집중력을 함께 끌어올리고 싶어요.", score: 1, pattern: "study" },
+      { label: "긴장과 생활 리듬을 안정시켜 학교 생활을 편하게 하고 싶어요.", score: 1, pattern: "neuro" },
     ],
   },
 ];
 
 const resultCopy: Record<Pattern, { title: string; desc: string; care: string; note: string }> = {
   growth: {
-    title: "성장 흡수 보강형",
-    desc: "성장의 재료는 들어오지만 비위의 흡수력과 기혈 생성이 약해 충분히 쓰이지 못하는 패턴입니다.",
-    care: "식욕을 억지로 늘리는 것보다 소화 흡수, 장부 에너지, 수면 회복을 함께 세워 성장판이 편하게 일할 환경을 만드는 것이 우선입니다.",
-    note: "키, 체중, 식사량, 배변, 수면 시간을 함께 확인하면 처방 방향이 더 정확해집니다.",
-  },
-  study: {
-    title: "수험생 뇌피로 회복형",
-    desc: "오래 앉아 있는 시간은 늘었지만 뇌가 쓸 에너지와 목·어깨 순환이 따라가지 못하는 상태입니다.",
-    care: "총명 처방은 각성만 올리는 방향이 아니라 비위와 심신 피로를 풀고, 머리로 가는 기혈 순환을 도와 집중 유지력을 회복하는 데 초점을 둡니다.",
-    note: "두통, 눈 피로, 소화불량, 불면이 동반되면 함께 조절하는 것이 좋습니다.",
+    title: "성장·성조숙 관리형",
+    desc: "키 성장, 체중, 성숙 속도를 함께 봐야 하는 패턴입니다. 소화 흡수와 성장 리듬, 성숙 속도 조절이 핵심입니다.",
+    care: "비위 기능을 보강해 성장 재료를 확보하고, 필요 시 성장판 상태와 성숙 진행을 확인하며 과도한 열과 빠른 성숙 흐름을 조심스럽게 살핍니다.",
+    note: "키, 체중, 부모 키, 최근 1년 성장 속도, 2차 성징 여부를 함께 확인하면 치료 방향이 더 선명해집니다.",
   },
   immunity: {
     title: "면역·호흡기 허약형",
-    desc: "폐기와 비위가 약해 환절기마다 코, 목, 기관지가 먼저 흔들리는 패턴입니다.",
-    care: "잦은 감기와 비염은 단순히 증상만 누르기보다 호흡기 점막, 소화 흡수, 수면 회복력을 함께 보강해야 반복이 줄어듭니다.",
-    note: "구강호흡이나 코막힘으로 잠이 얕다면 성장과 집중력에도 영향을 줄 수 있습니다.",
+    desc: "감기, 비염, 중이염이 반복되며 성장 에너지가 면역 회복에 먼저 쓰이는 패턴입니다.",
+    care: "호흡기 면역과 비위 기능을 함께 보강해 잔병치레를 줄이고, 코막힘으로 얕아진 수면을 회복해 성장 호르몬 리듬을 돕습니다.",
+    note: "구강호흡, 코골이, 잦은 항생제 복용, 환절기 악화 여부를 함께 살피는 것이 좋습니다.",
   },
-  sleep: {
-    title: "수면 리듬 불안정형",
-    desc: "몸은 피곤한데 긴장이 잘 내려가지 않아 깊은 잠과 아침 회복감이 부족한 패턴입니다.",
-    care: "수면 리듬을 바로잡기 위해서는 저녁 소화 부담, 심신 긴장, 낮 활동량, 호흡기 불편을 함께 살피는 접근이 필요합니다.",
-    note: "깊은 잠은 성장과 학습 기억 정리에 모두 관여하므로 생활 리듬 교정과 처방을 함께 보는 것이 좋습니다.",
+  study: {
+    title: "수험생 뇌피로 회복형",
+    desc: "오래 앉아 있는 시간은 늘었지만 뇌가 쓸 에너지와 목·어깨 순환, 수면 회복이 따라가지 못하는 상태입니다.",
+    care: "총명 처방은 단순 각성이 아니라 비위와 심신 피로를 풀고 머리로 가는 기혈 순환을 도와 집중 유지력을 회복하는 데 초점을 둡니다.",
+    note: "두통, 눈 피로, 소화불량, 불면이 동반되면 함께 조절하는 것이 좋습니다.",
+  },
+  neuro: {
+    title: "틱·ADHD 신경 안정형",
+    desc: "긴장과 피로가 쌓이면 반복 행동, 산만함, 야뇨, 예민함이 두드러지는 패턴입니다.",
+    care: "억지로 누르는 방식보다 아이의 긴장 반응, 수면, 소화, 학업 스트레스를 함께 안정시켜 신경계가 편안해지는 환경을 만드는 것이 중요합니다.",
+    note: "증상이 심해지는 시간대, 스마트폰 사용, 수면 부족, 학교 스트레스 변화를 함께 기록해오면 도움이 됩니다.",
   },
 };
 
@@ -95,7 +95,7 @@ export default function PediatricQuiz() {
 
   const scores = answers.reduce<Record<Pattern, number>>(
     (acc, answer) => ({ ...acc, [answer.pattern]: acc[answer.pattern] + answer.score + 1 }),
-    { growth: 0, study: 0, immunity: 0, sleep: 0 },
+    { growth: 0, immunity: 0, study: 0, neuro: 0 },
   );
   const topPattern = (Object.keys(scores) as Pattern[]).sort((a, b) => scores[b] - scores[a])[0];
   const result = resultCopy[topPattern];
@@ -104,7 +104,7 @@ export default function PediatricQuiz() {
     <div className="ch-card-lg ch-card-hover mx-auto max-w-2xl">
       <div className="mb-6 flex items-center justify-between gap-4">
         <h3 className="text-lg font-bold tracking-tight text-ink sm:text-xl">
-          소아·수험생 성장 미니 진단
+          소아·수험생 미니 진단
         </h3>
         {!done && <span className="text-xs text-ink-soft">{step + 1} / {questions.length}</span>}
       </div>
@@ -139,7 +139,7 @@ export default function PediatricQuiz() {
           </div>
           <div className="flex flex-col items-center gap-3">
             <Link href="/reserve" className="ch-btn-primary w-full py-3.5">
-              성장·학습 상담 예약하기
+              성장·소아 상담 예약하기
             </Link>
             <button onClick={reset} className="text-sm text-ink-soft underline-offset-4 hover:text-root hover:underline">
               다시 하기

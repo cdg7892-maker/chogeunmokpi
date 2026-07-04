@@ -103,7 +103,7 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
       <section className="border-y border-line bg-paper-soft">
         <div className="ch-section-pad mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div className="relative aspect-[4/3.45] overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5">
-            <Image src={data.heroImage} alt={data.heroAlt} fill sizes="(max-width: 768px) 92vw, 460px" quality={92} className="object-cover" />
+            <Image src={data.diagnosisImage ?? data.heroImage} alt={data.heroAlt} fill sizes="(max-width: 768px) 92vw, 460px" quality={92} className="object-cover" />
           </div>
           <div>
             <p className="mb-3 text-sm font-semibold text-root">{data.diagnosisLabel}</p>
@@ -192,17 +192,50 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
             <h2 className="ch-section-title">{data.programTitle}</h2>
             <p className="mt-3 text-ink-soft">개인의 체질과 생활 리듬에 맞춘 한방 치료 프로그램입니다.</p>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {data.programs.map((program) => (
-              <div key={program.title} className="ch-card ch-card-hover text-center">
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-2xl">{program.icon}</div>
-                <h3 className="mb-3 text-lg font-semibold text-ink">{program.title}</h3>
-                <p className="keep-words text-sm leading-relaxed text-ink-soft">{program.desc}</p>
+          <div className={data.programImage ? "grid gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center" : ""}>
+            {data.programImage && (
+              <div className="relative aspect-[4/3.15] overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5">
+                <Image src={data.programImage} alt={`${data.title} 치료 프로그램`} fill sizes="(max-width: 768px) 92vw, 480px" quality={92} className="object-cover" />
               </div>
-            ))}
+            )}
+            <div className={data.programImage ? "grid gap-5" : "grid gap-5 md:grid-cols-3"}>
+              {data.programs.map((program) => (
+                <div key={program.title} className="ch-card ch-card-hover text-center">
+                  <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-paper-soft text-2xl">{program.icon}</div>
+                  <h3 className="mb-3 text-lg font-semibold text-ink">{program.title}</h3>
+                  <p className="keep-words text-sm leading-relaxed text-ink-soft">{program.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {data.reviews && data.reviews.length > 0 && (
+        <section className="bg-paper">
+          <div className="ch-section-pad mx-auto max-w-6xl">
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="mb-2 text-sm font-semibold text-root">진료 노트</p>
+                <h2 className="ch-section-title">초근목피와 함께 자란 아이들의 이야기입니다.</h2>
+              </div>
+              <Link href="/community/reviews" className="text-sm font-medium text-root hover:text-root-dark">전체 후기 보기 →</Link>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {data.reviews.map((review) => (
+                <div key={review.title} className="ch-card ch-card-hover">
+                  <p className="mb-3 text-xs font-semibold text-root">치료 사례</p>
+                  <h3 className="mb-4 keep-words text-lg font-bold leading-snug text-ink">{review.title}</h3>
+                  <p className="mb-6 keep-words text-sm leading-relaxed text-ink-soft">{review.summary}</p>
+                  <div className="border-t border-line pt-4 text-xs text-ink-soft">
+                    환자: {review.patient} | 담당의: {doctor.name}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-paper">
         <div className="ch-section-pad mx-auto max-w-6xl">
