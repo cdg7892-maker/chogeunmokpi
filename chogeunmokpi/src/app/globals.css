@@ -77,6 +77,19 @@ body {
   line-height: 1.2;
 }
 
+.digestive-page :where(h1, h2, h3, p, li, a, button, span) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.digestive-page :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.digestive-page :where(p, li) {
+  text-wrap: pretty;
+}
+
 @layer components {
   .ch-section {
     @apply border-t border-line;
@@ -123,6 +136,28 @@ body {
 
   .ch-pill {
     @apply rounded-full border border-line bg-card px-4 py-2 text-sm text-ink-soft transition-all duration-300 ease-out hover:-translate-y-px hover:border-root hover:text-root;
+  }
+}
+
+@media (max-width: 767px) {
+  .digestive-page .ch-section-pad {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .digestive-page .ch-section-title {
+    font-size: 2rem;
+    line-height: 1.24;
+  }
+
+  .digestive-page .ch-section-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+
+  .digestive-page .ch-card,
+  .digestive-page .ch-card-lg {
+    border-radius: 1rem;
   }
 }
 

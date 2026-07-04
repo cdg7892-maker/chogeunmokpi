@@ -338,12 +338,12 @@ const digestiveReviews = reviews.filter((r) => r.programSlug === "digestive");
 
 export default function DigestiveProgramPage() {
   return (
-    <>
+    <main className="digestive-page">
       {/* 1. 히어로 */}
       <section className="border-b border-line bg-paper-soft">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:min-h-[720px] md:grid-cols-[0.95fr_1.05fr] md:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 sm:py-14 md:min-h-[720px] md:grid-cols-[0.95fr_1.05fr] md:gap-12 md:py-20">
           <div className="flex flex-col items-start">
-            <div className="mb-24 inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5 shadow-sm shadow-ink/5">
+            <div className="mb-12 inline-flex items-center gap-3 rounded-2xl border border-line bg-card px-4 py-2.5 shadow-sm shadow-ink/5 md:mb-24">
               <span className="relative h-8 w-8 overflow-hidden rounded-full">
                 <Image
                   src={digestiveDoctor.photo}
@@ -363,26 +363,26 @@ export default function DigestiveProgramPage() {
               </span>
             </div>
 
-            <p className="mb-6 max-w-md text-base leading-7 text-ink-soft">
+            <p className="mb-5 max-w-md text-[15px] leading-7 text-ink-soft sm:text-base">
               더부룩한 속, 쓰린 가슴.
               <br />
               위장의 운동성을 되살려 편안함을 드립니다.
             </p>
-            <h1 className="font-display text-[4.75rem] leading-[1.05] text-ink md:text-[5.75rem]">
+            <h1 className="font-display text-[3.35rem] leading-[1.08] text-ink sm:text-[4.25rem] md:text-[5.75rem]">
               소화기
               <br />
               클리닉
             </h1>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
               <Link
                 href="/reserve"
-                className="ch-btn-primary px-7 py-4 text-base"
+                className="ch-btn-primary px-5 py-3.5 text-sm sm:px-7 sm:py-4 sm:text-base"
               >
                 <IconCalendar /> 진료 예약하기
               </Link>
               <a
                 href="#quiz"
-                className="ch-btn-secondary px-7 py-4 text-base"
+                className="ch-btn-secondary px-5 py-3.5 text-sm sm:px-7 sm:py-4 sm:text-base"
               >
                 <IconClipboard /> 소화기 자가진단
               </a>
@@ -401,8 +401,8 @@ export default function DigestiveProgramPage() {
                 priority
               />
             </div>
-            <div className="ch-card absolute -bottom-8 left-1/2 w-[82%] -translate-x-1/2 p-5 md:left-auto md:right-4 md:translate-x-0">
-              <div className="space-y-2.5 text-base text-ink">
+            <div className="ch-card absolute -bottom-7 left-1/2 w-[88%] -translate-x-1/2 p-4 md:-bottom-8 md:left-auto md:right-4 md:w-[82%] md:translate-x-0 md:p-5">
+              <div className="space-y-2.5 text-sm text-ink sm:text-base">
                 <p className="flex items-center gap-2">
                   <span className="text-root"><IconStar /></span> 만성 소화불량·담적병
                 </p>
@@ -884,6 +884,6 @@ export default function DigestiveProgramPage() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
