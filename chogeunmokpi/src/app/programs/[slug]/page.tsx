@@ -4,7 +4,7 @@ import { programs } from "@/lib/site-data";
 
 export function generateStaticParams() {
   return programs
-    .filter((p) => p.slug !== "digestive")
+    .filter((p) => !["digestive", "mind"].includes(p.slug))
     .map((p) => ({ slug: p.slug }));
 }
 
