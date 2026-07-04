@@ -213,7 +213,7 @@ export default function DigestiveQuiz() {
               <button
                 key={opt.label}
                 onClick={() => handleSelect(opt)}
-                className="block w-full rounded-xl border border-line px-4 py-3 text-left text-sm text-ink-soft transition hover:border-root hover:bg-paper hover:text-ink"
+                className="block w-full rounded-xl border border-line px-4 py-3 text-left text-sm text-ink-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-root hover:bg-paper hover:text-ink hover:shadow-md hover:shadow-ink/5"
               >
                 {opt.label}
               </button>
@@ -269,7 +269,7 @@ export default function DigestiveQuiz() {
             <div className="flex flex-col items-center gap-3">
               <Link
                 href="/reserve"
-                className="w-full rounded-full bg-ink py-3.5 text-center text-sm font-medium text-paper-soft transition hover:bg-root"
+                className="w-full rounded-full bg-ink py-3.5 text-center text-sm font-medium text-paper-soft transition-all duration-200 hover:-translate-y-1 hover:bg-root hover:shadow-lg hover:shadow-ink/10"
               >
                 맞춤 상담 신청하기 (무료)
               </Link>

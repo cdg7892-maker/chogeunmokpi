@@ -378,13 +378,13 @@ export default function DigestiveProgramPage() {
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
                 href="/reserve"
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-medium text-paper-soft transition hover:bg-root"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-medium text-paper-soft transition-all duration-200 hover:-translate-y-1 hover:bg-root hover:shadow-lg hover:shadow-ink/10"
               >
                 <IconCalendar /> 진료 예약하기
               </Link>
               <a
                 href="#quiz"
-                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-4 text-base font-medium text-ink-soft transition hover:border-root hover:text-root"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-4 text-base font-medium text-ink-soft transition-all duration-200 hover:-translate-y-1 hover:border-root hover:text-root hover:shadow-lg hover:shadow-ink/5"
               >
                 <IconClipboard /> 소화기 자가진단
               </a>
