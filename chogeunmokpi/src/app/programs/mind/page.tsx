@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MindQuiz from "@/components/programs/MindQuiz";
+import { mindConditions } from "@/lib/mind-conditions";
 import { doctors } from "@/lib/site-data";
 
 function IconCalendar() {
@@ -213,21 +214,6 @@ const faqs = [
     q: "불면과 소화불량이 같이 있는데 마음건강 진료를 받아도 되나요?",
     a: "네. 마음 증상은 소화, 흉부 답답함, 두통과 함께 나타나는 경우가 많아 몸 전체의 흐름을 같이 봅니다.",
   },
-];
-
-const conditions = [
-  "불면증",
-  "수면장애",
-  "우울감",
-  "불안장애",
-  "공황장애",
-  "화병",
-  "ADHD",
-  "강박",
-  "틱장애",
-  "번아웃",
-  "분노조절",
-  "산후우울",
 ];
 
 const mindDoctor = doctors[0];
@@ -542,11 +528,18 @@ export default function MindProgramPage() {
             </div>
             <Link href="/reserve" className="ch-btn-primary px-5 py-2.5">상담 예약</Link>
           </div>
+          <div className="mb-4 border-b border-line pb-3 text-sm text-root">
+            수면·정서·인지
+          </div>
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-            {conditions.map((condition) => (
-              <Link key={condition} href="/reserve" className="ch-card ch-card-hover flex items-center justify-between p-5">
-                <span className="font-medium text-ink">{condition}</span>
-                <span className="text-sm text-root">상담하기 →</span>
+            {mindConditions.map((condition) => (
+              <Link
+                key={condition.slug}
+                href={`/programs/psy/${condition.slug}`}
+                className="ch-card ch-card-hover flex min-h-[96px] items-start justify-between gap-4 p-5"
+              >
+                <span className="font-medium text-ink">{condition.title}</span>
+                <span className="whitespace-nowrap text-sm text-root">자세히 보기 →</span>
               </Link>
             ))}
           </div>
