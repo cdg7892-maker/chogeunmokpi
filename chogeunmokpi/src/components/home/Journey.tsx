@@ -24,7 +24,7 @@ const cards = [
 export default function Journey() {
   return (
     <section className="ch-section bg-paper-soft">
-      <div className="home-section-pad mx-auto flex max-w-6xl flex-col justify-center">
+      <div className="ch-section-pad mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="ch-section-title">
             치유를 향한 여정

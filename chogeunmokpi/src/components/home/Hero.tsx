@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-paper">
+    <section className="relative flex min-h-[calc(100vh-72px)] items-center overflow-hidden bg-paper">
       {/* signature root-line art */}
       <svg
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%] w-full text-root/25"
@@ -53,7 +53,7 @@ export default function Hero() {
         />
       </svg>
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-24 pt-20 text-center md:pb-28 md:pt-28">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center md:py-24">
         <p className="mb-6 text-xs tracking-[0.3em] text-ink-soft">
           전통의 지혜와 현대한의학의 통합
         </p>
