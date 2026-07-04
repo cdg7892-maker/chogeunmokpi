@@ -36,6 +36,39 @@ body {
   line-height: 1.5;
 }
 
+.hero-root-map {
+  animation: ch-root-breathe 18s ease-in-out infinite;
+  transform-origin: 50% 62%;
+}
+
+.hero-pulse-rings {
+  animation: ch-pulse-rings 22s ease-in-out infinite;
+}
+
+@keyframes ch-root-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.94;
+    transform: translateY(-10px) scale(1.012);
+  }
+}
+
+@keyframes ch-pulse-rings {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: translate(-50%, -50%) scale(0.985);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(1.025);
+  }
+}
+
 /* NOTE: 배포 시 next/font/google의 Song Myung으로 교체 예정 */
 .font-display {
   font-family: "Noto Serif KR", "Nanum Myeongjo", "Batang", Georgia, serif;
