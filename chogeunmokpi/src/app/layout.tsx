@@ -30,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="site-shell">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

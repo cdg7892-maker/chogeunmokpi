@@ -77,29 +77,16 @@ body {
   line-height: 1.2;
 }
 
-.digestive-page :where(h1, h2, h3, p, li, a, button, span) {
+.site-shell :where(h1, h2, h3, h4, p, li, a, button, span, dt, dd, blockquote) {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
-.digestive-page :where(h1, h2, h3) {
+.site-shell :where(h1, h2, h3, h4) {
   text-wrap: balance;
 }
 
-.digestive-page :where(p, li) {
-  text-wrap: pretty;
-}
-
-.home-page :where(h1, h2, h3, p, li, a, button, span) {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-.home-page :where(h1, h2, h3) {
-  text-wrap: balance;
-}
-
-.home-page :where(p, li) {
+.site-shell :where(p, li, dd, blockquote) {
   text-wrap: pretty;
 }
 
