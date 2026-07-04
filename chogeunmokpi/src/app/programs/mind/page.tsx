@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import MindQuiz from "@/components/programs/MindQuiz";
 import { mindConditions } from "@/lib/mind-conditions";
 import { doctors } from "@/lib/site-data";
@@ -70,25 +71,26 @@ function IconFlame() {
   );
 }
 
-function MindVisual() {
+function ProgramImage({
+  src,
+  alt,
+  children,
+}: {
+  src: string;
+  alt: string;
+  children?: ReactNode;
+}) {
   return (
     <div className="relative aspect-[4/4.6] overflow-hidden rounded-2xl border border-line bg-paper shadow-sm shadow-ink/5">
-      <svg className="absolute inset-0 h-full w-full text-root/20" viewBox="0 0 520 600" fill="none" aria-hidden="true">
-        <path d="M260 86c86 0 156 70 156 156 0 92-62 128-96 173-20 26-25 57-25 99h-70c0-42-5-73-25-99-34-45-96-81-96-173 0-86 70-156 156-156Z" stroke="currentColor" strokeWidth="2" />
-        <path d="M180 246c26-36 55-54 87-54 43 0 69 31 69 66 0 42-34 73-76 73-26 0-50-11-72-33" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M144 392c76 35 154 36 232 0M180 448c55 22 108 22 160 0" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-        <circle cx="260" cy="250" r="206" stroke="currentColor" strokeWidth="0.7" />
-        <circle cx="260" cy="250" r="142" stroke="currentColor" strokeWidth="0.7" />
-      </svg>
-      <div className="absolute inset-x-8 bottom-8 rounded-2xl border border-line bg-card/90 p-5 shadow-sm shadow-ink/5">
-        <p className="mb-2 text-xs font-semibold tracking-wide text-root">4축 기능평가</p>
-        <div className="grid grid-cols-2 gap-3 text-sm text-ink">
-          <span>심장 안정</span>
-          <span>간기 순환</span>
-          <span>비위 기력</span>
-          <span>수면 회복</span>
-        </div>
-      </div>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 90vw, 500px"
+        quality={95}
+        className="object-cover"
+      />
+      {children}
     </div>
   );
 }
@@ -258,7 +260,10 @@ export default function MindProgramPage() {
           </div>
 
           <div className="relative">
-            <MindVisual />
+            <ProgramImage
+              src="/images/programs/mind-hero.png"
+              alt="차분한 한의원 공간에서 마음건강 상담을 기다리는 모습"
+            />
             <div className="ch-card absolute -bottom-7 left-1/2 w-[88%] -translate-x-1/2 p-4 md:-bottom-8 md:left-auto md:right-4 md:w-[82%] md:translate-x-0 md:p-5">
               <div className="space-y-2.5 text-sm text-ink sm:text-base">
                 <p className="flex items-center gap-2">
@@ -341,7 +346,10 @@ export default function MindProgramPage() {
               ))}
             </div>
           </div>
-          <MindVisual />
+          <ProgramImage
+            src="/images/programs/mind-mechanism.png"
+            alt="마음과 몸의 균형 회복을 상징하는 한약재와 차"
+          />
         </div>
       </section>
 
@@ -397,7 +405,10 @@ export default function MindProgramPage() {
       <section className="bg-paper">
         <div className="ch-section-pad mx-auto max-w-6xl">
           <div className="mb-12 grid items-center gap-8 md:grid-cols-2">
-            <MindVisual />
+            <ProgramImage
+              src="/images/programs/mind-treatment.png"
+              alt="마음건강 치료를 위한 맞춤 한약 준비 과정"
+            />
             <div>
               <h2 className="ch-section-title mb-3">초근목피 마음건강 치료 프로그램</h2>
               <p className="ch-section-copy">
