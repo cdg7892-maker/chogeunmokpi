@@ -90,6 +90,19 @@ body {
   text-wrap: pretty;
 }
 
+.home-page :where(h1, h2, h3, p, li, a, button, span) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.home-page :where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.home-page :where(p, li) {
+  text-wrap: pretty;
+}
+
 @layer components {
   .ch-section {
     @apply border-t border-line;

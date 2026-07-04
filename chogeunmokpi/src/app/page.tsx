@@ -9,7 +9,7 @@ import ExploreTags from "@/components/home/ExploreTags";
 
 export default function Home() {
   return (
-    <>
+    <main className="home-page">
       <Hero />
       <Philosophy />
       <ProblemSteps />
@@ -18,6 +18,6 @@ export default function Home() {
       <NoticeHours />
       <RecentColumns />
       <ExploreTags />
-    </>
+    </main>
   );
 }
