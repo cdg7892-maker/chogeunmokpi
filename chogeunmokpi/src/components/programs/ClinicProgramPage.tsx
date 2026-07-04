@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ClinicPageData } from "@/lib/clinic-pages";
 import { doctors } from "@/lib/site-data";
+import PediatricQuiz from "@/components/programs/PediatricQuiz";
 
 function IconCalendar() {
   return (
@@ -140,16 +141,20 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
             <h2 className="ch-section-title">{data.quizTitle}</h2>
             <p className="mt-3 text-ink-soft">1분이면 충분합니다. 현재 필요한 관리 방향을 확인해보세요.</p>
           </div>
-          <div className="ch-card-lg bg-card md:p-10">
-            <p className="mb-6 text-lg font-semibold text-ink">{data.quizQuestion}</p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {data.quizOptions.map((option) => (
-                <Link key={option} href="/reserve" className="rounded-2xl border border-line bg-paper-soft px-5 py-4 text-sm font-medium text-ink transition hover:-translate-y-1 hover:border-root/40 hover:bg-card hover:shadow-lg hover:shadow-ink/10">
-                  {option}
-                </Link>
-              ))}
+          {data.slug === "pediatric" ? (
+            <PediatricQuiz />
+          ) : (
+            <div className="ch-card-lg bg-card md:p-10">
+              <p className="mb-6 text-lg font-semibold text-ink">{data.quizQuestion}</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {data.quizOptions.map((option) => (
+                  <Link key={option} href="/reserve" className="rounded-2xl border border-line bg-paper-soft px-5 py-4 text-sm font-medium text-ink transition hover:-translate-y-1 hover:border-root/40 hover:bg-card hover:shadow-lg hover:shadow-ink/10">
+                    {option}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
