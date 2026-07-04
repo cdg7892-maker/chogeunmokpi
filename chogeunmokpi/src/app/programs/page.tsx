@@ -6,6 +6,7 @@ const thumbnailBySlug: Record<string, string> = {
   digestive: "/images/programs/digestive-hero.png",
   mind: "/images/programs/mind-hero.png",
   skin: "/images/programs/skin-hero.png",
+  tonic: "/images/programs/tonic-hero.png",
 };
 
 export default function ProgramsPage() {
