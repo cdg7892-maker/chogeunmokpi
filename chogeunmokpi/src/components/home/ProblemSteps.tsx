@@ -45,7 +45,7 @@ const steps = [
 export default function ProblemSteps() {
   return (
     <section className="bg-paper">
-      <div className="ch-section-pad mx-auto max-w-6xl">
+      <div className="home-section-pad mx-auto flex max-w-6xl flex-col justify-center">
         <div className="mb-12 text-center">
           <p className="mb-3 text-sm text-ink-soft">
             초근목피는 당신의 아픔을 다르게 봅니다.
@@ -60,7 +60,7 @@ export default function ProblemSteps() {
             <RevealOnScroll
               key={step.n}
               className="relative"
-              delayMs={i * 180}
+              delayMs={i * 260}
               y={34}
             >
               <div className="ch-card ch-card-hover h-full p-7">

@@ -24,7 +24,7 @@ const columns = [
 export default function RecentColumns() {
   return (
     <section className="bg-paper">
-      <div className="ch-section-pad mx-auto max-w-6xl">
+      <div className="home-section-pad mx-auto flex max-w-6xl flex-col justify-center">
         <div className="mb-10 flex items-end justify-between">
           <h2 className="ch-section-title">
             최근 건강 이야기

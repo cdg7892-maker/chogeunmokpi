@@ -25,7 +25,7 @@ const notices = [
 export default function NoticeHours() {
   return (
     <section className="ch-section bg-paper-soft">
-      <div className="ch-section-pad mx-auto max-w-6xl">
+      <div className="home-section-pad mx-auto flex max-w-6xl flex-col justify-center">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
             <span aria-hidden="true">📣</span> 공지사항

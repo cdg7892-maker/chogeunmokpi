@@ -18,7 +18,7 @@ const tags = [
 export default function ExploreTags() {
   return (
     <section className="ch-section bg-paper-soft">
-      <div className="ch-section-pad mx-auto max-w-6xl">
+      <div className="home-section-pad mx-auto flex max-w-6xl flex-col justify-center">
         <div className="mb-8 flex items-end justify-between">
           <div>
             <h2 className="ch-section-title">

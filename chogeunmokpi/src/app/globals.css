@@ -53,6 +53,10 @@ body {
     @apply px-5 py-16 md:py-20;
   }
 
+  .home-section-pad {
+    @apply px-5 py-24 md:min-h-[calc(100vh-72px)] md:py-28;
+  }
+
   .ch-section-title {
     @apply text-3xl font-bold tracking-normal text-ink md:text-4xl;
     font-family: "Nanum Myeongjo", "Batang", Georgia, serif;

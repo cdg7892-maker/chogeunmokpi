@@ -5,7 +5,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 export default function DoctorStory() {
   return (
     <section className="bg-paper">
-      <RevealOnScroll className="ch-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+      <RevealOnScroll className="home-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
         <div>
           <p className="mb-3 text-sm text-ink-soft">치유와 회복의 공간</p>
           <h2 className="ch-section-title leading-snug">
