@@ -1,22 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import { doctors } from "@/lib/site-data";
 
 export default function DoctorsPage() {
   return (
     <section className="ch-section-pad mx-auto max-w-6xl">
-      <div className="mb-14 text-center">
+      <RevealOnScroll className="mb-14 text-center">
         <h1 className="font-display text-4xl text-ink md:text-5xl">
           의료진 소개
         </h1>
         <p className="mt-4 text-ink-soft">전문 의료진을 소개합니다.</p>
-      </div>
+      </RevealOnScroll>
 
       <div className="flex flex-wrap justify-center gap-6">
-        {doctors.map((doctor) => (
-          <div
+        {doctors.map((doctor, i) => (
+          <RevealOnScroll
             key={doctor.slug}
             className="ch-card-hover w-full max-w-xs overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5"
+            delayMs={i * 140}
+            y={32}
           >
             <div className="relative aspect-[4/5]">
               <Image
@@ -56,7 +59,7 @@ export default function DoctorsPage() {
                 의료진 소개 더보기
               </Link>
             </div>
-          </div>
+          </RevealOnScroll>
         ))}
       </div>
     </section>

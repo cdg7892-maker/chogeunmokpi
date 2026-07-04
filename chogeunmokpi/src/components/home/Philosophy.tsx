@@ -1,7 +1,9 @@
+import RevealOnScroll from "@/components/RevealOnScroll";
+
 export default function Philosophy() {
   return (
     <section className="ch-section bg-paper-soft">
-      <div className="ch-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
+      <RevealOnScroll className="ch-section-pad mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <h2 className="ch-section-title leading-snug">
             검사지 너머,
@@ -26,7 +28,7 @@ export default function Philosophy() {
             </span>
           </div>
         </div>
-      </div>
+      </RevealOnScroll>
     </section>
   );
 }

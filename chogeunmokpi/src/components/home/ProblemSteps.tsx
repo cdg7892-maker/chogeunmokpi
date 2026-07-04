@@ -1,3 +1,5 @@
+import RevealOnScroll from "@/components/RevealOnScroll";
+
 const steps = [
   {
     n: "1",
@@ -55,7 +57,12 @@ export default function ProblemSteps() {
 
         <div className="grid gap-6 md:grid-cols-3 md:gap-5">
           {steps.map((step, i) => (
-            <div key={step.n} className="relative">
+            <RevealOnScroll
+              key={step.n}
+              className="relative"
+              delayMs={i * 180}
+              y={34}
+            >
               <div className="ch-card ch-card-hover h-full p-7">
                 <span className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-medium text-paper-soft">
                   {step.n}
@@ -75,7 +82,7 @@ export default function ProblemSteps() {
                   ›
                 </span>
               )}
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>
