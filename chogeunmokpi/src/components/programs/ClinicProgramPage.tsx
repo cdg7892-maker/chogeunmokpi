@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ClinicPageData } from "@/lib/clinic-pages";
 import { doctors } from "@/lib/site-data";
+import HeadFaceQuiz from "@/components/programs/HeadFaceQuiz";
 import PediatricQuiz from "@/components/programs/PediatricQuiz";
 
 function IconCalendar() {
@@ -119,19 +120,56 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
 
       <section className="bg-paper">
         <div className="ch-section-pad mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
-            <p className="mb-2 text-xs font-semibold tracking-wide text-root">CORE SOLUTION</p>
-            <h2 className="ch-section-title">핵심 치료 원리</h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-4">
-            {data.principles.map((item, index) => (
-              <div key={item.title} className="ch-card ch-card-hover">
-                <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-line text-lg font-medium text-ink">{index + 1}</span>
-                <h3 className="mb-3 text-lg font-semibold text-ink">{item.title}</h3>
-                <p className="keep-words text-sm leading-relaxed text-ink-soft">{item.desc}</p>
+          {data.slug === "pediatric" || data.slug === "head-face" ? (
+            <div className="grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+              <div>
+                <p className="mb-4 text-xs font-semibold tracking-wide text-root">CORE SOLUTION</p>
+                <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
+                  {data.slug === "pediatric" ? "아이의 숨은 키를 찾는" : "맑은 머리를 되찾는"}
+                  <span className="block">핵심 치료 원리</span>
+                </h2>
+                <div className="mt-10 space-y-8">
+                  {data.principles.map((item, index) => (
+                    <div key={item.title} className="grid grid-cols-[52px_1fr] gap-5">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-paper-soft text-lg font-bold text-ink">
+                        {index + 1}
+                      </span>
+                      <div>
+                        <h3 className="mb-2 text-xl font-bold tracking-tight text-ink">{item.title}</h3>
+                        <p className="keep-words text-[15px] leading-relaxed text-ink-soft">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+              <div className="relative aspect-square overflow-hidden rounded-3xl border border-line bg-card shadow-xl shadow-ink/10">
+                <Image
+                  src={data.slug === "pediatric" ? "/images/programs/pediatric-core-solution.png" : "/images/programs/head-face-core-solution.png"}
+                  alt={data.slug === "pediatric" ? "아이의 성장과 면역을 상징하는 방패와 새싹 일러스트" : "두면부 순환과 맑은 머리를 상징하는 일러스트"}
+                  fill
+                  sizes="(max-width: 768px) 92vw, 520px"
+                  quality={95}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="mb-12 text-center">
+                <p className="mb-2 text-xs font-semibold tracking-wide text-root">CORE SOLUTION</p>
+                <h2 className="ch-section-title">핵심 치료 원리</h2>
+              </div>
+              <div className="grid gap-5 md:grid-cols-4">
+                {data.principles.map((item, index) => (
+                  <div key={item.title} className="ch-card ch-card-hover">
+                    <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-line text-lg font-medium text-ink">{index + 1}</span>
+                    <h3 className="mb-3 text-lg font-semibold text-ink">{item.title}</h3>
+                    <p className="keep-words text-sm leading-relaxed text-ink-soft">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
@@ -143,6 +181,8 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
           </div>
           {data.slug === "pediatric" ? (
             <PediatricQuiz />
+          ) : data.slug === "head-face" ? (
+            <HeadFaceQuiz />
           ) : (
             <div className="ch-card-lg bg-card md:p-10">
               <p className="mb-6 text-lg font-semibold text-ink">{data.quizQuestion}</p>
