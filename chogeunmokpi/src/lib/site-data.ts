@@ -179,6 +179,30 @@ export const reviews: Review[] = [
     summary: "비염과 야간 가려움이 함께 있던 소아 아토피를 호흡기 면역과 비위 기능 중심으로 관리한 사례",
     doctor: "이호근",
   },
+  {
+    id: "skin-eczema-1",
+    programSlug: "eczema",
+    patient: "박**",
+    title: "[반석동 손습진] 3년 반복되던 손가락 갈라짐과 진물이 줄어든 40대 주부",
+    summary: "물 닿을 때마다 따갑고 갈라지던 만성 손습진을 습열과 혈허 패턴 중심으로 관리한 사례",
+    doctor: "이호근",
+  },
+  {
+    id: "skin-eczema-2",
+    programSlug: "eczema",
+    patient: "김**",
+    title: "[노은동 습진] 얼굴 붉은기와 각질로 대인기피를 겪던 30대 직장인의 회복기",
+    summary: "스트레스성 간울과 피부 장벽 약화를 함께 조절하며 붉은기와 각질 반복을 줄인 치료 경과",
+    doctor: "이호근",
+  },
+  {
+    id: "skin-eczema-3",
+    programSlug: "eczema",
+    patient: "최**",
+    title: "[전민동 만성 습진] 연고 반동이 두려웠던 50대 여성의 피부 장벽 재건",
+    summary: "장기간 연고 사용 후 반복 재발하던 습진을 단계적으로 조절하며 피부 회복력을 높인 사례",
+    doctor: "이호근",
+  },
 ];
 
 export const clinicInfo = {
