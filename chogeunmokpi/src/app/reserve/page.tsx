@@ -1,10 +1,8 @@
-import StubPage from "@/components/StubPage";
+import { redirect } from "next/navigation";
+
+const NAVER_BOOKING_URL =
+  "https://m.booking.naver.com/booking/13/bizes/1508188?theme=place&lang=ko&area=pll";
+
 export default function Page() {
-  return (
-    <StubPage
-      eyebrow="예약"
-      title="진료 예약하기"
-      description="예약 폼 또는 네이버 예약 연동이 이 자리에 들어갑니다."
-    />
-  );
+  redirect(NAVER_BOOKING_URL);
 }
