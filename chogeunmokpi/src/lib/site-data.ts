@@ -155,13 +155,37 @@ export const reviews: Review[] = [
     summary: "장기간 지속된 소화불량이 호전된 치료 경과",
     doctor: "이호근",
   },
+  {
+    id: "skin-atopic-1",
+    programSlug: "atopic-dermatitis",
+    patient: "김**",
+    title: "[반석동 아토피 치료] 10년 스테로이드 의존 없이 태선화 피부가 부드러워진 30대 여성",
+    summary: "반복되는 목과 팔오금 태선화, 야간 가려움이 장벽 회복과 면역 안정 치료 후 완화된 사례",
+    doctor: "이호근",
+  },
+  {
+    id: "skin-atopic-2",
+    programSlug: "atopic-dermatitis",
+    patient: "박**",
+    title: "[노은동 아토피] 사회생활 중 얼굴 아토피로 고생하던 20대 여성의 4개월 회복기",
+    summary: "얼굴 홍반과 건조, 스트레스성 상열을 함께 조절하며 외출 불안을 줄인 치료 경과",
+    doctor: "이호근",
+  },
+  {
+    id: "skin-atopic-3",
+    programSlug: "atopic-dermatitis",
+    patient: "이**",
+    title: "[전민동 소아 아토피] 비염 동반 8세 남아, 알레르기 행진 멈추고 체질 개선",
+    summary: "비염과 야간 가려움이 함께 있던 소아 아토피를 호흡기 면역과 비위 기능 중심으로 관리한 사례",
+    doctor: "이호근",
+  },
 ];
 
 export const clinicInfo = {
   name: "초근목피한의원",
   ceo: "이호근",
   phone: "00-0000-0000",
-  address: "대전 00구 00동 00 (00빌딩 0층)",
+  address: "대전 유성구 반석동 00 (00빌딩 0층)",
   bizNumber: "000-00-00000",
   hours: {
     weekday: "09:00 - 18:00",
