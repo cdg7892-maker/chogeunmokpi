@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/favicon-180.png", sizes: "180x180", type: "image/png" }],
   },
+  verification: {
+    other: {
+      "naver-site-verification": "b14dad02eabb7f8c5b427e9524751486b1ab985e",
+    },
+  },
 };
 
 export default function RootLayout({
