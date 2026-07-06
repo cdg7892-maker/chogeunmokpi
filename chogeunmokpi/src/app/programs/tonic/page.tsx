@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import TonicQuiz from "@/components/programs/TonicQuiz";
 import { tonicConditions } from "@/lib/tonic-conditions";
 import { doctors } from "@/lib/site-data";
@@ -346,14 +347,16 @@ export default function TonicProgramPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {reviews.map((r) => (
-              <Link key={r.title} href="/community/reviews" className="ch-card ch-card-hover group min-h-[190px]">
-                <span className="mb-3 inline-block rounded-full bg-paper px-2.5 py-0.5 text-xs text-ink-soft">치료 사례</span>
-                <p className="mb-3 line-clamp-2 font-medium leading-snug text-ink">{r.title}</p>
-                <p className="mb-4 line-clamp-2 text-sm text-ink-soft">{r.summary}</p>
-                <p className="text-xs text-ink-soft/70">환자: {r.patient} | 담당의: {tonicDoctor.name}</p>
-              </Link>
+              <LockedReviewCard
+                key={r.title}
+                title={r.title}
+                summary={r.summary}
+                patient={r.patient}
+                doctor={tonicDoctor.name}
+              />
             ))}
           </div>
+          <LockedReviewGate count={3} />
         </div>
       </section>
 

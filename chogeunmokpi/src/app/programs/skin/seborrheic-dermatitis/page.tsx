@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -480,14 +481,16 @@ export default function SeborrheicDermatitisPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {seborrheicReviews.map((review) => (
-              <article key={review.title} className="rounded-2xl border border-line bg-white p-7 shadow-sm">
-                <p className="mb-4 text-sm font-bold text-brown">치료 사례</p>
-                <h3 className="text-xl font-bold leading-snug keep-words">{review.title}</h3>
-                <p className="mt-4 text-base leading-7 text-ink-soft keep-words">{review.desc}</p>
-                <p className="mt-6 border-t border-line pt-4 text-sm font-semibold text-ink-soft">환자: {review.patient} | 담당의: {doctor.name}</p>
-              </article>
+              <LockedReviewCard
+                key={review.title}
+                title={review.title}
+                summary={review.desc}
+                patient={review.patient}
+                doctor={doctor.name}
+              />
             ))}
           </div>
+          <LockedReviewGate count={3} />
         </div>
       </section>
 

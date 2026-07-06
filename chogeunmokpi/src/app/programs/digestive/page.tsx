@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import DigestiveQuiz from "@/components/programs/DigestiveQuiz";
+import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { doctors, reviews } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -666,28 +667,16 @@ export default function DigestiveProgramPage() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {digestiveReviews.map((r) => (
-              <Link
+              <LockedReviewCard
                 key={r.id}
-                href="/community/reviews"
-                className="ch-card ch-card-hover group min-h-[190px]"
-              >
-                <div className="mb-3 flex items-center gap-2">
-                  <span className="rounded-full bg-paper px-2.5 py-0.5 text-xs text-ink-soft">
-                    치료 사례
-                  </span>
-                </div>
-                <p className="mb-3 line-clamp-2 font-medium leading-snug text-ink">
-                  {r.title}
-                </p>
-                <p className="mb-4 line-clamp-2 text-sm text-ink-soft">
-                  {r.summary}
-                </p>
-                <p className="text-xs text-ink-soft/70">
-                  환자: {r.patient} | 담당의: {r.doctor}
-                </p>
-              </Link>
+                title={r.title}
+                summary={r.summary}
+                patient={r.patient}
+                doctor={r.doctor}
+              />
             ))}
           </div>
+          <LockedReviewGate count={3} />
         </div>
       </section>
 

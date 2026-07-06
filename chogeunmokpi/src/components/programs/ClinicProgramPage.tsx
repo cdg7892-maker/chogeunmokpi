@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ClinicPageData } from "@/lib/clinic-pages";
 import { doctors } from "@/lib/site-data";
 import HeadFaceQuiz from "@/components/programs/HeadFaceQuiz";
+import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import PediatricQuiz from "@/components/programs/PediatricQuiz";
 import WomenQuiz from "@/components/programs/WomenQuiz";
 
@@ -289,16 +290,16 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {data.reviews.map((review) => (
-                <div key={review.title} className="ch-card ch-card-hover">
-                  <p className="mb-3 text-xs font-semibold text-root">치료 사례</p>
-                  <h3 className="mb-4 keep-words text-lg font-bold leading-snug text-ink">{review.title}</h3>
-                  <p className="mb-6 keep-words text-sm leading-relaxed text-ink-soft">{review.summary}</p>
-                  <div className="border-t border-line pt-4 text-xs text-ink-soft">
-                    환자: {review.patient} | 담당의: {doctor.name}
-                  </div>
-                </div>
+                <LockedReviewCard
+                  key={review.title}
+                  title={review.title}
+                  summary={review.summary}
+                  patient={review.patient}
+                  doctor={doctor.name}
+                />
               ))}
             </div>
+            <LockedReviewGate count={3} />
           </div>
         </section>
       )}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import AtopicQuiz from "@/components/programs/AtopicQuiz";
+import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { clinicInfo, doctors, reviews } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -509,18 +510,18 @@ export default function AtopicDermatitisPage() {
 
           <section>
             <SectionTitle eyebrow="Treatment Reviews" title="아토피 치료 사례" desc="실제 치료 경과는 개인 상태에 따라 다르지만, 비슷한 고민을 가진 분들의 회복 흐름을 참고할 수 있습니다." />
-            <div className="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-card">
-              {atopicReviews.map((review, index) => (
-                <Link key={review.id} href="/community/reviews" className="grid gap-3 p-5 transition-colors hover:bg-paper md:grid-cols-[44px_1fr_auto] md:items-center">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-paper text-sm font-bold text-root">{atopicReviews.length - index}</span>
-                  <div>
-                    <h3 className="font-bold leading-relaxed text-ink">{review.title}</h3>
-                    <p className="mt-1 text-sm text-ink-soft">{review.summary}</p>
-                  </div>
-                  <span className="text-xs font-semibold text-ink-soft">환자: {review.patient}</span>
-                </Link>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {atopicReviews.map((review) => (
+                <LockedReviewCard
+                  key={review.id}
+                  title={review.title}
+                  summary={review.summary}
+                  patient={review.patient}
+                  doctor={doctor.name}
+                />
               ))}
             </div>
+            <LockedReviewGate count={3} />
           </section>
 
           <section>
