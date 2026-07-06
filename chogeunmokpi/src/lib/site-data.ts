@@ -208,8 +208,8 @@ export const reviews: Review[] = [
 export const clinicInfo = {
   name: "초근목피한의원",
   ceo: "이호근",
-  phone: "00-0000-0000",
-  address: "대전 유성구 반석동 00 (00빌딩 0층)",
+  phone: "042-823-7571",
+  address: "대전 유성구 반석로11번길 66-22 1층",
   bizNumber: "000-00-00000",
   hours: {
     weekday: "09:00 - 18:00",
