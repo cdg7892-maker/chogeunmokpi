@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "대전 유성구 반석동 | 습진 피부염 한방 진료 | 초근목피한의원",
   description:
     "대전 유성구 반석동 습진, 피부염, 습창으로 반복되는 가려움·진물·각질을 겪는 분께. 한약과 한방 진료로 피부 면역 환경과 재발 고리를 함께 살핍니다.",
+  alternates: {
+    canonical: "/programs/skin/eczema",
+  },
 };
 
 function CheckIcon() {

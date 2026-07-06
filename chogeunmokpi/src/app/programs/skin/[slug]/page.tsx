@@ -15,12 +15,15 @@ export async function generateMetadata({
   const condition = skinConditions.find((item) => item.slug === slug);
 
   if (!condition) {
-    return { title: "피부질환 치료 안내" };
+    return { title: "피부질환 치료 안내 | 초근목피한의원" };
   }
 
   return {
-    title: `${condition.title} | 피부질환 치료 안내`,
-    description: condition.summary,
+    title: `대전 ${condition.title} 한방치료 | 피부질환 치료 안내 | 초근목피한의원`,
+    description: `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`,
+    alternates: {
+      canonical: `/programs/skin/${slug}`,
+    },
   };
 }
 

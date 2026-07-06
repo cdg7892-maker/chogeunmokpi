@@ -1,6 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { programs } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "대전 초근목피한의원 진료과목 | 소화기·피부·마음건강·보약 클리닉",
+  description:
+    "대전 유성구 반석동 초근목피한의원의 진료과목 안내입니다. 소화기질환, 피부질환, 마음건강, 보약·웰니스, 소아 성장, 두면부, 여성질환 클리닉을 확인하세요.",
+  alternates: {
+    canonical: "/programs",
+  },
+};
 
 const thumbnailBySlug: Record<string, string> = {
   digestive: "/images/programs/digestive-hero.png",

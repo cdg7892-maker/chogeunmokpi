@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "대전 유성구 반석동 | 아토피 피부염 신생아 얼굴태열 아토피성 피부염 한방 치료 | 초근목피한의원",
   description:
     "대전 유성구 반석동 아토피 피부염, 신생아 얼굴태열, 아토피성 피부염으로 고민하는 분께. 한약과 한방 치료로 피부 회복력과 면역 균형을 함께 살핍니다.",
+  alternates: {
+    canonical: "/programs/skin/atopic-dermatitis",
+  },
 };
 
 function CheckIcon() {

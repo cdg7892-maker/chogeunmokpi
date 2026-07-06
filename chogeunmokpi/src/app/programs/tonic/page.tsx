@@ -1,9 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import TonicQuiz from "@/components/programs/TonicQuiz";
 import { tonicConditions } from "@/lib/tonic-conditions";
 import { doctors } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "대전 보약·웰니스 클리닉 | 만성피로·면역력·공진단·경옥고 | 초근목피한의원",
+  description:
+    "대전 유성구 반석동 초근목피한의원의 보약·웰니스 클리닉입니다. 만성 피로, 면역력 저하, 병후 회복, 공진단·경옥고와 맞춤 보약을 체질에 맞게 설계합니다.",
+  alternates: {
+    canonical: "/programs/tonic",
+  },
+};
 
 function IconCalendar() {
   return (

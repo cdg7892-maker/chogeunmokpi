@@ -1,9 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import SkinQuiz from "@/components/programs/SkinQuiz";
 import { skinConditions } from "@/lib/skin-conditions";
 import { doctors } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "대전 피부질환 클리닉 | 아토피·습진·건선·두드러기 한방치료 | 초근목피한의원",
+  description:
+    "대전 유성구 반석동 초근목피한의원의 난치성 피부질환 클리닉입니다. 아토피, 습진, 건선, 지루성 피부염, 두드러기를 피부 장벽과 면역 균형 관점에서 살핍니다.",
+  alternates: {
+    canonical: "/programs/skin",
+  },
+};
 
 function IconCalendar() {
   return (

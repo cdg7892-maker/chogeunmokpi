@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import DigestiveQuiz from "@/components/programs/DigestiveQuiz";
 import { doctors, reviews } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "대전 소화기질환 클리닉 | 담적·역류성식도염·만성소화불량 한방치료 | 초근목피한의원",
+  description:
+    "대전 유성구 반석동 초근목피한의원의 소화기질환 클리닉입니다. 담적, 만성 소화불량, 역류성 식도염, 과민성 대장을 위장 운동성과 자율신경 균형 관점에서 살핍니다.",
+  alternates: {
+    canonical: "/programs/digestive",
+  },
+};
 
 function IconCalendar() {
   return (

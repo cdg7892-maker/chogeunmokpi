@@ -1,9 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import MindQuiz from "@/components/programs/MindQuiz";
 import { mindConditions } from "@/lib/mind-conditions";
 import { doctors } from "@/lib/site-data";
+
+export const metadata: Metadata = {
+  title: "대전 마음건강 클리닉 | 불면증·불안·공황·우울 한방치료 | 초근목피한의원",
+  description:
+    "대전 유성구 반석동 초근목피한의원의 마음건강 클리닉입니다. 불면증, 불안장애, 공황장애, 우울감, 화병을 몸과 자율신경 균형 관점에서 함께 살핍니다.",
+  alternates: {
+    canonical: "/programs/mind",
+  },
+};
 
 function IconCalendar() {
   return (
