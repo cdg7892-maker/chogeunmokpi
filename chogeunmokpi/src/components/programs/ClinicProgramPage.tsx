@@ -4,6 +4,7 @@ import type { ClinicPageData } from "@/lib/clinic-pages";
 import { doctors } from "@/lib/site-data";
 import HeadFaceQuiz from "@/components/programs/HeadFaceQuiz";
 import PediatricQuiz from "@/components/programs/PediatricQuiz";
+import WomenQuiz from "@/components/programs/WomenQuiz";
 
 function IconCalendar() {
   return (
@@ -101,31 +102,54 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
         </div>
       </section>
 
-      <section className="border-y border-line bg-paper-soft">
-        <div className="ch-section-pad mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div className="relative aspect-[4/3.45] overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5">
-            <Image src={data.diagnosisImage ?? data.heroImage} alt={data.heroAlt} fill sizes="(max-width: 768px) 92vw, 460px" quality={92} className="object-cover" />
-          </div>
-          <div>
-            <p className="mb-3 text-sm font-semibold text-root">{data.diagnosisLabel}</p>
-            <h2 className="ch-section-title keep-words">{data.diagnosisTitle}</h2>
-            <div className="mt-7 space-y-4 keep-words leading-loose text-ink-soft">
-              {data.diagnosisParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+      {data.slug === "women" ? (
+        <section className="border-y border-line bg-paper-soft">
+          <div className="ch-section-pad mx-auto max-w-5xl">
+            <div className="rounded-2xl border-2 border-ink bg-card p-7 shadow-xl shadow-ink/10 md:p-12">
+              <span className="mb-8 inline-flex items-center rounded-full border border-ink px-4 py-2 text-xs font-bold text-ink">
+                {data.diagnosisLabel}
+              </span>
+              <h2 className="font-display text-3xl leading-tight text-ink md:text-4xl">
+                {data.diagnosisTitle}
+              </h2>
+              <div className="mt-7 space-y-5 keep-words text-[15px] leading-loose text-ink">
+                {data.diagnosisParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-9 border-t-2 border-ink pt-6">
+                <p className="text-sm font-bold text-ink">특화된 진단 시스템</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="border-y border-line bg-paper-soft">
+          <div className="ch-section-pad mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div className="relative aspect-[4/3.45] overflow-hidden rounded-2xl border border-line bg-card shadow-sm shadow-ink/5">
+              <Image src={data.diagnosisImage ?? data.heroImage} alt={data.heroAlt} fill sizes="(max-width: 768px) 92vw, 460px" quality={92} className="object-cover" />
+            </div>
+            <div>
+              <p className="mb-3 text-sm font-semibold text-root">{data.diagnosisLabel}</p>
+              <h2 className="ch-section-title keep-words">{data.diagnosisTitle}</h2>
+              <div className="mt-7 space-y-4 keep-words leading-loose text-ink-soft">
+                {data.diagnosisParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-paper">
         <div className="ch-section-pad mx-auto max-w-6xl">
-          {data.slug === "pediatric" || data.slug === "head-face" ? (
+          {data.slug === "pediatric" || data.slug === "head-face" || data.slug === "women" ? (
             <div className="grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
               <div>
                 <p className="mb-4 text-xs font-semibold tracking-wide text-root">CORE SOLUTION</p>
                 <h2 className="font-display text-4xl leading-tight text-ink md:text-5xl">
-                  {data.slug === "pediatric" ? "아이의 숨은 키를 찾는" : "맑은 머리를 되찾는"}
+                  {data.slug === "pediatric" ? "아이의 숨은 키를 찾는" : data.slug === "head-face" ? "맑은 머리를 되찾는" : "여성의 온도와 리듬을 되찾는"}
                   <span className="block">핵심 치료 원리</span>
                 </h2>
                 <div className="mt-10 space-y-8">
@@ -144,8 +168,8 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
               </div>
               <div className="relative aspect-square overflow-hidden rounded-3xl border border-line bg-card shadow-xl shadow-ink/10">
                 <Image
-                  src={data.slug === "pediatric" ? "/images/programs/pediatric-core-solution.png" : "/images/programs/head-face-core-solution.png"}
-                  alt={data.slug === "pediatric" ? "아이의 성장과 면역을 상징하는 방패와 새싹 일러스트" : "두면부 순환과 맑은 머리를 상징하는 일러스트"}
+                  src={data.slug === "pediatric" ? "/images/programs/pediatric-core-solution.png" : data.slug === "head-face" ? "/images/programs/head-face-core-solution.png" : "/images/programs/women-core-solution.png"}
+                  alt={data.slug === "pediatric" ? "아이의 성장과 면역을 상징하는 방패와 새싹 일러스트" : data.slug === "head-face" ? "두면부 순환과 맑은 머리를 상징하는 일러스트" : "여성질환의 온도와 순환 회복을 상징하는 일러스트"}
                   fill
                   sizes="(max-width: 768px) 92vw, 520px"
                   quality={95}
@@ -183,6 +207,8 @@ export default function ClinicProgramPage({ data }: { data: ClinicPageData }) {
             <PediatricQuiz />
           ) : data.slug === "head-face" ? (
             <HeadFaceQuiz />
+          ) : data.slug === "women" ? (
+            <WomenQuiz />
           ) : (
             <div className="ch-card-lg bg-card md:p-10">
               <p className="mb-6 text-lg font-semibold text-ink">{data.quizQuestion}</p>
