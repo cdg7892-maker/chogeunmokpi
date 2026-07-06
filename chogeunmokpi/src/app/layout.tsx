@@ -10,11 +10,35 @@ import { clinicInfo } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chogeunmokpi.vercel.app"),
-  title: "대전한의원 초근목피 한의원 | 난치성 질환 치료 대전 유성구 반석동 한의원",
+  title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
   description:
-    "검사는 정상인데 왜 아플까요? 초근목피한의원은 수치가 아닌 몸 전체의 균형을 봅니다. 3대에 걸친 한의업, 30년 임상 경력으로 소화기·피부·알러지 만성질환을 근본부터 치료합니다.",
+    "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
+    description:
+      "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
+    url: "https://chogeunmokpi.vercel.app",
+    siteName: "초근목피한의원",
+    locale: "ko_KR",
+    type: "website",
+    images: [
+      {
+        url: "/logo-icon.png",
+        width: 512,
+        height: 512,
+        alt: "초근목피한의원",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
+    description:
+      "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
+    images: ["/logo-icon.png"],
   },
   icons: {
     icon: [
