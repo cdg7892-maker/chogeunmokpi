@@ -275,7 +275,7 @@ export default function KeratosisPilarisPage() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-[18px] border border-line bg-white shadow-2xl shadow-black/10">
               <Image
-                src="/images/programs/skin-hero.png"
+                src="/images/programs/skin-keratosis-pilaris-detail.png"
                 alt="모공각화증 한방 진료 이미지"
                 width={900}
                 height={1100}
