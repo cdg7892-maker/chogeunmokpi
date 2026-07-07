@@ -5,7 +5,9 @@ import type { Metadata } from "next";
 import { tonicConditions } from "@/lib/tonic-conditions";
 
 export function generateStaticParams() {
-  return tonicConditions.map((condition) => ({ slug: condition.slug }));
+  return tonicConditions
+    .filter((condition) => condition.slug !== "gout")
+    .map((condition) => ({ slug: condition.slug }));
 }
 
 export async function generateMetadata({
