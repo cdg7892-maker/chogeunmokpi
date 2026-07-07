@@ -90,14 +90,30 @@ export const headFaceConditions: ClinicCondition[] = [
 ];
 
 export const womenConditions: ClinicCondition[] = [
+  { slug: "amenorrhea", title: "무월경", group: "여성질환", summary: "월경이 멈춘 원인을 기혈, 체중, 스트레스, 호르몬 리듬에서 살핍니다." },
   { slug: "menstrual-pain", title: "생리통", group: "여성질환", summary: "반복되는 통증을 자궁 냉증, 어혈, 순환 관점에서 살핍니다." },
   { slug: "irregular-period", title: "생리불순", group: "여성질환", summary: "주기 변화와 컨디션 저하를 호르몬 리듬과 체력에서 봅니다." },
   { slug: "pms", title: "월경전증후군", group: "여성질환", summary: "예민함, 붓기, 두통, 피로가 반복되는 흐름을 정리합니다." },
+  { slug: "endometriosis", title: "자궁내막증", group: "여성질환", summary: "반복 골반통과 생리통을 어혈과 자궁 순환 관점에서 봅니다." },
+  { slug: "adenomyosis", title: "자궁선근증", group: "여성질환", summary: "월경과다와 심한 통증을 자궁 근층의 어혈 흐름에서 살핍니다." },
+  { slug: "uterine-fibroids", title: "자궁근종", group: "여성질환", summary: "근종과 동반되는 월경량, 골반 압박감, 순환 저하를 관리합니다." },
+  { slug: "ovarian-cyst", title: "난소낭종", group: "여성질환", summary: "난소 리듬과 습담·어혈 흐름을 함께 확인합니다." },
+  { slug: "pcos", title: "다낭성난소", group: "여성질환", summary: "배란장애, 주기 불순, 대사 정체를 함께 관리합니다." },
+  { slug: "pelvic-inflammatory-disease", title: "골반염", group: "여성질환", summary: "골반 염증 후 남은 통증과 순환 저하를 회복 관점에서 봅니다." },
+  { slug: "vaginal-discharge", title: "질염", group: "여성질환", summary: "냉대하, 가려움, 반복 염증을 질 내 환경과 면역에서 살핍니다." },
   { slug: "infertility", title: "난임 관리", group: "여성질환", summary: "몸의 온도와 순환, 기혈 회복을 중심으로 임신 준비를 돕습니다." },
   { slug: "postpartum", title: "산후 회복", group: "여성질환", summary: "출산 후 기혈 손상과 관절 시림, 피로 회복을 다룹니다." },
   { slug: "menopause", title: "갱년기", group: "여성질환", summary: "상열감, 불면, 감정 변화, 진액 부족을 함께 보는 안내입니다." },
+  { slug: "premature-menopause", title: "조기폐경", group: "여성질환", summary: "난소기능저하와 이른 폐경 신호를 기혈·진액 관점에서 살핍니다." },
+  { slug: "postpartum-tonic", title: "산후보약", group: "여성질환", summary: "출산 후 소모된 기혈과 체력을 회복하는 보강 안내입니다." },
+  { slug: "postpartum-wind", title: "산후풍", group: "여성질환", summary: "출산 후 관절 시림과 찬바람 민감 증상을 관리합니다." },
+  { slug: "miscarriage-recovery", title: "유산 후 조리", group: "여성질환", summary: "유산 후 자궁 회복과 기혈 보강을 단계적으로 돕습니다." },
+  { slug: "recurrent-miscarriage", title: "습관성유산", group: "여성질환", summary: "반복 유산 후 임신 유지력과 자궁 환경을 함께 살핍니다." },
+  { slug: "threatened-miscarriage", title: "절박유산", group: "여성질환", summary: "임신 초기 안정과 한의학적 보조 관리 방향을 안내합니다." },
+  { slug: "gounmom-card", title: "고운맘카드", group: "여성질환", summary: "임신·출산 진료비 지원과 이용 상담 안내 페이지입니다." },
   { slug: "cold-uterus", title: "자궁 냉증", group: "여성질환", summary: "아랫배 냉감과 순환 저하, 통증을 온열 회복 관점에서 살핍니다." },
   { slug: "vaginitis", title: "반복 질염", group: "여성질환", summary: "면역 저하와 습담, 생활 리듬을 함께 정리합니다." },
+  { slug: "womens-clinic", title: "여성한의원", group: "여성질환", summary: "여성 생애주기별 한방 진료와 클리닉 방향을 안내합니다." },
 ];
 
 export const clinicPages: Record<ClinicPageData["slug"], ClinicPageData> = {

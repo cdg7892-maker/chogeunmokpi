@@ -32,7 +32,100 @@ const commonPrograms = [
   { title: "생활 리듬 관리", body: "수면, 식사, 스트레스, 카페인, 하복부 보온 등 재발 요인을 조정합니다." },
 ];
 
-export const womenDetailPages: WomenDetailPage[] = [
+const temporaryWomenConditions = [
+  { slug: "amenorrhea", title: "무월경", aliases: "무월경 · 월경 중단 · Amenorrhea", focus: "멈춘 월경 리듬과 기혈·호르몬 균형" },
+  { slug: "endometriosis", title: "자궁내막증", aliases: "자궁내막증 · 골반통 · Endometriosis", focus: "반복 골반통과 어혈성 통증" },
+  { slug: "adenomyosis", title: "자궁선근증", aliases: "자궁선근증 · 과다월경 · Adenomyosis", focus: "자궁 근층의 어혈과 과다월경" },
+  { slug: "uterine-fibroids", title: "자궁근종", aliases: "자궁근종 · 월경과다 · Uterine Fibroids", focus: "근종과 동반되는 월경량·골반 압박감" },
+  { slug: "ovarian-cyst", title: "난소낭종", aliases: "난소낭종 · 난소 물혹 · Ovarian Cyst", focus: "난소 리듬과 습담·어혈 관리" },
+  { slug: "pcos", title: "다낭성난소", aliases: "다낭성난소 · 배란장애 · PCOS", focus: "배란 리듬, 대사, 습담 조절" },
+  { slug: "pelvic-inflammatory-disease", title: "골반염", aliases: "골반염 · 만성 골반통 · Pelvic Inflammation", focus: "골반 염증 후 순환과 통증 회복" },
+  { slug: "vaginal-discharge", title: "질염", aliases: "질염 · 냉대하 · Vaginitis", focus: "질 내 환경과 면역·습담 균형" },
+  { slug: "premature-menopause", title: "조기폐경", aliases: "조기폐경 · 난소기능저하 · POI", focus: "난소 기능 저하와 진액·기혈 보강" },
+  { slug: "postpartum-tonic", title: "산후보약", aliases: "산후보약 · 산후 기력회복 · Postpartum Tonic", focus: "출산 후 기혈 보강과 회복력 회복" },
+  { slug: "postpartum-wind", title: "산후풍", aliases: "산후풍 · 관절 시림 · Postpartum Wind", focus: "출산 후 관절 시림과 한습 관리" },
+  { slug: "miscarriage-recovery", title: "유산 후 조리", aliases: "유산 후 조리 · 소파 후 회복 · Miscarriage Recovery", focus: "유산 후 자궁 회복과 기혈 보강" },
+  { slug: "recurrent-miscarriage", title: "습관성유산", aliases: "습관성유산 · 반복 유산 · Recurrent Miscarriage", focus: "임신 유지력과 자궁 환경 관리" },
+  { slug: "threatened-miscarriage", title: "절박유산", aliases: "절박유산 · 임신 초기 안정 · Threatened Miscarriage", focus: "임신 초기 안정과 한의학적 보조 관리" },
+  { slug: "gounmom-card", title: "고운맘카드", aliases: "고운맘카드 · 임신출산 진료비 · Pregnancy Voucher", focus: "임신·출산 진료비 안내와 이용 상담" },
+  { slug: "womens-clinic", title: "여성한의원", aliases: "여성한의원 · 여성질환 클리닉 · Women's Clinic", focus: "여성 생애주기별 한방 진료 안내" },
+];
+
+function createTemporaryWomenPage(condition: (typeof temporaryWomenConditions)[number]): WomenDetailPage {
+  return {
+    slug: condition.slug,
+    title: condition.title,
+    category: "여성질환 한방 진료",
+    aliases: condition.aliases,
+    summary: `${condition.title}에 대한 상세 치료 안내를 준비 중입니다. ${condition.focus}을 중심으로 진료 방향을 정리합니다.`,
+    heroImage: "/images/programs/women-hero.png",
+    diagnosisImage: "/images/programs/women-core-solution.png",
+    heroAlt: `${condition.title} 여성질환 한방 진료 이미지`,
+    diagnosisAlt: `${condition.title} 진단과 치료 원리를 상징하는 이미지`,
+    headline: `${condition.title}, 증상명보다 몸의 리듬과 원인을 함께 살펴야 합니다.`,
+    intro: `${condition.title} 페이지는 현재 임시 안내 페이지입니다. 정식 콘텐츠는 백록담식 상세 구성으로 확장 예정이며, 현재는 초근목피한의원의 여성질환 진료 원칙과 상담 방향을 먼저 확인하실 수 있습니다.`,
+    badges: ["상세 콘텐츠 준비 중", "여성질환 클리닉 상담 가능"],
+    signals: [
+      `${condition.title} 관련 증상이 반복됩니다.`,
+      "검사상 큰 이상이 없는데 불편감이 계속됩니다.",
+      "생리 주기, 냉감, 피로, 스트레스와 증상이 연결됩니다.",
+      "일상생활에 영향을 줄 정도로 불편합니다.",
+      "임신·출산·갱년기 등 생애주기 변화와 함께 나타났습니다.",
+      "재발 방지와 체질 관리를 함께 원합니다.",
+    ],
+    phrases: [
+      "왜 반복되는지 원인을 알고 싶습니다.",
+      "검사는 괜찮다는데 몸은 계속 불편합니다.",
+      "약을 쓰면 잠깐 괜찮다가 다시 반복됩니다.",
+      "주기와 컨디션이 같이 흔들립니다.",
+      "아랫배 냉감이나 피로가 함께 있습니다.",
+      "근본적인 관리 방향을 알고 싶습니다.",
+    ],
+    diagnosisTitle: `${condition.title}은 전신 리듬 속에서 봐야 합니다`,
+    diagnosis: [
+      `${condition.title}은 한 가지 원인만으로 설명되기보다 자궁 순환, 기혈 상태, 냉열 균형, 습담, 스트레스, 수면 리듬이 함께 관여하는 경우가 많습니다.`,
+      "초근목피한의원은 증상명만 보고 처방하지 않고, 월경 양상과 하복부 온도, 소화, 수면, 피로도, 생활 패턴을 함께 확인합니다.",
+      "이 임시 페이지는 우선 진료 방향을 안내하기 위한 페이지이며, 이후 질환별 원인·증상·치료 경과·FAQ를 더 자세히 보강할 예정입니다.",
+    ],
+    coreTitle: `${condition.focus}을 회복하는 핵심 치료 원리`,
+    coreLead: "여성질환은 증상 완화와 함께 주기 리듬, 하복부 순환, 기혈 회복을 같이 다뤄야 반복을 줄일 수 있습니다.",
+    principles: [
+      { title: "기혈 순환", body: "자궁과 골반으로 가는 혈류와 에너지 흐름을 부드럽게 회복합니다." },
+      { title: "냉열 균형", body: "아랫배 냉감이나 상열감처럼 치우친 온도 반응을 안정시킵니다." },
+      { title: "습담·어혈 정리", body: "몸속 정체가 통증, 부종, 냉대하, 주기 불균형으로 이어지지 않도록 관리합니다." },
+      { title: "생활 리듬 회복", body: "수면, 식사, 스트레스, 카페인, 활동량을 현실적으로 조정합니다." },
+    ],
+    causes: [
+      { title: "기혈 부족", body: "피로와 수면 부족이 누적되면 주기와 회복력이 함께 흔들릴 수 있습니다." },
+      { title: "어혈 정체", body: "골반 순환이 막히면 통증, 덩어리혈, 묵직함이 반복될 수 있습니다." },
+      { title: "한습·냉증", body: "찬 기운과 습담은 하복부 냉감, 냉대하, 소화 저하와 연결됩니다." },
+      { title: "간울 스트레스", body: "스트레스가 기운을 막으면 주기, 통증, 감정 변화가 심해질 수 있습니다." },
+    ],
+    patterns: [
+      { title: "냉증·한습형", symptoms: ["아랫배 냉감", "손발 냉증", "묵직함"], pattern: "한습, 양기 부족", treatment: "온경산한 처방", desc: "차고 습한 하복부 환경을 따뜻하게 돌리는 방향입니다." },
+      { title: "어혈·통증형", symptoms: ["골반통", "덩어리혈", "찌르는 통증"], pattern: "어혈, 기체혈어", treatment: "활혈거어 처방", desc: "막힌 순환을 풀어 통증과 정체감을 줄이는 방향입니다." },
+      { title: "기혈허약형", symptoms: ["피로", "월경량 감소", "어지럼"], pattern: "기혈양허", treatment: "보익기혈 처방", desc: "부족한 에너지와 혈을 보강해 회복력을 높입니다." },
+    ],
+    progress: [
+      { phase: "초기", title: "증상 양상 정리", body: "현재 가장 불편한 증상과 주기, 생활 요인을 먼저 정리합니다." },
+      { phase: "2~3개월", title: "주기와 컨디션 회복", body: "월경, 냉감, 피로, 통증의 변화를 여러 주기에 걸쳐 확인합니다." },
+      { phase: "유지기", title: "재발 방지 관리", body: "개인의 약한 축을 보완해 반복을 줄이는 방향으로 관리합니다." },
+    ],
+    programs: commonPrograms,
+    reviews: [
+      { title: `[여성질환] ${condition.title} 관련 반복 증상으로 상담한 사례`, patient: "김**" },
+      { title: `[여성질환] 검사상 이상 없이 불편감이 지속되던 사례`, patient: "박**" },
+      { title: `[여성질환] 주기와 컨디션이 함께 흔들리던 사례`, patient: "이**" },
+    ],
+    faqs: [
+      { q: "현재 페이지가 임시 페이지인가요?", a: "네. 우선 상담 연결과 기본 안내를 위해 생성한 임시 페이지이며, 이후 질환별 상세 콘텐츠로 확장할 예정입니다." },
+      { q: "검사상 이상이 없어도 진료 가능한가요?", a: "가능합니다. 기능적 불균형, 냉증, 어혈, 기혈 부족처럼 검사에 잘 드러나지 않는 부분을 함께 봅니다." },
+      { q: "산부인과 치료와 병행할 수 있나요?", a: "질환과 복용 약에 따라 병행 가능성을 확인합니다. 급성 증상이나 임신 관련 위험 신호는 산부인과 진료가 우선입니다." },
+    ],
+  };
+}
+
+const baseWomenDetailPages: WomenDetailPage[] = [
   {
     slug: "menstrual-pain",
     title: "생리통",
@@ -489,6 +582,11 @@ export const womenDetailPages: WomenDetailPage[] = [
       { q: "생활습관도 많이 바꿔야 하나요?", a: "무리한 제한보다 재발을 유발하는 당 섭취, 음주, 수면 부족, 습한 환경을 우선 조정합니다." },
     ],
   },
+];
+
+export const womenDetailPages: WomenDetailPage[] = [
+  ...baseWomenDetailPages,
+  ...temporaryWomenConditions.map(createTemporaryWomenPage),
 ];
 
 export function getWomenDetailPage(slug: string) {
