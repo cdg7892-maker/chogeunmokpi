@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getClinicPage } from "@/lib/clinic-pages";
+import { healthColumns } from "@/lib/health-columns";
 import { mindConditions } from "@/lib/mind-conditions";
 import { skinConditions } from "@/lib/skin-conditions";
 import { tonicConditions } from "@/lib/tonic-conditions";
@@ -45,9 +46,13 @@ const conditionRoutes = [
   ...tonicConditions.map((condition) => `/programs/tonic/${condition.slug}`),
 ];
 
+const columnRoutes = healthColumns.map(
+  (column) => `/community/column/${column.slug}`,
+);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = [...staticRoutes, ...clinicDetailRoutes, ...conditionRoutes];
+  const routes = [...staticRoutes, ...clinicDetailRoutes, ...conditionRoutes, ...columnRoutes];
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
