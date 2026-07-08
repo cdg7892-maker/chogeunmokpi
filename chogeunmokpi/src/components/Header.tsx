@@ -9,7 +9,7 @@ type MenuKey = "about" | "programs" | "community" | null;
 
 const aboutLinks = [
   { href: "/about/doctors", label: "의료진 소개" },
-  { href: "/about/location", label: "대전 유성구 반석동 오시는 길" },
+  { href: "/about/location", label: "오시는 길" },
   { href: "/about/notices", label: "병원 공지" },
 ];
 

@@ -52,7 +52,7 @@ export default function Footer() {
                 진료과목 전체보기
               </Link>
               <Link href="/about/location" className="hover:text-root">
-                대전 유성구 반석동 오시는 길
+                오시는 길
               </Link>
               <Link href="/community/reviews" className="hover:text-root">
                 치료후기
