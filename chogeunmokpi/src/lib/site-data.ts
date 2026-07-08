@@ -21,9 +21,9 @@ export const programs: Program[] = [
     slug: "diet",
     title: "다이어트",
     summary:
-      "굶지 않고, 힘들지 않게. 체질에 맞춘 처방으로 요요 없이 건강하게 체중 관리를 도와드립니다.",
+      "엔오슬림환 1~4단계 맞춤 처방으로 식욕, 대사, 체지방 연소 리듬을 함께 관리합니다.",
     keywords: ["체질 다이어트", "요요 없는 감량", "식욕·대사 관리"],
-    image: "/images/programs/diet.jpg",
+    image: "/images/programs/diet/eno-slim-hero.png",
     icon: "⚖️",
   },
   {
