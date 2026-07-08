@@ -210,7 +210,7 @@ export const clinicInfo = {
   ceo: "이호근",
   phone: "042-823-7571",
   address: "대전 유성구 반석로11번길 66-22 1층",
-  bizNumber: "000-00-00000",
+  bizNumber: "774-96-00803",
   hours: {
     weekday: "09:00 - 18:00",
     weekdayLabel: "월·화·수·금",
