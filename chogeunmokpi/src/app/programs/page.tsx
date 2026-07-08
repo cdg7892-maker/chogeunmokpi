@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 const thumbnailBySlug: Record<string, string> = {
   digestive: "/images/programs/digestive-hero.png",
+  diet: "/images/programs/diet/eno-slim-hero.png",
   mind: "/images/programs/mind-hero.png",
   skin: "/images/programs/skin-hero.png",
   tonic: "/images/programs/tonic-hero.png",
