@@ -23,6 +23,18 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "통풍 한방 치료 | 초근목피한의원",
+    description:
+      "반복되는 통풍 발작과 관절 통증을 대사 환경의 문제로 살피는 초근목피한의원 통풍 진료 안내입니다.",
+    images: [
+      {
+        url: "/images/programs/tonic-detail-gout.png",
+        alt: "통풍 및 관절 통증 한방 치료 이미지",
+      },
+    ],
+  },
 };
 
 const heroBadges = ["요산 수치 너머 대사 환경 관리", "습열·어혈·관절 순환 개선"];

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getWomenDetailPage, womenDetailPages } from "@/lib/women-detail-pages";
+import { programImageMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -29,19 +30,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `/programs/women/${page.slug}`,
     },
-    openGraph: {
+    ...programImageMetadata({
       title,
       description,
       url: `/programs/women/${page.slug}`,
-      images: [
-        {
-          url: page.heroImage,
-          width: 1200,
-          height: 1200,
-          alt: page.heroAlt,
-        },
-      ],
-    },
+      image: page.heroImage,
+      alt: page.heroAlt,
+    }),
   };
 }
 

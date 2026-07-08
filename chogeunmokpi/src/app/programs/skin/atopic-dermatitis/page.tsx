@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { programImageMetadata } from "@/lib/seo";
 import AtopicQuiz from "@/components/programs/AtopicQuiz";
 import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { clinicInfo, doctors, reviews } from "@/lib/site-data";
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/programs/skin/atopic-dermatitis",
   },
+  ...programImageMetadata({
+    title: "?? ??? ??? ???? | ???????",
+    description: "?? ??? ??? ???????? ??? ??? ???? ?????.",
+    url: "/programs/skin/atopic-dermatitis",
+    image: "/images/programs/atopic-hero.png",
+    alt: "??? ??? ?? ?? ???",
+  }),
 };
 
 function CheckIcon() {

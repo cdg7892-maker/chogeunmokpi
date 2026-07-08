@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { tonicConditions } from "@/lib/tonic-conditions";
+import { programImageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return tonicConditions
@@ -30,19 +31,13 @@ export async function generateMetadata({
     alternates: {
       canonical: `/programs/tonic/${slug}`,
     },
-    openGraph: {
+    ...programImageMetadata({
       title: `${condition.title} 한방 치료 | 초근목피한의원`,
       description: condition.summary,
       url: `/programs/tonic/${slug}`,
-      images: [
-        {
-          url: condition.heroImage,
-          width: 1200,
-          height: 1200,
-          alt: condition.heroAlt,
-        },
-      ],
-    },
+      image: condition.heroImage,
+      alt: condition.heroAlt,
+    }),
   };
 }
 

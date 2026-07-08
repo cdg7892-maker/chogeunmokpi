@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { programImageMetadata } from "@/lib/seo";
 import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { clinicInfo, doctors } from "@/lib/site-data";
 
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/programs/skin/warts",
   },
+  ...programImageMetadata({
+    title: "?? ??? ???? | ???????",
+    description: "?? ??? ??? ???????? ??? ???? ?????.",
+    url: "/programs/skin/warts",
+    image: "/images/programs/skin-warts-detail.png",
+    alt: "??? ?? ?? ???",
+  }),
 };
 
 function CheckIcon() {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { programImageMetadata } from "@/lib/seo";
 import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { clinicInfo, doctors } from "@/lib/site-data";
 
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/programs/skin/psoriasis",
   },
+  ...programImageMetadata({
+    title: "?? ?? ???? | ???????",
+    description: "?? ??? ??? ???????? ?? ???? ?????.",
+    url: "/programs/skin/psoriasis",
+    image: "/images/programs/skin-psoriasis-detail.png",
+    alt: "?? ?? ?? ???",
+  }),
 };
 
 function CheckIcon() {

@@ -6,6 +6,7 @@ import {
   getPediatricDetailPage,
   pediatricDetailPages,
 } from "@/lib/pediatric-detail-pages";
+import { programImageMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -34,19 +35,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: `/programs/pediatric/${page.slug}`,
     },
-    openGraph: {
+    ...programImageMetadata({
       title,
       description,
       url: `/programs/pediatric/${page.slug}`,
-      images: [
-        {
-          url: page.heroImage,
-          width: 1200,
-          height: 1200,
-          alt: page.heroAlt,
-        },
-      ],
-    },
+      image: page.heroImage,
+      alt: page.heroAlt,
+    }),
   };
 }
 

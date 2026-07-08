@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { mindConditions } from "@/lib/mind-conditions";
+import { programImageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return mindConditions.map((condition) => ({ slug: condition.slug }));
@@ -20,12 +21,22 @@ export async function generateMetadata({
     };
   }
 
+  const title = `대전 ${condition.title} 한방치료 | 마음건강 질환 안내 | 초근목피한의원`;
+  const description = `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`;
+
   return {
-    title: `대전 ${condition.title} 한방치료 | 마음건강 질환 안내 | 초근목피한의원`,
-    description: `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`,
+    title,
+    description,
     alternates: {
       canonical: `/programs/psy/${slug}`,
     },
+    ...programImageMetadata({
+      title,
+      description,
+      url: `/programs/psy/${slug}`,
+      image: "/images/programs/mind-hero.png",
+      alt: "마음건강 클리닉 한방 진료 이미지",
+    }),
   };
 }
 

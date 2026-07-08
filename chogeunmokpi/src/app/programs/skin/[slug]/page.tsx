@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { skinConditions } from "@/lib/skin-conditions";
+import { programImageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return skinConditions.map((condition) => ({ slug: condition.slug }));
@@ -18,12 +19,22 @@ export async function generateMetadata({
     return { title: "피부질환 치료 안내 | 초근목피한의원" };
   }
 
+  const title = `대전 ${condition.title} 한방치료 | 피부질환 치료 안내 | 초근목피한의원`;
+  const description = `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`;
+
   return {
-    title: `대전 ${condition.title} 한방치료 | 피부질환 치료 안내 | 초근목피한의원`,
-    description: `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`,
+    title,
+    description,
     alternates: {
       canonical: `/programs/skin/${slug}`,
     },
+    ...programImageMetadata({
+      title,
+      description,
+      url: `/programs/skin/${slug}`,
+      image: "/images/programs/skin-hero.png",
+      alt: "피부질환 클리닉 한방 진료 이미지",
+    }),
   };
 }
 
