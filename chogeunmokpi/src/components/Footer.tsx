@@ -46,13 +46,13 @@ export default function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-ink">바로가기</h3>
             <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-ink-soft">
               <Link href="/reserve" className="hover:text-root">
-                진료 예약
+                초근목피한의원 진료 예약
               </Link>
               <Link href="/programs" className="hover:text-root">
                 진료과목 전체보기
               </Link>
               <Link href="/about/location" className="hover:text-root">
-                오시는 길
+                대전 유성구 반석동 오시는 길
               </Link>
               <Link href="/community/reviews" className="hover:text-root">
                 치료후기

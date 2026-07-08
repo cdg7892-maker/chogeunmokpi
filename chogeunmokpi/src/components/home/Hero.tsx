@@ -144,13 +144,15 @@ export default function Hero() {
         <p className="mt-8 text-lg leading-relaxed text-ink-soft md:text-xl">
           이곳저곳 다녀봐도 낫지 않던 만성 질환.
           <br />
-          초근목피는 수치가 아닌 몸 전체의 균형을 봅니다.
+          대전 유성구 반석동 초근목피한의원은 수치가 아닌
+          <br className="hidden md:block" />
+          몸 전체의 균형을 봅니다.
         </p>
         <Link
           href="/reserve"
           className="ch-btn-primary mt-10 px-7 py-3.5"
         >
-          진료 예약하기
+          초근목피한의원 진료 예약하기
           <span aria-hidden="true">→</span>
         </Link>
       </div>

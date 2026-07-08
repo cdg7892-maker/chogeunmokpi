@@ -9,7 +9,7 @@ type MenuKey = "about" | "programs" | "community" | null;
 
 const aboutLinks = [
   { href: "/about/doctors", label: "의료진 소개" },
-  { href: "/about/location", label: "오시는 길" },
+  { href: "/about/location", label: "대전 유성구 반석동 오시는 길" },
   { href: "/about/notices", label: "병원 공지" },
 ];
 
@@ -92,7 +92,7 @@ export default function Header() {
             href="/reserve"
             className="ch-btn-primary hidden px-5 py-2.5 md:inline-flex"
           >
-            예약하기
+            진료 예약하기
           </Link>
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line md:hidden"
@@ -129,7 +129,7 @@ export default function Header() {
             className="ch-btn-primary mt-2 flex px-5 py-3"
             onClick={() => setMobileOpen(false)}
           >
-            예약하기
+            초근목피한의원 진료 예약하기
           </Link>
         </div>
       )}
@@ -192,7 +192,7 @@ function DropdownPanel({
   dividerAfterFirst?: boolean;
 }) {
   return (
-    <div className="w-48 rounded-2xl border border-line bg-card p-2 shadow-md shadow-ink/5">
+    <div className="w-64 rounded-2xl border border-line bg-card p-2 shadow-md shadow-ink/5">
       {links.map((link, i) => (
         <div key={link.href}>
           <Link

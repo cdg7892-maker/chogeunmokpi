@@ -28,6 +28,11 @@ export default function DoctorStory() {
               걸쳐 이어온 이 마음으로, 지친 몸과 마음이 온전히 기댈 수 있는
               치유의 공간을 만들고자 합니다.
             </p>
+            <p>
+              초근목피한의원은 대전 유성구 반석동에서 소화기질환,
+              피부질환, 마음건강처럼 오래 반복되는 난치성 질환을
+              몸 전체의 흐름으로 살피겠습니다.
+            </p>
           </div>
 
           <div className="mt-8 flex items-center gap-3 border-t border-line pt-6">

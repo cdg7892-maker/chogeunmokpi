@@ -10,16 +10,16 @@ import { clinicInfo } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chogeunmokpi.vercel.app"),
-  title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
+  title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
   description:
-    "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
+    "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
     description:
-      "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
+      "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
     url: "https://chogeunmokpi.vercel.app",
     siteName: "초근목피한의원",
     locale: "ko_KR",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "대전 반석동 초근목피한의원 | 난치성질환 치료",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
     description:
-      "대전 유성구 반석동 한의원. 소화기·피부·알러지 등 만성 난치성질환을 몸 전체 균형으로 치료합니다.",
+      "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
     images: ["/logo-icon.png"],
   },
   icons: {
@@ -60,6 +60,9 @@ const clinicJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   name: clinicInfo.name,
+  alternateName: "대전 유성구 반석동 초근목피한의원",
+  description:
+    "대전 유성구 반석동에서 소화기·피부·마음건강 등 만성 난치성 질환을 진료하는 한의원입니다.",
   url: "https://chogeunmokpi.vercel.app",
   telephone: clinicInfo.phone,
   image: "https://chogeunmokpi.vercel.app/logo-icon.png",
@@ -78,6 +81,7 @@ const clinicJsonLd = {
     addressRegion: "대전광역시",
     addressCountry: "KR",
   },
+  areaServed: ["대전", "유성구", "반석동"],
   founder: {
     "@type": "Person",
     name: clinicInfo.ceo,
