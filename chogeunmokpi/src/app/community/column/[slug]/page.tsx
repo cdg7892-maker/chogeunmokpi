@@ -73,8 +73,6 @@ export default async function ColumnDetailPage({ params }: PageProps) {
               <div className="mt-7 flex flex-wrap items-center gap-3 text-sm font-bold text-[#7c6f5a]">
                 <span>{column.date.replaceAll("-", ".")}</span>
                 <span>·</span>
-                <span>{column.readTime}</span>
-                <span>·</span>
                 <span>이호근 대표원장 감수</span>
               </div>
             </div>

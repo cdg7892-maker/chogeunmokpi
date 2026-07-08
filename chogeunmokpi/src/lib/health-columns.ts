@@ -5,7 +5,6 @@ export type HealthColumn = {
   title: string;
   summary: string;
   hero: string;
-  readTime: string;
   tags: string[];
   body: {
     heading: string;
@@ -23,7 +22,6 @@ export const healthColumns: HealthColumn[] = [
     summary:
       "내시경은 괜찮은데 체기, 더부룩함, 명치 답답함이 반복된다면 위장의 움직임과 긴장도를 함께 봐야 합니다.",
     hero: "/images/programs/digestive-hero.png",
-    readTime: "4분",
     tags: ["기능성 소화불량", "담적", "위장 운동성"],
     body: [
       {
@@ -61,7 +59,6 @@ export const healthColumns: HealthColumn[] = [
     summary:
       "불면은 생각이 많아서만 생기지 않습니다. 두근거림, 상열감, 소화 정체처럼 몸의 경보가 꺼지지 않을 때 잠은 얕아집니다.",
     hero: "/images/programs/mind-detail-insomnia-hero.png",
-    readTime: "5분",
     tags: ["불면증", "자율신경", "수면 리듬"],
     body: [
       {
@@ -98,7 +95,6 @@ export const healthColumns: HealthColumn[] = [
     summary:
       "연고를 바를 때만 잠잠하고 다시 올라오는 피부 증상은 피부 장벽, 열감, 소화와 면역 균형을 함께 살펴야 합니다.",
     hero: "/images/programs/skin-hero.png",
-    readTime: "4분",
     tags: ["피부염", "아토피", "면역 균형"],
     body: [
       {

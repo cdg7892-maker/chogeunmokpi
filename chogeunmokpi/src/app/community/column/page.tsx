@@ -48,7 +48,7 @@ export default function ColumnPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <p className="text-sm font-bold text-[#7b5f38]">
-                  {column.category} · {column.date.replaceAll("-", ".")} · {column.readTime}
+                  {column.category} · {column.date.replaceAll("-", ".")}
                 </p>
                 <h2 className="mt-3 text-2xl font-black leading-9 text-[#111827] keep-words md:text-3xl">
                   {column.title}

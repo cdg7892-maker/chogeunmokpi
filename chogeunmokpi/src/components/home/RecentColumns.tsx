@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { recentHealthColumns } from "@/lib/health-columns";
 
@@ -22,18 +23,24 @@ export default function RecentColumns() {
             <Link
               key={col.slug}
               href={`/community/column/${col.slug}`}
-              className="ch-card ch-card-hover group"
+              className="ch-card ch-card-hover group overflow-hidden"
             >
-              <div className="mb-4 flex h-32 items-center justify-center rounded-xl bg-paper-soft text-sm font-bold text-herb/70">
-                {col.category}
+              <div className="relative mb-4 overflow-hidden rounded-xl bg-paper-soft">
+                <Image
+                  src={col.hero}
+                  alt={col.title}
+                  width={720}
+                  height={480}
+                  className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
               <p className="mb-2 text-xs text-ink-soft/70">
-                {col.date.replaceAll("-", ".")} · {col.readTime}
+                {col.category} · {col.date.replaceAll("-", ".")}
               </p>
-              <p className="mb-2 text-lg font-semibold leading-snug text-ink">
+              <p className="mb-2 text-lg font-semibold leading-snug text-ink keep-words">
                 {col.title}
               </p>
-              <p className="line-clamp-2 text-base text-ink-soft">
+              <p className="line-clamp-2 text-base text-ink-soft keep-words">
                 {col.summary}
               </p>
               <span className="mt-3 inline-block text-sm text-root opacity-0 transition group-hover:opacity-100">
