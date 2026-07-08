@@ -154,7 +154,7 @@ export default function DietMiniQuiz() {
                   </div>
                 </dl>
                 <div className="mt-6 flex flex-col gap-3">
-                  <Link href="/reserve" className="ch-btn-primary justify-center">
+                  <Link href="/events/diet-program" className="ch-btn-primary justify-center">
                     진료 예약하기
                   </Link>
                   <button

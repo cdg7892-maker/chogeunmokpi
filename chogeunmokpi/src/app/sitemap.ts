@@ -16,6 +16,8 @@ const staticRoutes = [
   "/community/column",
   "/community/guide",
   "/community/reviews",
+  "/events/diet-program",
+  "/intake/success",
   "/programs",
   "/programs/diet",
   "/programs/digestive",

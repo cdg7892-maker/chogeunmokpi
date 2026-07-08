@@ -153,7 +153,7 @@ export default function DietPage() {
             1~4단계 맞춤 처방으로 식욕, 대사, 체지방 감량을 함께 관리합니다.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/reserve" className="ch-btn-primary">
+            <Link href="/events/diet-program" className="ch-btn-primary">
               진료 예약하기
             </Link>
             <a href="#diet-check" className="ch-btn-secondary">
@@ -218,7 +218,7 @@ export default function DietPage() {
                     <li key={point}>✓ {point}</li>
                   ))}
                 </ul>
-                <Link href="/reserve" className="ch-btn-primary mt-7 w-full justify-center">
+                <Link href="/events/diet-program" className="ch-btn-primary mt-7 w-full justify-center">
                   신청하기
                 </Link>
               </div>
@@ -415,7 +415,7 @@ export default function DietPage() {
               엔오슬림환 다이어트 상담은 예약제로 진행됩니다.
             </p>
           </div>
-          <Link href="/reserve" className="rounded-full bg-white px-7 py-4 font-bold text-ink">
+          <Link href="/events/diet-program" className="rounded-full bg-white px-7 py-4 font-bold text-ink">
             진료 예약하기
           </Link>
         </div>
