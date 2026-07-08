@@ -66,9 +66,6 @@ export default async function SkinConditionPage({
               이 페이지는 {condition.title}에 대한 블로그형 치료 안내 칼럼으로 확장될 예정입니다.
               증상 체크, 한의학적 원인, 치료 과정, 생활 관리법을 차례로 정리하겠습니다.
             </p>
-            <p>
-              이후 백록담 세부질환 페이지의 정보 구조를 벤치마킹해, 초근목피의 진료 철학과 문체에 맞게 새로 작성할 계획입니다.
-            </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">

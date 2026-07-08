@@ -68,9 +68,6 @@ export default async function MindConditionPage({
               이 페이지는 {condition.title}에 대한 블로그형 치료 안내 칼럼으로 확장될 예정입니다.
               증상 체크, 한의학적 관점, 진료 과정, 생활 관리법을 한 페이지에서 읽을 수 있도록 구성하겠습니다.
             </p>
-            <p>
-              이후 백록담 세부질환 페이지의 정보 구조를 벤치마킹해, 초근목피의 진료 철학과 문체에 맞게 새로 정리할 계획입니다.
-            </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">

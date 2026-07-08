@@ -63,7 +63,7 @@ function createTemporaryWomenPage(condition: (typeof temporaryWomenConditions)[n
     heroAlt: `${condition.title} 여성질환 한방 진료 이미지`,
     diagnosisAlt: `${condition.title} 진단과 치료 원리를 상징하는 이미지`,
     headline: `${condition.title}, 증상명보다 몸의 리듬과 원인을 함께 살펴야 합니다.`,
-    intro: `${condition.title} 페이지는 현재 임시 안내 페이지입니다. 정식 콘텐츠는 백록담식 상세 구성으로 확장 예정이며, 현재는 초근목피한의원의 여성질환 진료 원칙과 상담 방향을 먼저 확인하실 수 있습니다.`,
+    intro: `${condition.title} 페이지는 현재 임시 안내 페이지입니다. 현재는 초근목피한의원의 여성질환 진료 원칙과 상담 방향을 먼저 확인하실 수 있습니다.`,
     badges: ["상세 콘텐츠 준비 중", "여성질환 클리닉 상담 가능"],
     signals: [
       `${condition.title} 관련 증상이 반복됩니다.`,
