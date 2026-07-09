@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "통풍 한방 치료 | 대전 유성구 반석동 초근목피한의원",
+  title: "대전 통풍 유성구 한의원 요산 관절 한약 - 초근목피한의원 대전 반석동",
   description:
     "바람만 스쳐도 아픈 통풍, 요산 수치 조절을 넘어 습열·어혈·대사 환경을 함께 관리합니다. 대전 유성구 반석동 초근목피한의원 통풍 한방 진료 안내.",
   alternates: {

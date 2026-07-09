@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 한포진 한방진료 | 수포성 습진·손 습진·손발 물집 | 초근목피한의원",
+  title: "대전 한포진 유성구 한의원 손발수포 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 한포진 한방진료 안내입니다. 손가락·손바닥·발바닥 수포, 극심한 가려움, 갈라짐과 재발을 습열과 피부 장벽 관점에서 살핍니다.",
   alternates: {

@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 두드러기 한방진료 | 만성 두드러기·콜린성·한랭 두드러기 | 초근목피한의원",
+  title: "대전 두드러기 한의원 만성 알레르기 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 두드러기 한방진료 안내입니다. 만성 두드러기, 콜린성·한랭 두드러기, 팽진과 가려움을 면역 균형과 피부 자생력 관점에서 살핍니다.",
   alternates: {

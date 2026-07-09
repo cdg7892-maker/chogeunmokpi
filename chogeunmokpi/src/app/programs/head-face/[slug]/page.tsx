@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getHeadFaceDetailPage, headFaceDetailPages } from "@/lib/head-face-detail-pages";
 import { programImageMetadata } from "@/lib/seo";
+import { headFaceSeoTitles } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,7 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "두면부 치료 안내 | 초근목피한의원" };
   }
 
-  const title = `대전 ${page.title} 한방치료 | 두면부 클리닉 | 초근목피한의원`;
+  const title =
+    headFaceSeoTitles[page.slug] ??
+    `대전 ${page.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
   const description = `${page.summary} 대전 유성구 반석동 초근목피한의원의 ${page.title} 한방 진료 안내입니다.`;
 
   return {

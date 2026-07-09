@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 모공각화증 한방진료 | 닭살피부·모낭각화증·팔뚝 돌기 | 초근목피한의원",
+  title: "대전 모공각화증 한의원 닭살피부 치료 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 모공각화증 한방진료 안내입니다. 닭살피부, 팔·다리 오돌토돌한 돌기, 피부 건조와 색소 침착을 피부 재생력과 장벽 관점에서 살핍니다.",
   alternates: {

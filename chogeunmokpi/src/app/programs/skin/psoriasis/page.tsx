@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 건선 한방치료 | 마른버짐·홍반성 구진·두피 건선 | 초근목피한의원",
+  title: "대전 건선 유성구 한의원 각질 피부 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 건선 한방치료 안내입니다. 은백색 각질, 붉은 판상 홍반, 두피 건선과 재발을 면역 균형 관점에서 살핍니다.",
   alternates: {

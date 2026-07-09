@@ -7,7 +7,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors, reviews } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 유성구 반석동 | 아토피 피부염 신생아 얼굴태열 아토피성 피부염 한방 치료 | 초근목피한의원",
+  title: "대전 아토피 유성구 한의원 피부염 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 아토피 피부염, 신생아 얼굴태열, 아토피성 피부염으로 고민하는 분께. 한약과 한방 치료로 피부 회복력과 면역 균형을 함께 살핍니다.",
   alternates: {

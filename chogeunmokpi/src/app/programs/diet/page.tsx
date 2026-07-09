@@ -5,7 +5,8 @@ import DietMiniQuiz from "@/components/programs/DietMiniQuiz";
 import { clinicInfo } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "엔오슬림환 다이어트 | 대전 유성구 반석동 초근목피한의원",
+  title:
+    "대전 다이어트 한의원 엔오슬림환 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 엔오슬림환 다이어트 안내. 1개월 15만원, 3개월 45만원, 3개월 처방 시 10일분 서비스. 1~4단계 맞춤 처방으로 식욕과 대사를 함께 관리합니다.",
   alternates: {

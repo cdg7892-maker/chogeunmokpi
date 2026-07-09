@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 피부클리닉 한방진료 | 반복 피부염·가려움·홍반·진물 | 초근목피한의원",
+  title: "대전 피부클리닉 유성구 한의원 피부치료 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 피부클리닉 안내입니다. 반복되는 피부염, 가려움, 홍반, 진물, 각질과 피부 장벽 손상을 면역 균형과 장부 기능 관점에서 살핍니다.",
   alternates: {

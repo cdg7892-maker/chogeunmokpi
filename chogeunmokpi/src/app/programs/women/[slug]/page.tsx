@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getWomenDetailPage, womenDetailPages } from "@/lib/women-detail-pages";
 import { programImageMetadata } from "@/lib/seo";
+import { womenSeoTitles } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,7 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "여성질환 치료 안내 | 초근목피한의원" };
   }
 
-  const title = `대전 ${page.title} 한방치료 | 여성질환 클리닉 | 초근목피한의원`;
+  const title =
+    womenSeoTitles[page.slug] ??
+    `대전 ${page.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
   const description = `${page.summary} 대전 유성구 반석동 초근목피한의원의 ${page.title} 한방 진료 안내입니다.`;
 
   return {

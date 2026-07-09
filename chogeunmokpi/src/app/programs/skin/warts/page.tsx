@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 사마귀 한방진료 | 발바닥·손가락·편평사마귀·곤지름 | 초근목피한의원",
+  title: "대전 사마귀 유성구 한의원 면역치료 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 사마귀 한방진료 안내입니다. 발바닥 사마귀, 손가락 사마귀, 편평사마귀와 재발을 면역 균형과 피부 장벽 관점에서 살핍니다.",
   alternates: {

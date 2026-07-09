@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { skinConditions } from "@/lib/skin-conditions";
 import { programImageMetadata } from "@/lib/seo";
+import { skinSeoTitles } from "@/lib/seo-titles";
 
 export function generateStaticParams() {
   return skinConditions.map((condition) => ({ slug: condition.slug }));
@@ -19,7 +20,9 @@ export async function generateMetadata({
     return { title: "피부질환 치료 안내 | 초근목피한의원" };
   }
 
-  const title = `대전 ${condition.title} 한방치료 | 피부질환 치료 안내 | 초근목피한의원`;
+  const title =
+    skinSeoTitles[condition.slug] ??
+    `대전 ${condition.title} 유성구 한의원 피부치료 한약 - 초근목피한의원 대전 반석동`;
   const description = `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`;
 
   return {

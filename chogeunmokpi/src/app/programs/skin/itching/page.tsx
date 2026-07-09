@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 가려움증 한방진료 | 소양증·전신 가려움·만성 피부 가려움 | 초근목피한의원",
+  title: "대전 가려움증 유성구 한의원 소양증 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 소양증·가려움증 한방진료 안내입니다. 항히스타민제 반복, 야간 가려움, 전신 가려움과 피부 건조를 몸속 열과 진액 균형 관점에서 살핍니다.",
   alternates: {

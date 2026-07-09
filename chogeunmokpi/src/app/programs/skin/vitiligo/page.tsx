@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 백반증 한방진료 | 백전풍·하얀 반점·색소 탈실 | 초근목피한의원",
+  title: "대전 백반증 유성구 한의원 색소질환 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 백반증 한방진료 안내입니다. 하얀 반점, 백전풍, 색소 탈실과 재발을 면역 균형과 기혈 순환 관점에서 살핍니다.",
   alternates: {

@@ -7,6 +7,7 @@ import {
   pediatricDetailPages,
 } from "@/lib/pediatric-detail-pages";
 import { programImageMetadata } from "@/lib/seo";
+import { pediatricSeoTitles } from "@/lib/seo-titles";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -26,7 +27,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `대전 ${page.title} 한방치료 | 소아·수험생 클리닉 | 초근목피한의원`;
+  const title =
+    pediatricSeoTitles[page.slug] ??
+    `대전 ${page.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
   const description = `${page.summary} 대전 유성구 반석동 초근목피한의원의 ${page.title} 한방 진료 안내입니다.`;
 
   return {

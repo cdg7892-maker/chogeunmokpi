@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 안면홍조 한방진료 | 얼굴 붉어짐·상열감·갱년기 홍조 | 초근목피한의원",
+  title: "대전 안면홍조 한의원 얼굴붉어짐 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 안면홍조 한방진료 안내입니다. 얼굴 붉어짐, 상열감, 갱년기 홍조, 감정 홍조를 몸속 열 조절과 자율신경 균형 관점에서 살핍니다.",
   alternates: {

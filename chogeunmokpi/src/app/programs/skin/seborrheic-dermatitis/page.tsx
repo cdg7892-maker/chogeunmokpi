@@ -6,7 +6,7 @@ import { LockedReviewCard, LockedReviewGate } from "@/components/programs/Locked
 import { clinicInfo, doctors } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "대전 지루성피부염 한방진료 | 지루성두피염·얼굴 홍반·면유풍 | 초근목피한의원",
+  title: "대전 지루성피부염 한의원 두피 얼굴 한약 - 초근목피한의원 대전 반석동",
   description:
     "대전 유성구 반석동 초근목피한의원의 지루성피부염 한방진료 안내입니다. 얼굴 홍반, 지루성두피염, 기름진 각질과 반복 재발을 습열과 피부 면역 관점에서 살핍니다.",
   alternates: {

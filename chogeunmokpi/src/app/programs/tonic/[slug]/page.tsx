@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { tonicConditions } from "@/lib/tonic-conditions";
 import { programImageMetadata } from "@/lib/seo";
+import { tonicSeoTitles } from "@/lib/seo-titles";
 
 export function generateStaticParams() {
   return tonicConditions
@@ -25,14 +26,18 @@ export async function generateMetadata({
     };
   }
 
+  const title =
+    tonicSeoTitles[condition.slug] ??
+    `대전 ${condition.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
+
   return {
-    title: `${condition.title} 한방 치료 | 대전 유성구 반석동 초근목피한의원`,
+    title,
     description: `${condition.category}. ${condition.summary} 대전 유성구 반석동 초근목피한의원에서 체질과 증상에 맞춰 안내합니다.`,
     alternates: {
       canonical: `/programs/tonic/${slug}`,
     },
     ...programImageMetadata({
-      title: `${condition.title} 한방 치료 | 초근목피한의원`,
+      title,
       description: condition.summary,
       url: `/programs/tonic/${slug}`,
       image: condition.heroImage,
