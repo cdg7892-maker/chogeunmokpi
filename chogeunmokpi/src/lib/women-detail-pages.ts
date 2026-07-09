@@ -1,3 +1,5 @@
+import { upgradedTemporaryWomenPages } from "./women-detail-upgrades";
+
 export type WomenDetailPage = {
   slug: string;
   title: string;
@@ -6,8 +8,10 @@ export type WomenDetailPage = {
   summary: string;
   heroImage: string;
   diagnosisImage: string;
+  coreImage?: string;
   heroAlt: string;
   diagnosisAlt: string;
+  coreAlt?: string;
   headline: string;
   intro: string;
   badges: string[];
@@ -586,7 +590,7 @@ const baseWomenDetailPages: WomenDetailPage[] = [
 
 export const womenDetailPages: WomenDetailPage[] = [
   ...baseWomenDetailPages,
-  ...temporaryWomenConditions.map(createTemporaryWomenPage),
+  ...upgradedTemporaryWomenPages,
 ];
 
 export function getWomenDetailPage(slug: string) {

@@ -229,8 +229,8 @@ export default async function WomenConditionPage({ params }: PageProps) {
 
           <div className="rounded-[28px] border border-[#d8cfbd] bg-white p-4 shadow-[0_24px_45px_rgba(42,35,24,0.12)]">
             <Image
-              src={page.diagnosisImage}
-              alt={page.diagnosisAlt}
+              src={page.coreImage ?? page.diagnosisImage}
+              alt={page.coreAlt ?? page.diagnosisAlt}
               width={1200}
               height={1200}
               className="aspect-square w-full rounded-[22px] object-cover"
