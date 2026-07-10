@@ -21,6 +21,7 @@ export function programImageMetadata({
       description,
       url,
       type: "article",
+      siteName: "초근목피한의원",
       images: [
         {
           url: image,

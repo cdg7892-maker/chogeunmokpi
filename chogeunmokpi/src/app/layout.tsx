@@ -10,6 +10,7 @@ import { clinicInfo } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chogeunmokpi.vercel.app"),
+  applicationName: "초근목피한의원",
   title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
   description:
     "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
@@ -92,6 +93,20 @@ const clinicJsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "초근목피한의원",
+  alternateName: ["초근목피 한의원", "대전 초근목피한의원"],
+  url: "https://chogeunmokpi.vercel.app",
+  inLanguage: "ko-KR",
+  publisher: {
+    "@type": "MedicalClinic",
+    name: "초근목피한의원",
+    url: "https://chogeunmokpi.vercel.app",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -103,6 +118,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(clinicJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <div className="site-shell">
           <Header />
