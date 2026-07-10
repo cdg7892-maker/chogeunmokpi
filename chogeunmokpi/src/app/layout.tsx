@@ -17,6 +17,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": 160,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
     description:

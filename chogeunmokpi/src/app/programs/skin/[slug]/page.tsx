@@ -1,8 +1,23 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { skinConditions } from "@/lib/skin-conditions";
-import { programImageMetadata } from "@/lib/seo";
+import { buildSearchDescription, programImageMetadata } from "@/lib/seo";
 import { skinSeoTitles } from "@/lib/seo-titles";
+
+const skinImageBySlug: Record<string, string> = {
+  "atopic-dermatitis": "/images/programs/atopic-hero.png",
+  eczema: "/images/programs/eczema-hero.png",
+  psoriasis: "/images/programs/skin-psoriasis-detail.png",
+  "seborrheic-dermatitis": "/images/programs/skin-seborrheic-detail.png",
+  itching: "/images/programs/skin-itching-detail.png",
+  urticaria: "/images/programs/skin-urticaria-detail.png",
+  pompholyx: "/images/programs/skin-pompholyx-detail.png",
+  "facial-flushing": "/images/programs/skin-facial-flushing-detail.png",
+  vitiligo: "/images/programs/skin-vitiligo-detail.png",
+  "keratosis-pilaris": "/images/programs/skin-keratosis-pilaris-detail.png",
+  warts: "/images/programs/skin-warts-detail.png",
+  "skin-clinic": "/images/programs/skin-hero.png",
+};
 
 export function generateStaticParams() {
   return skinConditions.map((condition) => ({ slug: condition.slug }));
@@ -23,7 +38,8 @@ export async function generateMetadata({
   const title =
     skinSeoTitles[condition.slug] ??
     `대전 ${condition.title} 유성구 한의원 피부치료 한약 - 초근목피한의원 대전 반석동`;
-  const description = `대전 유성구 반석동 초근목피한의원의 ${condition.title} 한방치료 안내입니다. ${condition.summary}`;
+  const description = buildSearchDescription(condition.title, condition.summary);
+  const image = skinImageBySlug[condition.slug] ?? "/images/programs/skin-hero.png";
 
   return {
     title,
@@ -35,8 +51,8 @@ export async function generateMetadata({
       title,
       description,
       url: `/programs/skin/${slug}`,
-      image: "/images/programs/skin-hero.png",
-      alt: "피부질환 클리닉 한방 진료 이미지",
+      image,
+      alt: `${condition.title} 피부질환 한방 진료 이미지`,
     }),
   };
 }

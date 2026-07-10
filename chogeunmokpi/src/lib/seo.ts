@@ -44,3 +44,17 @@ export function programImageMetadata({
     },
   };
 }
+
+export function buildSearchDescription(title: string, summary: string) {
+  const cleanedSummary = summary
+    .replace(/[“”"']/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const description = `대전 유성구 반석동 초근목피한의원 ${title} 한방 진료. ${cleanedSummary}`;
+
+  if (description.length <= 118) {
+    return description;
+  }
+
+  return `${description.slice(0, 115).replace(/[,.·\s]+$/g, "")}...`;
+}

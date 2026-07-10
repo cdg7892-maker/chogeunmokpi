@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getHeadFaceDetailPage, headFaceDetailPages } from "@/lib/head-face-detail-pages";
-import { programImageMetadata } from "@/lib/seo";
+import { buildSearchDescription, programImageMetadata } from "@/lib/seo";
 import { headFaceSeoTitles } from "@/lib/seo-titles";
 
 type PageProps = {
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title =
     headFaceSeoTitles[page.slug] ??
     `대전 ${page.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
-  const description = `${page.summary} 대전 유성구 반석동 초근목피한의원의 ${page.title} 한방 진료 안내입니다.`;
+  const description = buildSearchDescription(page.title, page.summary);
 
   return {
     title,
@@ -137,7 +137,7 @@ export default async function HeadFaceConditionPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
+      <section data-nosnippet className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
         <SectionHeading
           eyebrow="Symptom Language"
           title={`${page.title}, 이런 표현을 자주 하시나요?`}
@@ -152,7 +152,7 @@ export default async function HeadFaceConditionPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-y border-[#d8cfbd] bg-[#fffdf7]">
+      <section data-nosnippet className="border-y border-[#d8cfbd] bg-[#fffdf7]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-24">
           <SectionHeading
             eyebrow="Check Point"

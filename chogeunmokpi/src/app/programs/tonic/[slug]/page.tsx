@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { tonicConditions } from "@/lib/tonic-conditions";
-import { programImageMetadata } from "@/lib/seo";
+import { buildSearchDescription, programImageMetadata } from "@/lib/seo";
 import { tonicSeoTitles } from "@/lib/seo-titles";
 
 export function generateStaticParams() {
@@ -29,16 +29,17 @@ export async function generateMetadata({
   const title =
     tonicSeoTitles[condition.slug] ??
     `대전 ${condition.title} 유성구 한의원 한약 - 초근목피한의원 대전 반석동`;
+  const description = buildSearchDescription(condition.title, condition.summary);
 
   return {
     title,
-    description: `${condition.category}. ${condition.summary} 대전 유성구 반석동 초근목피한의원에서 체질과 증상에 맞춰 안내합니다.`,
+    description,
     alternates: {
       canonical: `/programs/tonic/${slug}`,
     },
     ...programImageMetadata({
       title,
-      description: condition.summary,
+      description,
       url: `/programs/tonic/${slug}`,
       image: condition.heroImage,
       alt: condition.heroAlt,
