@@ -8,23 +8,36 @@ type ProgramImageMetadataOptions = {
   alt: string;
 };
 
+const SITE_URL = "https://chogeunmokpi.vercel.app";
+
+export function absoluteSiteUrl(path: string) {
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return path;
+  }
+
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export function programImageMetadata({
   title,
   description,
   url,
   image,
   alt,
-}: ProgramImageMetadataOptions): Pick<Metadata, "openGraph" | "twitter"> {
+}: ProgramImageMetadataOptions): Pick<Metadata, "openGraph" | "twitter" | "other"> {
+  const absoluteUrl = absoluteSiteUrl(url);
+  const absoluteImage = absoluteSiteUrl(image);
+
   return {
     openGraph: {
       title,
       description,
-      url,
+      url: absoluteUrl,
       type: "article",
       siteName: "초근목피한의원",
       images: [
         {
-          url: image,
+          url: absoluteImage,
           width: 1200,
           height: 1200,
           alt,
@@ -37,10 +50,14 @@ export function programImageMetadata({
       description,
       images: [
         {
-          url: image,
+          url: absoluteImage,
           alt,
         },
       ],
+    },
+    other: {
+      thumbnail: absoluteImage,
+      image_src: absoluteImage,
     },
   };
 }

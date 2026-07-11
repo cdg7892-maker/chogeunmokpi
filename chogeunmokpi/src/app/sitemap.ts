@@ -56,12 +56,15 @@ const columnRoutes = healthColumns.map(
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = [...staticRoutes, ...clinicDetailRoutes, ...conditionRoutes, ...columnRoutes];
+const routes = [...staticRoutes, ...clinicDetailRoutes, ...conditionRoutes, ...columnRoutes];
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: now,
     changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),
     priority: route === "" ? 1 : route.split("/").length <= 3 ? 0.8 : 0.6,
+    images: digestiveDetailPages
+      .filter((condition) => route === `/programs/digestive/${condition.slug}`)
+      .map((condition) => `${SITE_URL}${condition.heroImage}`),
   }));
 }

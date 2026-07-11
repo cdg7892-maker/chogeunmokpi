@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
 import { digestiveDetailPages, getDigestiveDetailPage } from "@/lib/digestive-detail-pages";
 import { doctors } from "@/lib/site-data";
-import { programImageMetadata } from "@/lib/seo";
+import { absoluteSiteUrl, programImageMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -52,9 +52,42 @@ export default async function DigestiveConditionPage({ params }: PageProps) {
   if (!page) notFound();
 
   const relatedPages = digestiveDetailPages.filter((item) => item.slug !== page.slug).slice(0, 6);
+  const pageUrl = absoluteSiteUrl(`/programs/digestive/${page.slug}`);
+  const imageUrl = absoluteSiteUrl(page.heroImage);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: page.seoTitle,
+    headline: page.headline,
+    description: page.summary,
+    url: pageUrl,
+    image: imageUrl,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: imageUrl,
+      width: 1200,
+      height: 1200,
+      caption: page.heroAlt,
+    },
+    about: {
+      "@type": "MedicalCondition",
+      name: page.title,
+      alternateName: page.aliases,
+    },
+    publisher: {
+      "@type": "MedicalClinic",
+      name: "초근목피한의원",
+      url: "https://chogeunmokpi.vercel.app",
+    },
+    inLanguage: "ko-KR",
+  };
 
   return (
     <main className="min-h-screen bg-[#f6f2e8] text-[#20251c]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="border-b border-[#d8cfbd] bg-[#f6f2e8]">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-12 sm:px-8 lg:min-h-[760px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-20">
           <div>
