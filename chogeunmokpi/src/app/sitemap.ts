@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getClinicPage } from "@/lib/clinic-pages";
+import { digestiveDetailPages } from "@/lib/digestive-detail-pages";
 import { healthColumns } from "@/lib/health-columns";
 import { mindConditions } from "@/lib/mind-conditions";
 import { skinConditions } from "@/lib/skin-conditions";
@@ -43,6 +44,7 @@ const clinicDetailRoutes = [
 ];
 
 const conditionRoutes = [
+  ...digestiveDetailPages.map((condition) => `/programs/digestive/${condition.slug}`),
   ...mindConditions.map((condition) => `/programs/psy/${condition.slug}`),
   ...skinConditions.map((condition) => `/programs/skin/${condition.slug}`),
   ...tonicConditions.map((condition) => `/programs/tonic/${condition.slug}`),

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import DigestiveQuiz from "@/components/programs/DigestiveQuiz";
 import { LockedReviewCard, LockedReviewGate } from "@/components/programs/LockedReview";
+import { digestiveDetailPages } from "@/lib/digestive-detail-pages";
 import { doctors, reviews } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -781,7 +782,42 @@ export default function DigestiveProgramPage() {
         </div>
       </section>
 
-      {/* 11. 관련 자료 */}
+      {/* 11. 세부 질환 안내 */}
+      <section className="border-t border-line bg-paper-soft">
+        <div className="ch-section-pad mx-auto max-w-6xl">
+          <div className="mb-12 text-center">
+            <p className="mb-2 text-xs font-semibold tracking-wide text-root">세부 질환 안내</p>
+            <h2 className="ch-section-title">소화기질환 - 질환별 치료 안내</h2>
+            <p className="ch-section-copy">
+              증상 이름은 비슷해도 원인과 치료 방향은 다를 수 있습니다.
+              <br />
+              해당 질환을 클릭하면 상세 치료 정보를 확인하실 수 있습니다.
+            </p>
+          </div>
+
+          <div className="mb-8 border-b border-line pb-3 text-sm font-semibold text-root">
+            위장·장 기능 클리닉
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {digestiveDetailPages.map((condition) => (
+              <Link
+                key={condition.slug}
+                href={`/programs/digestive/${condition.slug}`}
+                className="group flex min-h-[112px] flex-col justify-between rounded-2xl border border-line bg-card p-5 shadow-sm shadow-ink/5 transition hover:-translate-y-1 hover:border-ink hover:shadow-lg hover:shadow-ink/10"
+              >
+                <span className="text-lg font-bold leading-snug text-ink keep-words">
+                  {condition.title}
+                </span>
+                <span className="mt-5 text-sm font-semibold text-root group-hover:underline">
+                  자세히 보기 →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. 관련 자료 */}
       <section className="bg-paper">
         <div className="ch-section-pad mx-auto max-w-6xl">
           <p className="mb-2 text-xs text-ink-soft">함께 보면 좋은 문서</p>
