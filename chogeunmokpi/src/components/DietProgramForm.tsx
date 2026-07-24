@@ -24,6 +24,8 @@ export default function DietProgramForm() {
   const router = useRouter();
   const [selected, setSelected] = useState<string[]>(["three-month"]);
   const [agreed, setAgreed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const toggle = (id: string) => {
     setSelected((prev) =>
@@ -34,10 +36,39 @@ export default function DietProgramForm() {
   return (
     <form
       className="rounded-[8px] border border-line bg-white p-6 shadow-sm md:p-8"
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
-        if (selected.length === 0 || !agreed) return;
-        router.push("/intake/success");
+        setErrorMessage("");
+        if (selected.length === 0 || !agreed || isSubmitting) return;
+
+        const formData = new FormData(event.currentTarget);
+        const name = String(formData.get("name") ?? "").trim();
+        const phone = String(formData.get("phone") ?? "").trim();
+
+        if (!name || !phone) {
+          setErrorMessage("성함과 연락처를 입력해주세요.");
+          return;
+        }
+
+        setIsSubmitting(true);
+        try {
+          const response = await fetch("/api/diet-program", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, phone, selected }),
+          });
+
+          if (!response.ok) {
+            throw new Error("request failed");
+          }
+
+          router.push("/intake/success");
+        } catch {
+          setErrorMessage(
+            "신청 접수 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
+          );
+          setIsSubmitting(false);
+        }
       }}
     >
       <div className="grid gap-5 md:grid-cols-2">
@@ -128,12 +159,18 @@ export default function DietProgramForm() {
         </span>
       </label>
 
+      {errorMessage ? (
+        <p className="mt-4 rounded-[8px] border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+          {errorMessage}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        disabled={selected.length === 0 || !agreed}
+        disabled={selected.length === 0 || !agreed || isSubmitting}
         className="mt-6 w-full rounded-full bg-ink px-7 py-4 font-bold text-white shadow-md shadow-ink/10 transition hover:-translate-y-px hover:bg-root disabled:cursor-not-allowed disabled:bg-ink/30"
       >
-        신청하기
+        {isSubmitting ? "접수 중입니다" : "신청하기"}
       </button>
     </form>
   );
