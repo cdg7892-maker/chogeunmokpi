@@ -59,21 +59,26 @@ async function sendSmsNotification(params: {
 
   await Promise.all(
     receivers.map(async (receiver) => {
-      const response = await fetch("https://api.solapi.com/messages/v4/send", {
+      const response = await fetch(
+        "https://api.solapi.com/messages/v4/send-many/detail",
+        {
         method: "POST",
         headers: {
           Authorization: createSolapiAuthorization(apiKey, apiSecret),
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: {
-            to: receiver,
-            from: sender,
-            text,
-          },
+          messages: [
+            {
+              to: receiver,
+              from: sender,
+              text,
+            },
+          ],
         }),
         cache: "no-store",
-      });
+        },
+      );
 
       if (!response.ok) {
         throw new Error(`SMS request failed: ${response.status}`);
