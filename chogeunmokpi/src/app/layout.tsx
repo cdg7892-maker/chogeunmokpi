@@ -62,6 +62,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon-180.png", sizes: "180x180", type: "image/png" }],
   },
   verification: {
+    google: "3TWHTDHunF3DpfHzDxjo43mrv5kCDhrmApt6ZnYGCJ0",
     other: {
       "naver-site-verification": "b14dad02eabb7f8c5b427e9524751486b1ab985e",
     },
