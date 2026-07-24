@@ -145,15 +145,18 @@ export async function POST(request: Request) {
   };
 
   try {
-    await appendToSheet(submission);
     await sendSmsNotification({ name, phone, selectedLabels, submittedAt });
   } catch (error) {
-    console.error("[diet-program] notification failed", error);
+    console.error("[diet-program] sms notification failed", error);
     return NextResponse.json(
       { message: "알림 전송에 실패했습니다." },
       { status: 502 },
     );
   }
+
+  appendToSheet(submission).catch((error) => {
+    console.error("[diet-program] sheet webhook failed", error);
+  });
 
   return NextResponse.json({ ok: true });
 }
