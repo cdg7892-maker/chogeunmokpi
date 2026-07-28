@@ -34,7 +34,7 @@ export function programImageMetadata({
       description,
       url: absoluteUrl,
       type: "article",
-      siteName: "초근목피한의원",
+      siteName: "대전 초근목피한의원",
       images: [
         {
           url: absoluteImage,
