@@ -133,18 +133,23 @@ export default function Hero() {
       </svg>
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center md:py-24">
-        <p className="mb-6 text-sm tracking-[0.28em] text-ink-soft">
-          전통의 지혜와 현대한의학의 통합
+        <p className="mb-6 text-sm tracking-[0.24em] text-ink-soft">
+          대전한의원 · 유성구한의원 · 반석동한의원
         </p>
-        <h1 className="font-display text-6xl leading-[1.16] text-ink md:text-7xl">
+        <h1 className="font-display text-5xl leading-[1.16] text-ink md:text-7xl">
+          대전 초근목피한의원
+        </h1>
+        <p className="mt-5 font-display text-4xl leading-[1.2] text-ink md:text-6xl">
           근본의 시간,
           <br />
           회복의 공간
-        </h1>
+        </p>
         <p className="mt-8 text-lg leading-relaxed text-ink-soft md:text-xl">
-          이곳저곳 다녀봐도 낫지 않던 만성 질환.
+          대전 유성구 반석동에서 이곳저곳 다녀봐도
           <br />
-          대전 유성구 반석동 초근목피한의원은 수치가 아닌
+          낫지 않던 만성 질환을 살핍니다.
+          <br />
+          초근목피한의원은 수치가 아닌
           <br className="hidden md:block" />
           몸 전체의 균형을 봅니다.
         </p>

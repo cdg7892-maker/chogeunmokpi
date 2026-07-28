@@ -8,12 +8,14 @@ import { clinicInfo } from "@/lib/site-data";
 // IBM Plex Sans KR(body)를 불러오도록 교체 예정입니다.
 // 이 샌드박스는 fonts.googleapis.com 접근이 막혀 있어 시스템 폰트로 대체했습니다.
 
+const homeDescription =
+  "대전한의원·유성구한의원·반석동한의원 초근목피한의원은 소화기질환, 피부질환, 마음건강, 보약·웰니스 등 만성 난치성 질환을 몸의 균형 관점에서 진료합니다.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://chogeunmokpi.vercel.app"),
   applicationName: "대전 초근목피한의원",
   title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
-  description:
-    "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
+  description: homeDescription,
   alternates: {
     canonical: "/",
   },
@@ -30,8 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
-    description:
-      "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
+    description: homeDescription,
     url: "https://chogeunmokpi.vercel.app",
     siteName: "대전 초근목피한의원",
     locale: "ko_KR",
@@ -48,8 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "대전한의원 초근목피한의원 | 유성구 반석동 난치성 질환 진료",
-    description:
-      "대전 유성구 반석동 초근목피한의원은 소화기·피부·마음건강 등 만성 난치성 질환을 몸의 균형으로 진료합니다.",
+    description: homeDescription,
     images: ["/logo-icon.png"],
   },
   icons: {
