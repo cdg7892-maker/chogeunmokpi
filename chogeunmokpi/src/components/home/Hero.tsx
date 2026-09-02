@@ -137,7 +137,7 @@ export default function Hero() {
           대전한의원 · 유성구한의원 · 반석동한의원
         </p>
         <h1 className="font-display text-5xl leading-[1.16] text-ink md:text-7xl">
-          대전 초근목피한의원
+          대전한의원 초근목피한의원
         </h1>
         <p className="mt-5 font-display text-4xl leading-[1.2] text-ink md:text-6xl">
           근본의 시간,
