@@ -1,14 +1,14 @@
-# 진료 안내 캐러셀
+# 개별 질환 검색 캐러셀
 
-오비채한의원의 두통 안내 목록(기존 상세 글 재사용)과 안면마비·골프엘보의 공유 갤러리 구조를 참고했다. 초근목피의 기존 본문·이미지·URL을 사용한다.
+참조: https://orbitchae.com/programs/ms/tennis-elbow 및 그 아래 symptoms, causes 등 주제별 독립 페이지. 클리닉에 여러 질환을 나열하는 이전 구현은 철회했다.
 
-- 대상: 소화기, 마음건강, 소아·성장, 두면부, 여성건강, 보약·웰니스, 피부. 7개 소개 페이지와 88개 상세 글.
-- `src/lib/program-guides.ts`: 카드와 ItemList의 공통 데이터. 마음건강 소개는 `/programs/mind`, 상세 글은 `/programs/psy/*`.
-- 각 분야 layout이 공통 갤러리와 ItemList 하나를 렌더링한다. 같은 분야에서 이동하면 갤러리 위치를 유지한다.
-- 원본 이미지는 기존 상세 페이지 OG 이미지와 동일하다. 클라이언트에는 본문 전체 대신 카드용 필드만 전달한다.
-- 모바일 가로 스크롤, 이전/다음 버튼, 키보드 포커스, 현재 글 표시, 본문 바로가기를 제공한다.
-- 단독 다이어트 페이지와 신청 양식은 묶을 상세 글이 없어 제외했다.
+- 7개 상위 클리닉에는 갤러리와 ItemList가 없다. 여성한의원·피부클리닉·고운맘카드 같은 포괄/행정 안내도 제외했다.
+- 대상 85개 개별 질환/진료 항목에 각각 6개 주제 URL을 연결한다. 예: `/programs/digestive/reflux-esophagitis/symptoms`.
+- `disease-guides-content.json`은 기존 공개 본문의 주제별 편집본이다. `prepare-disease-guides.cjs`는 기존 빌드 HTML에서 원문을 추출하는 이관 도구이며 자동 빌드에서는 실행하지 않는다. 향후 내용 변경은 JSON과 원래 본문을 함께 검토한다.
+- `disease-guides.ts`의 데이터로 화면 목록, ItemList, 주제별 OG 메타데이터 및 sitemap을 맞춘다. 모든 링크는 같은 질환 아래 주제만 가리킨다.
+- 원본 이미지는 `public/images/disease-guides`의 1200×1200 WebP이다. `render-disease-cards.mjs`가 직접 설계한 벡터 그림과 한글 제목을 함께 렌더링한다. 이미지 파일 자체에 질환명, 주제, 설명이 포함된다. 사진을 합성하거나 CSS로 글씨를 덧씌우는 방식이 아니다.
+- 모바일 스크롤, 이전/다음 버튼, 키보드 포커스, 현재 글 표시, 본문 바로가기를 제공한다. 클라이언트에는 카드용 필드만 전달한다.
 
-검증: `npm run build` 후 저장소 루트에서 `node chogeunmokpi/scripts/check-program-guides.mjs` 실행. 생성된 HTML에서 목록 수, 카드 수, URL, canonical, OG 이미지, 원본 이미지 중복을 검사한다.
+검증: `npm run build` 후 저장소 루트에서 `node chogeunmokpi/scripts/check-disease-guides.mjs` 실행. 클리닉 복원, 질환별 목록 격리, 주제별 원문·canonical·OG, sitemap, 이미지 크기와 중복을 검사한다.
 
 네이버 검색 캐러셀 노출은 검색엔진 판단에 달려 있으며 보장되지 않는다. 지침: https://searchadvisor.naver.com/guide/structured-data-carousel

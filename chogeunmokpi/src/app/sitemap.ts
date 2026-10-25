@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { diseaseGuides } from "@/lib/disease-guides";
 import { digestiveDetailPages } from "@/lib/digestive-detail-pages";
 import { headFaceDetailPages } from "@/lib/head-face-detail-pages";
 import { healthColumns } from "@/lib/health-columns";
@@ -99,19 +100,31 @@ const imageByRoute = new Map<string, string>([
 ]);
 
 const LAST_MODIFIED = new Date("2026-07-24T00:00:00+09:00");
+const CAROUSEL_UPDATED = new Date('2026-10-25T00:00:00+09:00');
+const updatedRoutes = new Set([
+  ...diseaseGuides.map(disease => disease.path),
+  ...['digestive', 'mind', 'pediatric', 'head-face', 'women', 'tonic', 'skin'].map(group => `/programs/${group}`),
+]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [...new Set([...staticRoutes, ...clinicDetailRoutes, ...conditionRoutes, ...columnRoutes])];
 
-  return routes.map((route) => {
+  const existingRoutes = routes.map((route) => {
     const image = imageByRoute.get(route);
 
     return {
       url: `${SITE_URL}${route}`,
-      lastModified: LAST_MODIFIED,
+      lastModified: updatedRoutes.has(route) ? CAROUSEL_UPDATED : LAST_MODIFIED,
       changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),
       priority: route === "" ? 1 : route.split("/").length <= 3 ? 0.8 : 0.6,
       images: image ? [`${SITE_URL}${image}`] : [],
     };
   });
+  return [...existingRoutes, ...diseaseGuides.flatMap(disease => disease.items.map(item => ({
+    url: `${SITE_URL}${item.path}`,
+    lastModified: CAROUSEL_UPDATED,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+    images: [`${SITE_URL}${item.image}`],
+  })))];
 }

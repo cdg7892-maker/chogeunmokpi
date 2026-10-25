@@ -22,10 +22,10 @@ export default function ProgramGuideCarousel({ title, path, items }: {
   return (
     <section className={styles.section} aria-labelledby="program-guides-heading" data-program-guides>
       <div className={styles.heading}>
-        <div><p className={styles.eyebrow}>초근목피한의원 · 증상별 진료 안내</p><h2 id="program-guides-heading">{title} 증상, 하나씩 살펴보세요</h2></div>
+        <div><p className={styles.eyebrow}>초근목피한의원 · 질환별 진료 가이드</p><h2 id="program-guides-heading">{title}, 궁금한 주제를 살펴보세요</h2></div>
         <Link href={path} scroll={false} className={styles.overview}>전체 진료 안내 ↗</Link>
       </div>
-      <p className={styles.intro}>불편한 증상과 가까운 글을 선택해 자세한 진료 안내를 확인하세요.</p>
+      <p className={styles.intro}>증상부터 진료 과정까지, 이미지를 선택하면 해당 주제의 상세 안내로 연결됩니다.</p>
       <div className={styles.controls}>
         <a href="#program-content">본문 바로 보기 ↓</a>
         <div><span aria-live="polite">{position} / {items.length}</span><button type="button" onClick={() => move(-1)} aria-label="이전 진료 안내 보기" aria-controls="program-guides-list">←</button><button type="button" onClick={() => move(1)} aria-label="다음 진료 안내 보기" aria-controls="program-guides-list">→</button></div>
@@ -35,16 +35,16 @@ export default function ProgramGuideCarousel({ title, path, items }: {
         const card = element?.firstElementChild as HTMLElement | null;
         if (element && card) setPosition(Math.min(items.length, Math.round(element.scrollLeft / (card.offsetWidth + 16)) + 1));
       }}>
-        {items.map((item, index) => (
+        {items.map((item) => (
           <li key={item.path} className={styles.item}>
             <Link href={item.path} scroll={false} className={styles.card} aria-current={pathname === item.path ? "page" : undefined} data-guide-link>
-              <div className={styles.picture}><Image src={item.image} alt={`${item.title} 진료 안내`} fill sizes="(max-width: 640px) 76vw, (max-width: 1024px) 40vw, 285px" /><span>{String(index + 1).padStart(2, "0")}</span></div>
+              <div className={styles.picture}><Image src={item.image} alt={`${item.title} 진료 안내`} fill sizes="(max-width: 640px) 76vw, (max-width: 1024px) 40vw, 285px" /></div>
               <div className={styles.copy}><h3>{item.title}<span aria-hidden="true">↗</span></h3><p>{item.description}</p>{pathname === item.path && <strong className={styles.current}>현재 읽는 글</strong>}</div>
             </Link>
           </li>
         ))}
       </ol>
-      <p className={styles.hint}>옆으로 넘겨 다른 증상도 확인할 수 있습니다.</p>
+      <p className={styles.hint}>옆으로 넘겨 이 질환의 다른 주제도 확인할 수 있습니다.</p>
     </section>
   );
 }

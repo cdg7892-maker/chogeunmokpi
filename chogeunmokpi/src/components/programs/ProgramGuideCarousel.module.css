@@ -14,7 +14,7 @@
 .item { flex: 0 0 calc((100% - 48px) / 4); scroll-snap-align: start; list-style: none; }
 .card { display: block; height: 100%; border: 1px solid #d5ddcf; border-radius: 16px; overflow: hidden; background: #fffdf8; transition: border-color .2s; }
 .card:hover, .card[aria-current="page"] { border-color: #426448; box-shadow: 0 0 0 1px #426448; }
-.picture { position: relative; aspect-ratio: 4 / 3; background: #e8eee4; }
+.picture { position: relative; aspect-ratio: 1; background: #e8eee4; }
 .picture img { object-fit: cover; }
 .picture > span { position: absolute; top: 12px; left: 12px; padding: 4px 8px; border-radius: 8px; background: #fffdf8ee; font-size: 12px; font-weight: 700; }
 .copy { padding: 18px; }
