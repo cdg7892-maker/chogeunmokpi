@@ -12,7 +12,7 @@ const homeDescription =
   "대전한의원 초근목피한의원은 유성구 반석동에서 소화기·피부·마음건강·보약 등 만성질환을 몸의 균형 관점으로 진료합니다.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chogeunmokpi.vercel.app"),
+  metadataBase: new URL("https://www.cgmphani.com"),
   applicationName: "대전 초근목피한의원",
   title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원",
   description: homeDescription,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원",
     description: homeDescription,
-    url: "https://chogeunmokpi.vercel.app",
+    url: "https://www.cgmphani.com",
     siteName: "대전 초근목피한의원",
     locale: "ko_KR",
     type: "website",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   verification: {
     google: "3TWHTDHunF3DpfHzDxjo43mrv5kCDhrmApt6ZnYGCJ0",
     other: {
-      "naver-site-verification": "b14dad02eabb7f8c5b427e9524751486b1ab985e",
+      "naver-site-verification": ["b14dad02eabb7f8c5b427e9524751486b1ab985e", "d89d670fbad5078bca329881406afd241bc6121e"],
     },
   },
 };
@@ -86,9 +86,9 @@ const clinicJsonLd = {
   alternateName: ["초근목피한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
   description:
     "대전 유성구 반석동에서 소화기·피부·마음건강 등 만성 난치성 질환을 진료하는 한의원입니다.",
-  url: "https://chogeunmokpi.vercel.app",
+  url: "https://www.cgmphani.com",
   telephone: clinicInfo.phone,
-  image: "https://chogeunmokpi.vercel.app/logo-icon.png",
+  image: "https://www.cgmphani.com/logo-icon.png",
   priceRange: "$$",
   medicalSpecialty: [
     "Digestive",
@@ -120,12 +120,12 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "대전 초근목피한의원",
   alternateName: ["초근목피한의원", "초근목피 한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
-  url: "https://chogeunmokpi.vercel.app",
+  url: "https://www.cgmphani.com",
   inLanguage: "ko-KR",
   publisher: {
     "@type": "MedicalClinic",
     name: "대전 초근목피한의원",
-    url: "https://chogeunmokpi.vercel.app",
+    url: "https://www.cgmphani.com",
   },
 };
 

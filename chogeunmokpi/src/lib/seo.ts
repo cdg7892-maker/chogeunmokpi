@@ -8,7 +8,7 @@ type ProgramImageMetadataOptions = {
   alt: string;
 };
 
-const SITE_URL = "https://chogeunmokpi.vercel.app";
+const SITE_URL = "https://www.cgmphani.com";
 
 export function absoluteSiteUrl(path: string) {
   if (path.startsWith("http://") || path.startsWith("https://")) {

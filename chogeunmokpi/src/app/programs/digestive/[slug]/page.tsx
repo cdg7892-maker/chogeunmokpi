@@ -77,7 +77,7 @@ export default async function DigestiveConditionPage({ params }: PageProps) {
     publisher: {
       "@type": "MedicalClinic",
       name: "초근목피한의원",
-      url: "https://chogeunmokpi.vercel.app",
+      url: "https://www.cgmphani.com",
     },
     inLanguage: "ko-KR",
   };

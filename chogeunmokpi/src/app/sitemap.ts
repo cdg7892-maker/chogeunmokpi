@@ -8,7 +8,7 @@ import { skinConditions } from "@/lib/skin-conditions";
 import { tonicConditions } from "@/lib/tonic-conditions";
 import { womenDetailPages } from "@/lib/women-detail-pages";
 
-const SITE_URL = "https://chogeunmokpi.vercel.app";
+const SITE_URL = "https://www.cgmphani.com";
 
 const staticRoutes = [
   "",
