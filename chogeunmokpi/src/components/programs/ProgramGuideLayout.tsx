@@ -20,7 +20,7 @@ export default function ProgramGuideLayout({ path, children }: {
   };
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-    <ProgramGuideCarousel title={data.title} path={data.path} items={data.items.map(({ title, description, path, image }) => ({ title, description, path, image }))} />
+    <ProgramGuideCarousel title={data.title} path={data.path} generatedPhotos={data.generatedPhotos} items={data.items.map(({ title, description, path, image }) => ({ title, description, path, image }))} />
     <div id="program-content" style={{ scrollMarginTop: "6rem" }}>{children}</div>
   </>;
 }

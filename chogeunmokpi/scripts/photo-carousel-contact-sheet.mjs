@@ -1,0 +1,10 @@
+import { readFileSync, mkdirSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+import sharp from 'sharp';
+const root=resolve(import.meta.dirname,'..');
+const disease=process.argv[2];
+const jobs=JSON.parse(readFileSync(join(root,'docs/photo-carousel/prompts.json'),'utf8')).filter(j=>j.id.startsWith(disease+'/'));
+if(jobs.length!==6)throw Error('Expected six cards');
+const tiles=await Promise.all(jobs.map(async(j,i)=>({input:await sharp(join(root,'public/images/disease-guides-v2',j.id+'.webp')).resize(400,400).toBuffer(),left:(i%3)*400,top:Math.floor(i/3)*400})));
+mkdirSync(join(root,'docs/photo-carousel/qa'),{recursive:true});
+await sharp({create:{width:1200,height:800,channels:3,background:'#fff'}}).composite(tiles).png().toFile(join(root,'docs/photo-carousel/qa',disease.replaceAll('/','__')+'.png'));

@@ -100,7 +100,7 @@ const imageByRoute = new Map<string, string>([
 ]);
 
 const LAST_MODIFIED = new Date("2026-07-24T00:00:00+09:00");
-const CAROUSEL_UPDATED = new Date('2026-10-25T00:00:00+09:00');
+const CAROUSEL_UPDATED = new Date('2026-10-26T14:00:00+09:00');
 const updatedRoutes = new Set([
   ...diseaseGuides.map(disease => disease.path),
   ...['digestive', 'mind', 'pediatric', 'head-face', 'women', 'tonic', 'skin'].map(group => `/programs/${group}`),

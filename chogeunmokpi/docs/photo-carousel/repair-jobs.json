@@ -1,0 +1,44 @@
+[
+  {
+    "id": "pediatric/digestive/care",
+    "index": 4,
+    "disease": "소아 소화불량",
+    "label": "진료 과정",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A photorealistic ordinary family scene. A Korean school-age child wearing a sweater and trousers sits beside a parent at a home table, resting a hand over their sweater on their stomach with a mildly uncomfortable expression. Natural daylight, everyday clothes, respectful family setting. Embed exact Korean text: small brand 초근목피한의원; large heading 소아 소화불량; large topic 진료 과정; small footer AI 연출 이미지 · 실제 환자가 아닙니다. Clear large typography. No additional claims or before-and-after."
+  },
+  {
+    "id": "women/menopause/symptoms",
+    "index": 0,
+    "disease": "갱년기",
+    "label": "증상 확인",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A medical textbook illustration of isolated ovaries with follicles, with a small schematic pituitary and hormone signaling arrows. Clean educational diagram on ivory. No person or body. Embed exact Korean text: small brand 초근목피한의원; large heading 갱년기; large topic 증상 확인; small footer 해부학적 이해를 돕는 설명 이미지. Clear large typography. No additional claims or before-and-after."
+  },
+  {
+    "id": "women/cold-uterus/symptoms",
+    "index": 0,
+    "disease": "자궁냉증",
+    "label": "증상 확인",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A medical textbook illustration of an isolated normal uterus with fallopian tubes, ovaries and pelvic blood vessels. Educational anatomy, normal tissue, no literal cold effects or invented lesion. No person or body. Embed exact Korean text: small brand 초근목피한의원; large heading 자궁냉증; large topic 증상 확인; small footer 해부학적 이해를 돕는 설명 이미지. Clear large typography. No additional claims or before-and-after."
+  },
+  {
+    "id": "women/endometriosis/symptoms",
+    "index": 0,
+    "disease": "자궁내막증",
+    "label": "증상 확인",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A clean medical textbook diagram of an isolated uterus, fallopian tubes and ovaries with a few small dark red dots on the outside representing ectopic endometrial-like tissue sites. Muted colors, educational diagram only, no person or body. Embed exact Korean text: small brand 초근목피한의원; large heading 자궁내막증; large topic 증상 확인; small footer 해부학적 이해를 돕는 설명 이미지. Clear large typography. No additional claims or before-and-after."
+  },
+  {
+    "id": "women/ovarian-cyst/symptoms",
+    "index": 0,
+    "disease": "난소낭종",
+    "label": "증상 확인",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A clean medical textbook diagram of an isolated ovary in cross-section, showing follicles and one smooth fluid-filled cyst. Soft ivory background, muted colors, educational organ illustration only, no person or body. Embed exact Korean text: small brand 초근목피한의원; large heading 난소낭종; large topic 증상 확인; small footer 해부학적 이해를 돕는 설명 이미지. Clear large typography. No additional claims or before-and-after."
+  },
+  {
+    "id": "women/postpartum-wind/symptoms",
+    "index": 0,
+    "disease": "산후풍",
+    "label": "증상 확인",
+    "prompt": "Create ONE finished square website carousel card. Warm ivory and muted forest green editorial design. A clean medical textbook illustration of the bones, tendons and ligaments of the wrist and a smaller shoulder joint diagram. Normal anatomical structures, muted ivory and forest green layout. No person, no uterus, no invented lesion. Embed exact Korean text: small brand 초근목피한의원; large heading 산후풍; large topic 증상 확인; small footer 해부학적 이해를 돕는 설명 이미지. Clear large typography. No additional claims or before-and-after."
+  }
+]

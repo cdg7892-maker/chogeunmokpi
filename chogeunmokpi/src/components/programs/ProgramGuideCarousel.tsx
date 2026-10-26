@@ -7,8 +7,8 @@ import { useRef, useState } from "react";
 import type { ProgramGuide } from "@/lib/program-guides";
 import styles from "./ProgramGuideCarousel.module.css";
 
-export default function ProgramGuideCarousel({ title, path, items }: {
-  title: string; path: string; items: ProgramGuide[];
+export default function ProgramGuideCarousel({ title, path, items, generatedPhotos = false }: {
+  title: string; path: string; items: ProgramGuide[]; generatedPhotos?: boolean;
 }) {
   const pathname = usePathname();
   const list = useRef<HTMLOListElement>(null);
@@ -45,6 +45,7 @@ export default function ProgramGuideCarousel({ title, path, items }: {
         ))}
       </ol>
       <p className={styles.hint}>옆으로 넘겨 이 질환의 다른 주제도 확인할 수 있습니다.</p>
+      {generatedPhotos && <p className={styles.hint}>첫 이미지는 해부학적 이해를 돕는 설명 그림이며, 인물 사진은 AI 연출 이미지로 실제 환자가 아닙니다.</p>}
     </section>
   );
 }

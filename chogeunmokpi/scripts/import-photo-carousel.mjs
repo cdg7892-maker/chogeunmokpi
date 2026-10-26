@@ -1,0 +1,14 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { resolve, join, dirname } from 'node:path';
+import sharp from 'sharp';
+const root=resolve(import.meta.dirname,'..');
+const [id,source]=process.argv.slice(2);
+const jobs=JSON.parse(readFileSync(join(root,'docs/photo-carousel/prompts.json'),'utf8'));
+if(!jobs.some(job=>job.id===id)) throw Error('Unknown asset');
+const destination=join(root,'public/images/disease-guides-v2',id+'.webp');
+mkdirSync(dirname(destination),{recursive:true});
+await sharp(source).resize(1200,1200,{fit:'fill'}).webp({quality:90}).toFile(destination);
+const record=join(root,'docs/photo-carousel/completed',id.replaceAll('/','__')+'.json');
+mkdirSync(dirname(record),{recursive:true});
+writeFileSync(record,JSON.stringify({id,tool:'built-in image_gen',sourceFile:source.split(/[\\/]/).at(-1),destination:'/images/disease-guides-v2/'+id+'.webp'})+'\n');
+console.log(id);

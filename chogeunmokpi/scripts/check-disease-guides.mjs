@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 const root = resolve(import.meta.dirname, '..');
 const content = JSON.parse(readFileSync(join(root, 'src/lib/disease-guides-content.json'), 'utf8'));
+const photoReady = JSON.parse(readFileSync(join(root, 'src/lib/photo-carousel-ready.json'), 'utf8'));
 const html = path => readFileSync(join(root, '.next/server/app', path + '.html'), 'utf8');
 const lists = text => [...text.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m=>JSON.parse(m[1])).filter(s=>s['@type']==='ItemList');
 for (const category of ['digestive','mind','pediatric','head-face','women','tonic','skin']) {
@@ -29,7 +30,7 @@ for (const disease of content) {
   }
   for (const section of disease.sections) {
     const path = `${disease.path}/${section.id}`;
-    const image = `/images/disease-guides/${disease.path.split('/').slice(2).join('/')}/${section.id}.webp`;
+    const image = `/images/${photoReady.includes(disease.path) ? 'disease-guides-v2' : 'disease-guides'}/${disease.path.split('/').slice(2).join('/')}/${section.id}.webp`;
     const page = html(path);
     assert(page.includes(`<link rel="canonical" href="https://www.cgmphani.com${path}"`), path + ': canonical');
     assert(page.includes(`<meta property="og:image" content="https://www.cgmphani.com${image}"`), path + ': OG');
