@@ -3,6 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { doctors } from "@/lib/site-data";
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const doctor = doctors.find((d) => d.slug === slug);
+  if (!doctor) notFound();
+  return {
+    title: `${doctor.name} ${doctor.role} | 초근목피한의원`,
+    alternates: { canonical: `/about/doctors/${doctor.slug}` },
+  };
+}
+
 export function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
 }

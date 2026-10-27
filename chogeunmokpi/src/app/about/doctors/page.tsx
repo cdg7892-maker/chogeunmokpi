@@ -3,6 +3,11 @@ import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { doctors } from "@/lib/site-data";
 
+export const metadata = {
+  title: "의료진 소개 | 초근목피한의원",
+  alternates: { canonical: "/about/doctors" },
+};
+
 export default function DoctorsPage() {
   return (
     <section className="ch-section-pad mx-auto max-w-6xl">

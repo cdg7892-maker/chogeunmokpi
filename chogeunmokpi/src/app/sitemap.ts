@@ -26,7 +26,6 @@ const staticRoutes = [
   "/programs/digestive",
   "/programs/mind",
   "/programs/pediatric",
-  "/programs/head",
   "/programs/head-face",
   "/programs/skin",
   "/programs/tonic",
