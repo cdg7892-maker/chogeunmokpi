@@ -9,18 +9,18 @@ import { clinicInfo } from "@/lib/site-data";
 // 이 샌드박스는 fonts.googleapis.com 접근이 막혀 있어 시스템 폰트로 대체했습니다.
 
 const homeDescription =
-  "대전한의원 초근목피한의원은 유성구 반석동에서 소화기·피부·마음건강·보약 등 만성질환을 몸의 균형 관점으로 진료합니다.";
+  "반복되는 소화불량, 피부 고민, 잠 못 이루는 밤. 대전 유성구 반석동 초근목피한의원에서 증상과 생활습관, 몸 전체의 상태를 함께 살핍니다. 의료진과 진료과목을 확인하고 편하게 진료를 예약하세요.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cgmphani.com"),
-  applicationName: "대전 초근목피한의원",
-  title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원",
+  applicationName: "대전한의원 초근목피한의원",
+  title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
   description: homeDescription,
   keywords: [
     "대전한의원",
     "유성구한의원",
     "반석동한의원",
-    "대전 초근목피한의원",
+    "대전한의원 초근목피한의원",
     "초근목피한의원",
     "대전 소화기 한의원",
     "대전 피부 한의원",
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
     description: homeDescription,
     url: "https://www.cgmphani.com",
-    siteName: "대전 초근목피한의원",
+    siteName: "대전한의원 초근목피한의원",
     locale: "ko_KR",
     type: "website",
     images: [
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
         url: "/logo-icon.png",
         width: 512,
         height: 512,
-        alt: "대전 초근목피한의원",
+        alt: "대전한의원 초근목피한의원",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
     description: homeDescription,
     images: ["/logo-icon.png"],
   },
@@ -82,10 +82,9 @@ export const metadata: Metadata = {
 const clinicJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  name: "대전 초근목피한의원",
+  name: "대전한의원 초근목피한의원",
   alternateName: ["초근목피한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
-  description:
-    "대전 유성구 반석동에서 소화기·피부·마음건강 등 만성 난치성 질환을 진료하는 한의원입니다.",
+  description: homeDescription,
   url: "https://www.cgmphani.com",
   telephone: clinicInfo.phone,
   image: "https://www.cgmphani.com/logo-icon.png",
@@ -118,13 +117,13 @@ const clinicJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "대전 초근목피한의원",
+  name: "대전한의원 초근목피한의원",
   alternateName: ["초근목피한의원", "초근목피 한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
   url: "https://www.cgmphani.com",
   inLanguage: "ko-KR",
   publisher: {
     "@type": "MedicalClinic",
-    name: "대전 초근목피한의원",
+    name: "대전한의원 초근목피한의원",
     url: "https://www.cgmphani.com",
   },
 };

@@ -134,30 +134,28 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 py-20 text-center md:py-24">
         <p className="mb-6 text-sm tracking-[0.24em] text-ink-soft">
-          대전한의원 · 유성구한의원 · 반석동한의원
+          대전 유성구 반석동 · 몸 전체를 살피는 진료
         </p>
         <h1 className="font-display text-5xl leading-[1.16] text-ink md:text-7xl">
           대전한의원 초근목피한의원
         </h1>
-        <p className="mt-5 font-display text-4xl leading-[1.2] text-ink md:text-6xl">
-          근본의 시간,
+        <p className="mt-5 font-display text-3xl leading-[1.35] text-ink md:text-5xl">
+          반복되는 불편함,
           <br />
-          회복의 공간
+          이제 충분히 이야기하세요
         </p>
         <p className="mt-8 text-lg leading-relaxed text-ink-soft md:text-xl">
-          대전 유성구 반석동에서 이곳저곳 다녀봐도
-          <br />
-          낫지 않던 만성 질환을 살핍니다.
-          <br />
-          초근목피한의원은 수치가 아닌
+          소화가 불편한 날, 피부가 신경 쓰이는 날, 잠 못 이루는 밤.
           <br className="hidden md:block" />
-          몸 전체의 균형을 봅니다.
+          증상과 생활습관, 몸 전체의 상태를 함께 살피며
+          <br className="hidden md:block" />
+          나에게 맞는 진료 방향을 차근차근 안내합니다.
         </p>
         <Link
           href="/reserve"
           className="ch-btn-primary mt-10 px-7 py-3.5"
         >
-          초근목피한의원 진료 예약하기
+          네이버로 진료 예약하기
           <span aria-hidden="true">→</span>
         </Link>
       </div>

@@ -113,7 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return {
       url: `${SITE_URL}${route}`,
-      lastModified: updatedRoutes.has(route) ? CAROUSEL_UPDATED : LAST_MODIFIED,
+      lastModified: route === "" ? new Date("2026-10-30T00:00:00+09:00") : updatedRoutes.has(route) ? CAROUSEL_UPDATED : LAST_MODIFIED,
       changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),
       priority: route === "" ? 1 : route.split("/").length <= 3 ? 0.8 : 0.6,
       images: image ? [`${SITE_URL}${image}`] : [],
