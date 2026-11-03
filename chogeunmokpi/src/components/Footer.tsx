@@ -10,14 +10,14 @@ export default function Footer() {
           <span className="relative h-7 w-[22px]">
             <Image
               src="/logo-icon.png"
-              alt="초근목피한의원 로고"
+              alt="대전한의원 초근목피한의원 로고"
               fill
               sizes="22px"
               className="object-contain"
             />
           </span>
           <span className="font-display text-lg text-ink">
-            초근목피한의원
+            대전한의원 초근목피한의원
           </span>
         </div>
 

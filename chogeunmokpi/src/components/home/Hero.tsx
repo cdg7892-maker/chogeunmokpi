@@ -145,9 +145,9 @@ export default function Hero() {
           이제 충분히 이야기하세요
         </p>
         <p className="mt-8 text-lg leading-relaxed text-ink-soft md:text-xl">
-          소화가 불편한 날, 피부가 신경 쓰이는 날, 잠 못 이루는 밤.
+          오래 지속되거나 반복되는 소화기·피부·수면 문제.
           <br className="hidden md:block" />
-          증상과 생활습관, 몸 전체의 상태를 함께 살피며
+          만성·난치성 질환의 증상과 병력, 생활습관을 함께 살피며
           <br className="hidden md:block" />
           나에게 맞는 진료 방향을 차근차근 안내합니다.
         </p>

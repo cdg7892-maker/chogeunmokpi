@@ -9,12 +9,12 @@ import { clinicInfo } from "@/lib/site-data";
 // 이 샌드박스는 fonts.googleapis.com 접근이 막혀 있어 시스템 폰트로 대체했습니다.
 
 const homeDescription =
-  "반복되는 소화불량, 피부 고민, 잠 못 이루는 밤. 대전 유성구 반석동 초근목피한의원에서 증상과 생활습관, 몸 전체의 상태를 함께 살핍니다. 의료진과 진료과목을 확인하고 편하게 진료를 예약하세요.";
+  "대전 유성구 반석동 한의원, 초근목피한의원입니다. 오래 지속되거나 반복되는 소화기·피부·수면 문제 등 만성·난치성 질환을 진료합니다. 증상과 병력, 생활습관을 함께 살펴 개인별 치료 방향을 안내합니다.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cgmphani.com"),
   applicationName: "대전한의원 초근목피한의원",
-  title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
+  title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
   description: homeDescription,
   keywords: [
     "대전한의원",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
     description: homeDescription,
     url: "https://www.cgmphani.com",
     siteName: "대전한의원 초근목피한의원",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "대전한의원 초근목피한의원 | 유성구 반석동, 몸 전체를 살피는 진료",
+    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
     description: homeDescription,
     images: ["/logo-icon.png"],
   },
