@@ -137,7 +137,7 @@ export default function Hero() {
           대전 유성구 반석동 · 몸 전체를 살피는 진료
         </p>
         <h1 className="font-display text-5xl leading-[1.16] text-ink md:text-7xl">
-          대전한의원 초근목피한의원
+          대전 초근목피 한의원
         </h1>
         <p className="mt-5 font-display text-3xl leading-[1.35] text-ink md:text-5xl">
           반복되는 불편함,

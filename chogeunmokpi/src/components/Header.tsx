@@ -30,7 +30,7 @@ export default function Header() {
           <span className="relative h-9 w-7">
             <Image
               src="/logo-icon.png"
-              alt="대전한의원 초근목피한의원 로고"
+              alt="대전 초근목피 한의원 로고"
               fill
               sizes="28px"
               className="object-contain"
@@ -39,8 +39,8 @@ export default function Header() {
           </span>
           <span className="flex items-baseline gap-1.5">
             <span className="font-display text-xl tracking-tight text-ink lg:text-2xl">
-              <span className="block font-sans text-xs leading-4 text-ink-soft">대전한의원</span>
-              초근목피한의원
+              <span className="block font-sans text-xs leading-4 text-ink-soft">대전</span>
+              초근목피 한의원
             </span>
             <span className="hidden text-[11px] tracking-wide text-ink-soft/60 md:inline">
               Since 1994

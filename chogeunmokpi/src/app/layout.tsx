@@ -13,14 +13,14 @@ const homeDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cgmphani.com"),
-  applicationName: "대전한의원 초근목피한의원",
-  title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
+  applicationName: "대전 초근목피 한의원",
+  title: "대전 초근목피 한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
   description: homeDescription,
   keywords: [
     "대전한의원",
     "유성구한의원",
     "반석동한의원",
-    "대전한의원 초근목피한의원",
+    "대전 초근목피 한의원",
     "초근목피한의원",
     "대전 소화기 한의원",
     "대전 피부 한의원",
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
+    title: "대전 초근목피 한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
     description: homeDescription,
     url: "https://www.cgmphani.com",
-    siteName: "대전한의원 초근목피한의원",
+    siteName: "대전 초근목피 한의원",
     locale: "ko_KR",
     type: "website",
     images: [
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
         url: "/logo-icon.png",
         width: 512,
         height: 512,
-        alt: "대전한의원 초근목피한의원",
+        alt: "대전 초근목피 한의원",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "대전한의원 초근목피한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
+    title: "대전 초근목피 한의원 | 유성구 반석동 한의원, 몸 전체를 살피는 진료",
     description: homeDescription,
     images: ["/logo-icon.png"],
   },
@@ -82,8 +82,8 @@ export const metadata: Metadata = {
 const clinicJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  name: "대전한의원 초근목피한의원",
-  alternateName: ["초근목피한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
+  name: "대전 초근목피 한의원",
+  alternateName: ["초근목피한의원", "초근목피 한의원"],
   description: homeDescription,
   url: "https://www.cgmphani.com",
   telephone: clinicInfo.phone,
@@ -117,13 +117,13 @@ const clinicJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "대전한의원 초근목피한의원",
-  alternateName: ["초근목피한의원", "초근목피 한의원", "대전한의원 초근목피한의원", "대전 유성구 반석동 초근목피한의원"],
+  name: "대전 초근목피 한의원",
+  alternateName: ["초근목피 한의원", "초근목피한의원"],
   url: "https://www.cgmphani.com",
   inLanguage: "ko-KR",
   publisher: {
     "@type": "MedicalClinic",
-    name: "대전한의원 초근목피한의원",
+    name: "대전 초근목피 한의원",
     url: "https://www.cgmphani.com",
   },
 };
